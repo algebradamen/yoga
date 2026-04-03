@@ -42,6 +42,14 @@ The expanded section should be visually distinct, perhaps with a different backg
 from the main table. The "Meridians" and "Alternatives" columns should use icons or badges to make the information
 easily scannable.
 
+The page should be responsive and look good on both desktop and mobile devices. The layout should adapt to different
+screen sizes, ensuring that the content remains accessible and visually appealing on all devices.
+
+For the table, skip columns "Sensation" and "Meridians" on mobile, and only show the pose name and duration.
+The alternatives can be shown as icons or badges in the same column as the pose name.
+
+If the sensation and meridians are not displayed in the table on mobile, they should still be included in the expanded
+section when a row is clicked.
 
 Internationalisation
 ===
