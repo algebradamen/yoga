@@ -51,6 +51,8 @@ The alternatives can be shown as icons or badges in the same column as the pose 
 If the sensation and meridians are not displayed in the table on mobile, they should still be included in the expanded
 section when a row is clicked.
 
+The 
+
 Internationalisation
 ===
 
