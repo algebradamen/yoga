@@ -1,28 +1,28 @@
 /* ============================================================
    yoga.css – shared styles for yoga session pages
-   Colors: pastel pink, lavender, olive green
+   Colors: olive green, forest green, warm terracotta
    ============================================================ */
 
 :root {
-  --pink-bg:       #fdf0f5;
-  --pink-light:    #fce4ef;
-  --lavender:      #c5a8e4;
-  --lavender-mid:  #9b72c8;
-  --lavender-dark: #6a3d9e;
+  --sage-bg:       #f2f5ed;
+  --sage-light:    #ddebc4;
+  --forest:        #8ab870;
+  --forest-mid:    #5a8a46;
+  --forest-dark:   #3a5e2e;
   --olive:         #7a8c4a;
   --olive-light:   #b5c87a;
   --olive-dark:    #4e5c2a;
-  --text-main:     #2d2340;
-  --text-muted:    #7a6e8a;
-  --row-hover:     #f3e6fa;
-  --expand-bg:     #f9f0ff;
-  --expand-border: #d4b8f0;
-  --badge-bg:      #e8d6f8;
-  --badge-text:    #5c2f99;
-  --alt-badge-bg:  #e0f0da;
-  --alt-badge-text:#3a5e20;
+  --text-main:     #1c2e18;
+  --text-muted:    #5a7050;
+  --row-hover:     #ddebc4;
+  --expand-bg:     #f0f8e8;
+  --expand-border: #b8d890;
+  --badge-bg:      #cce8c0;
+  --badge-text:    #2c5820;
+  --alt-badge-bg:  #f5e0c8;
+  --alt-badge-text:#7a3e14;
   --white:         #ffffff;
-  --shadow:        rgba(106, 61, 158, 0.12);
+  --shadow:        rgba(62, 96, 42, 0.12);
 }
 
 /* ---------- Reset & Base ---------- */
@@ -30,7 +30,7 @@
 
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
-  background-color: var(--pink-bg);
+  background-color: var(--sage-bg);
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
@@ -39,7 +39,7 @@ body {
 
 /* ---------- Decorative header strip ---------- */
 .deco-top {
-  background: linear-gradient(135deg, var(--lavender-mid) 0%, var(--lavender) 60%, var(--lavender-dark) 100%);
+  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-mid) 60%, var(--forest) 100%);
   padding: 0.5rem 1.5rem 0;
   display: flex;
   align-items: flex-end;
@@ -75,7 +75,7 @@ body {
 .lang-switcher a:hover,
 .lang-switcher a.active {
   background: var(--white);
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
 }
 
 /* ---------- Main content ---------- */
@@ -90,7 +90,7 @@ main {
 h1 {
   font-size: 1.9rem;
   font-weight: 700;
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
   margin-bottom: 0.4rem;
 }
 
@@ -115,7 +115,7 @@ h1 {
 }
 
 .pose-table thead th {
-  background: linear-gradient(90deg, var(--lavender-mid), var(--lavender));
+  background: linear-gradient(90deg, var(--forest-mid), var(--forest));
   color: var(--white);
   font-size: 0.78rem;
   font-weight: 700;
@@ -130,7 +130,7 @@ h1 {
 
 /* ---------- Table body rows ---------- */
 .pose-table tbody tr.pose-row {
-  border-bottom: 1px solid var(--pink-light);
+  border-bottom: 1px solid var(--sage-light);
   cursor: pointer;
   transition: background 0.18s;
 }
@@ -151,7 +151,7 @@ h1 {
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
 }
 
 .chevron {
@@ -160,7 +160,7 @@ h1 {
   height: 18px;
   flex-shrink: 0;
   transition: transform 0.25s;
-  color: var(--lavender-mid);
+  color: var(--forest-mid);
 }
 
 .chevron svg { width: 18px; height: 18px; }
@@ -230,14 +230,14 @@ h1 {
 
 .detail-inner {
   background: var(--expand-bg);
-  border-left: 4px solid var(--lavender);
+  border-left: 4px solid var(--forest);
   border-bottom: 2px solid var(--expand-border);
   padding: 1.2rem 1.5rem 1.4rem 1.8rem;
 }
 
 .detail-inner h3 {
   font-size: 1rem;
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -281,7 +281,7 @@ h1 {
 
 /* ---------- Decorative footer strip ---------- */
 .deco-bottom {
-  background: linear-gradient(135deg, var(--olive-dark) 0%, var(--olive) 60%, var(--olive-light) 100%);
+  background: linear-gradient(135deg, #7a3e14 0%, #b05a30 60%, #d48a58 100%);
   padding: 0.5rem 1.5rem 0;
   display: flex;
   align-items: flex-end;
