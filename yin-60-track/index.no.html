@@ -25,37 +25,28 @@
   <p class="subtitle">En forankrende yin-sekvens som bearbeider dypt bindevev, meridianer og indre ro.</p>
 
   <div class="pose-table-wrapper">
-    <table class="pose-table" aria-label="Yoga-posisjoner">
-      <thead>
-        <tr>
-          <th scope="col">Posisjon</th>
-          <th scope="col">Varighet</th>
-          <th scope="col">Alternativer</th>
-          <th scope="col">Meridianer</th>
-          <th scope="col">Sensasjon</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class="pose-header">
+      <span class="col-pose">Posisjon</span>
+      <span class="col-duration">Varighet</span>
+      <span class="col-alternatives">Alternativer</span>
+      <span class="col-meridians">Meridianer</span>
+      <span class="col-sensation">Sensasjon</span>
+    </div>
 
         <!-- ── Meditasjon ── -->
-        <tr class="pose-row" data-target="detail-meditation" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Meditasjon
             </div>
-          </td>
-          <td class="duration-cell">3 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">3 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Pustefokus</span>
             </div>
-          </td>
-          <td><div class="badges"></div></td>
-          <td class="sensation-cell">Ro, tilstedeværelse</td>
-        </tr>
-        <tr class="detail-row" id="detail-meditation">
-          <td class="detail-cell" colspan="5">
+            <div class="col-meridians badges"></div>
+            <span class="col-sensation sensation-cell">Ro, tilstedeværelse</span>
+          </summary>
             <div class="detail-inner">
               <h3>Meditasjon</h3>
               <p>Sitt komfortabelt i en benkrysset stilling eller på en stol med føttene flatt på gulvet. Lukk øynene, slapp av kjeven og sett en personlig intensjon for praksisen. Pust naturlig og la pusten bli langsom og dyp. La tanker passere uten å henge seg opp i dem.</p>
@@ -70,34 +61,26 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Dangling ── -->
-        <tr class="pose-row" data-target="detail-dangling" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Hengende foroverbøy
             </div>
-          </td>
-          <td class="duration-cell">2–3 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">2–3 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Ragdoll</span>
               <span class="badge badge-alt">Sittende foroverbøy</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Urinblære</span>
               <span class="badge badge-meridian">Nyre</span>
             </div>
-          </td>
-          <td class="sensation-cell">Ryggsøyle dekompresjon, bakside lår</td>
-        </tr>
-        <tr class="detail-row" id="detail-dangling">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Ryggsøyle dekompresjon, bakside lår</span>
+          </summary>
             <div class="detail-inner">
               <h3>Hengende foroverbøy (Dangling)</h3>
               <p>Stå med føttene hoftebredde fra hverandre. Bøy knærne lett og bøy deg forover fra hoftene, la overkroppen henge tungt mot gulvet. Kryss armene og hold hver albue i motsatt hånd, la vekten av armene og hodet skape en mild trekkraft langs ryggraden. Gi slipp på all anstrengelse — la tyngdekraften gjøre jobben.</p>
@@ -121,35 +104,27 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Squat ── -->
-        <tr class="pose-row" data-target="detail-squat" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Knebøy (Malasana)
             </div>
-          </td>
-          <td class="duration-cell">2–3 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">2–3 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Støttet knebøy</span>
               <span class="badge badge-alt">Halvknebøy</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Nyre</span>
               <span class="badge badge-meridian">Lever</span>
               <span class="badge badge-meridian">Galleblære</span>
             </div>
-          </td>
-          <td class="sensation-cell">Hofter, lyske, ankler</td>
-        </tr>
-        <tr class="detail-row" id="detail-squat">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Hofter, lyske, ankler</span>
+          </summary>
             <div class="detail-inner">
               <h3>Knebøy (Malasana)</h3>
               <p>Stå med føttene litt bredere enn hoftebredde, tærne pekt utover. Senk deg ned i en dyp knebøy, bring hoftene mot gulvet. Bring håndflatene sammen foran brystet i Anjali mudra og bruk albuene til forsiktig å presse knærne utover. Hold ryggraden lang og brystet løftet. Dersom hælene løfter seg, legg et sammenbretten teppe under dem.</p>
@@ -174,35 +149,27 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Dragonfly – Fold right ── -->
-        <tr class="pose-row" data-target="detail-dragonfly-r" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Øyenstikker – Bøy til høyre
             </div>
-          </td>
-          <td class="duration-cell">3 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">3 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Sommerfugl</span>
               <span class="badge badge-alt">Hode til kne</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Lever</span>
               <span class="badge badge-meridian">Nyre</span>
               <span class="badge badge-meridian">Urinblære</span>
             </div>
-          </td>
-          <td class="sensation-cell">Indre lår, hamstrings (høyre)</td>
-        </tr>
-        <tr class="detail-row" id="detail-dragonfly-r">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Indre lår, hamstrings (høyre)</span>
+          </summary>
             <div class="detail-inner">
               <h3>Øyenstikker – Bøy over høyre ben</h3>
               <p>Fra en bredbent sittestilling, roter overkroppen mot høyre og bøy deg fremover over det høyre benet. La ryggen runde seg naturlig. Du kan hvile hendene på gulvet, bruke en kloss under pannen, eller gripe foten. Gi deg helt hen til posisjonen. Etter 3 minutter bruker du Vindusvisker (1 min) som motposisjon: legg deg på ryggen, bøyde knær med føttene bredt fra hverandre, og vipp knærne fra side til side.</p>
@@ -226,35 +193,27 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Dragonfly – Fold left ── -->
-        <tr class="pose-row" data-target="detail-dragonfly-l" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Øyenstikker – Bøy til venstre
             </div>
-          </td>
-          <td class="duration-cell">3 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">3 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Sommerfugl</span>
               <span class="badge badge-alt">Hode til kne</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Lever</span>
               <span class="badge badge-meridian">Nyre</span>
               <span class="badge badge-meridian">Urinblære</span>
             </div>
-          </td>
-          <td class="sensation-cell">Indre lår, hamstrings (venstre)</td>
-        </tr>
-        <tr class="detail-row" id="detail-dragonfly-l">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Indre lår, hamstrings (venstre)</span>
+          </summary>
             <div class="detail-inner">
               <h3>Øyenstikker – Bøy over venstre ben</h3>
               <p>Fra bredbent sittestilling, roter mot venstre og bøy deg fremover over det venstre benet. Samme prinsipper som høyre side: la ryggraden runde seg, slipp anstrengelse, og pust inn i baksiden av benet. Etter 3 minutter bruker du Vindusvisker (1 min) som motposisjon.</p>
@@ -278,34 +237,26 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Dragonfly – Fold centre ── -->
-        <tr class="pose-row" data-target="detail-dragonfly-c" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Øyenstikker – Bøy midtveis
             </div>
-          </td>
-          <td class="duration-cell">3 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">3 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Sommerfugl</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Lever</span>
               <span class="badge badge-meridian">Nyre</span>
               <span class="badge badge-meridian">Urinblære</span>
             </div>
-          </td>
-          <td class="sensation-cell">Indre lår, korsrygg</td>
-        </tr>
-        <tr class="detail-row" id="detail-dragonfly-c">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Indre lår, korsrygg</span>
+          </summary>
             <div class="detail-inner">
               <h3>Øyenstikker – Bøy rett ned i midten</h3>
               <p>Fra bredbent sittestilling, gå med begge hendene fremover mellom bena og senk overkroppen ned midt mellom. Hold bena så rette som komfortabelt, spenn føttene og la ryggraden runde seg. Hvil underarmene eller pannen på gulvet eller et hjelpemiddel. Etter 3 minutter bruker du Vindusvisker (1 min) som motposisjon.</p>
@@ -329,36 +280,28 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Sphinx ── -->
-        <tr class="pose-row" data-target="detail-sphinx" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Sfinx
             </div>
-          </td>
-          <td class="duration-cell">3 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">3 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Baby Cobra</span>
               <span class="badge badge-alt">Barneposisjon</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Urinblære</span>
               <span class="badge badge-meridian">Nyre</span>
               <span class="badge badge-meridian">Mage</span>
               <span class="badge badge-meridian">Milt</span>
             </div>
-          </td>
-          <td class="sensation-cell">Korsrygg; sekundært: forsiden av overkroppen</td>
-        </tr>
-        <tr class="detail-row" id="detail-sphinx">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Korsrygg; sekundært: forsiden av overkroppen</span>
+          </summary>
             <div class="detail-inner">
               <h3>Sfinx</h3>
               <p>Legg deg på magen. Plasser albuene rett under eller litt foran skuldrene og støtt deg opp på underarmene. Slapp av i bena og la dem ligge hoftebredde fra hverandre. Press forsiktig underarmene mot gulvet for å løfte brystet og skape en mild kompresjon i korsryggen. Dersom sensasjonen er for sterk, skyv albuene lenger fremover for å senke brystet mot gulvet.</p>
@@ -385,36 +328,28 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Seal ── -->
-        <tr class="pose-row" data-target="detail-seal" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Sel
             </div>
-          </td>
-          <td class="duration-cell">2 min</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">2 min</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Sfinx</span>
               <span class="badge badge-alt">Barneposisjon</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Urinblære</span>
               <span class="badge badge-meridian">Nyre</span>
               <span class="badge badge-meridian">Mage</span>
               <span class="badge badge-meridian">Milt</span>
             </div>
-          </td>
-          <td class="sensation-cell">Kompresjon i korsryggen; sekundært: forsiden av overkroppen</td>
-        </tr>
-        <tr class="detail-row" id="detail-seal">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Kompresjon i korsryggen; sekundært: forsiden av overkroppen</span>
+          </summary>
             <div class="detail-inner">
               <h3>Sel</h3>
               <p>Fra Sfinx, drei hendene utover og strekk armene, lås albuene. Gå med hendene forsiktig mot deg for å dype bakover-bøyen. Den sterkeste kompresjonen i korsryggen merkes når hendene ikke er rett under skuldrene, men litt fremover — juster for å finne riktig dybde. Hold bena avslappet.</p>
@@ -441,35 +376,27 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
         <!-- ── Swan ── -->
-        <tr class="pose-row" data-target="detail-swan" tabindex="0" role="button" aria-expanded="false">
-          <td>
+        <details class="pose-item">
+          <summary>
             <div class="pose-name-cell">
               <span class="chevron"></span>
               Svane
             </div>
-          </td>
-          <td class="duration-cell">3–5 min per side</td>
-          <td>
-            <div class="badges">
+            <span class="col-duration duration-cell">3–5 min per side</span>
+            <div class="col-alternatives badges">
               <span class="badge badge-alt">Liggende due</span>
               <span class="badge badge-alt">Sovende svane</span>
             </div>
-          </td>
-          <td>
-            <div class="badges">
+            <div class="col-meridians badges">
               <span class="badge badge-meridian">Urinblære</span>
               <span class="badge badge-meridian">Galleblære</span>
               <span class="badge badge-meridian">Mage</span>
             </div>
-          </td>
-          <td class="sensation-cell">Hoftefleksorer, ytre hofte (piriformis)</td>
-        </tr>
-        <tr class="detail-row" id="detail-swan">
-          <td class="detail-cell" colspan="5">
+            <span class="col-sensation sensation-cell">Hoftefleksorer, ytre hofte (piriformis)</span>
+          </summary>
             <div class="detail-inner">
               <h3>Svane</h3>
               <p>Fra firfotstilling, bring høyre kne frem bak høyre håndledd og strekk venstre ben bakover. Kvadrer hoftene mot fremenden av matta. Hold deg oppreist på hendene (Svane) eller fold deg fremover over fremre ben (Sovende svane). Bruk en bolster eller sammenbretten teppe under høyre hofte ved behov for å holde bekkenet i balanse. Hold hver side i 3–5 minutter, etterfulgt av Barneposisjon som motposisjon.</p>
@@ -494,11 +421,8 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+        </details>
 
-      </tbody>
-    </table>
   </div>
 </main>
 
@@ -508,7 +432,6 @@
   <img src="../images/deco-bottom.svg" width="340" height="60" alt=""/>
 </div>
 
-<script src="../scripts/yoga.js"></script>
 
 </body>
 </html>
