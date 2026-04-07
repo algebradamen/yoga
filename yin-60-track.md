@@ -6,7 +6,7 @@
 set the intesion for the session Duration 3 minutes 
 
 ### Dangling  
-
+ 
 ### Squat  
 
 ### Dragonfly (Straddle) 

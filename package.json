@@ -1,0 +1,22 @@
+{
+  "name": "@yoga/yoga",
+  "version": "1.0.0",
+  "description": "Edita's Yoga and Pilates sessions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node scripts/parse-track-yaml.js",
+    "generate": "node scripts/generate-html.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@codeberg.org/narve/yoga.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@loopstack/markdown-parser": "^1.1.2",
+    "yaml": "^2.8.3"
+  }
+}
