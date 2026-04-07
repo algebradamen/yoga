@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "track.schema.json",
+  "title": "Yoga Track",
+  "description": "A yoga session track with a sequence of poses",
+  "type": "object",
+  "required": ["Name", "Duration", "Poses"],
+  "properties": {
+    "Name": {
+      "type": "string",
+      "description": "The name of the track"
+    },
+    "Duration": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total duration of the track in minutes"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Markdown-formatted description of the track"
+    },
+    "Poses": {
+      "type": "array",
+      "description": "Ordered list of poses in the track",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Pose"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Pose": {
+      "type": "object",
+      "required": ["Name"],
+      "properties": {
+        "Name": {
+          "type": "string",
+          "description": "The name of the pose"
+        },
+        "Duration": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Duration to hold the pose in minutes"
+        },
+        "Description": {
+          "type": "string",
+          "description": "Markdown-formatted description and instructions for the pose"
+        },
+        "Sensation": {
+          "type": "string",
+          "description": "Description of the physical or emotional sensation of the pose"
+        },
+        "Meridians": {
+          "type": "array",
+          "description": "List of meridians activated by the pose",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "Alternatives": {
+          "$ref": "#/$defs/Alternative"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Alternative": {
+      "type": "object",
+      "required": ["Name"],
+      "description": "An alternative version of the pose",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "description": "Name of the alternative pose"
+        },
+        "Description": {
+          "type": "string",
+          "description": "Markdown-formatted description of the alternative"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
+

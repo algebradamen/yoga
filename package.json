@@ -4,7 +4,7 @@
   "description": "Edita's Yoga and Pilates sessions",
   "main": "index.js",
   "scripts": {
-    "test": "node scripts/parse-track-yaml.js",
+    "test": "node scripts/parse-track-yaml.js && node scripts/generate-html.js",
     "generate": "node scripts/generate-html.js"
   },
   "repository": {
@@ -17,6 +17,8 @@
   "type": "module",
   "dependencies": {
     "@loopstack/markdown-parser": "^1.1.2",
+    "ajv": "^8.18.0",
+    "markdown-it": "^14.1.1",
     "yaml": "^2.8.3"
   }
 }

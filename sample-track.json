@@ -1,22 +1,34 @@
 {
   "Name": "Yoga for Hip Opening",
-  "Description": "This track is designed to open the hips and stretch the inner thighs, hamstrings, and lower back. It includes a combination of static holds and dynamic movements to target the hip flex",
-  "Duration": "60 minutes",
+  "Duration": 60,
+  "Description": "This track is designed to open the hips and stretch the inner thighs, \nhamstrings, and lower back. It includes a combination of static holds and dynamic movements to target the hip flex.\n\nHere is one heading\n---\n\nand another heading\n=== \nand a paragraph with **bold** and *italic* text, as well as a [link](https://www.example.com).\nand now a paragraph separated by a blank line:\n\nnext (and last) paragraph.\n",
   "Poses": [
     {
       "Name": "Meditation",
       "Duration": 3,
-      "Description": "Set the intention for the session."
+      "Sensation": "Calm, centred presence",
+      "Description": "Sit comfortably in a cross-legged position or on a chair with your feet flat on the floor. \nClose your eyes, soften your jaw, and set a personal intention for your practice. \nBreathe naturally, allowing the breath to become slow and deep. Let thoughts pass without attachment.\n",
+      "Alternatives": {
+        "Name": "Seated Meditation",
+        "Description": "Sit comfortably in a cross-legged position or on a chair with your feet flat on the floor. \nClose your eyes, soften your jaw, and set a personal intention for your practice. \nBreathe naturally, allowing the breath to become slow and deep. \nLet thoughts pass without attachment.\n"
+      }
     },
     {
       "Name": "Dangling",
-      "Duration": "2–3 minutes",
-      "Description": "Stand with your feet hip-width apart, hinge at the hips, and let your upper body hang down towards the floor. Allow your head to relax and your arms to dangle freely. You can gently sway side to side or forward and backward to release tension in the hips and lower back.",
+      "Duration": 3,
+      "Description": "Stand with feet hip-width apart. Bend your knees slightly and fold forward from the hips, letting your torso hang heavy toward the floor. Clasp opposite elbows and let the weight of your arms and head create a gentle traction along the spine. Surrender all effort — let gravity do the work.\n\nThis pose decompresses the lumbar spine, stretches the hamstrings and calves, and stimulates the Urinary Bladder and Kidney meridians that run along the posterior chain.\n",
       "Meridians": [
         "Kidney",
         "Bladder",
         "Liver"
       ]
+    },
+    {
+      "Name": "Supported Squat (Malasana)",
+      "Meridians": [
+        "Kidney"
+      ],
+      "Sensation": "What is sensation really?"
     }
   ]
 }
