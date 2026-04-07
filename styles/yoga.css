@@ -1,28 +1,28 @@
 /* ============================================================
    yoga.css – shared styles for yoga session pages
-   Colors: pastel pink, lavender, olive green
+   Colors: olive green, forest green, warm terracotta
    ============================================================ */
 
 :root {
-  --pink-bg:       #fdf0f5;
-  --pink-light:    #fce4ef;
-  --lavender:      #c5a8e4;
-  --lavender-mid:  #9b72c8;
-  --lavender-dark: #6a3d9e;
+  --sage-bg:       #f2f5ed;
+  --sage-light:    #ddebc4;
+  --forest:        #8ab870;
+  --forest-mid:    #5a8a46;
+  --forest-dark:   #3a5e2e;
   --olive:         #7a8c4a;
   --olive-light:   #b5c87a;
   --olive-dark:    #4e5c2a;
-  --text-main:     #2d2340;
-  --text-muted:    #7a6e8a;
-  --row-hover:     #f3e6fa;
-  --expand-bg:     #f9f0ff;
-  --expand-border: #d4b8f0;
-  --badge-bg:      #e8d6f8;
-  --badge-text:    #5c2f99;
-  --alt-badge-bg:  #e0f0da;
-  --alt-badge-text:#3a5e20;
+  --text-main:     #1c2e18;
+  --text-muted:    #5a7050;
+  --row-hover:     #ddebc4;
+  --expand-bg:     #f0f8e8;
+  --expand-border: #b8d890;
+  --badge-bg:      #cce8c0;
+  --badge-text:    #2c5820;
+  --alt-badge-bg:  #f5e0c8;
+  --alt-badge-text:#7a3e14;
   --white:         #ffffff;
-  --shadow:        rgba(106, 61, 158, 0.12);
+  --shadow:        rgba(62, 96, 42, 0.12);
 }
 
 /* ---------- Reset & Base ---------- */
@@ -30,7 +30,7 @@
 
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
-  background-color: var(--pink-bg);
+  background-color: var(--sage-bg);
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
@@ -39,7 +39,7 @@ body {
 
 /* ---------- Decorative header strip ---------- */
 .deco-top {
-  background: linear-gradient(135deg, var(--lavender-mid) 0%, var(--lavender) 60%, var(--lavender-dark) 100%);
+  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-mid) 60%, var(--forest) 100%);
   padding: 0.5rem 1.5rem 0;
   display: flex;
   align-items: flex-end;
@@ -75,7 +75,7 @@ body {
 .lang-switcher a:hover,
 .lang-switcher a.active {
   background: var(--white);
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
 }
 
 /* ---------- Main content ---------- */
@@ -90,7 +90,7 @@ main {
 h1 {
   font-size: 1.9rem;
   font-weight: 700;
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
   margin-bottom: 0.4rem;
 }
 
@@ -108,42 +108,38 @@ h1 {
   overflow: hidden;
 }
 
-/* ---------- Table header ---------- */
-.pose-table {
-  width: 100%;
-  border-collapse: collapse;
+/* ---------- Grid layout ---------- */
+.pose-header,
+.pose-item > summary {
+  display: grid;
+  grid-template-columns: 2fr 0.65fr 1.8fr 2fr 2fr;
+  align-items: center;
+  column-gap: 1rem;
 }
 
-.pose-table thead th {
-  background: linear-gradient(90deg, var(--lavender-mid), var(--lavender));
+.pose-header {
+  background: linear-gradient(90deg, var(--forest-mid), var(--forest));
   color: var(--white);
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   padding: 0.85rem 1rem;
-  text-align: left;
   white-space: nowrap;
 }
 
-.pose-table thead th:first-child { border-radius: 0; }
-
-/* ---------- Table body rows ---------- */
-.pose-table tbody tr.pose-row {
-  border-bottom: 1px solid var(--pink-light);
+.pose-item > summary {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--sage-light);
   cursor: pointer;
   transition: background 0.18s;
-}
-
-.pose-table tbody tr.pose-row:hover {
-  background: var(--row-hover);
-}
-
-.pose-table tbody tr.pose-row td {
-  padding: 0.75rem 1rem;
-  vertical-align: middle;
   font-size: 0.93rem;
+  list-style: none;
 }
+
+.pose-item > summary::-webkit-details-marker { display: none; }
+
+.pose-item > summary:hover { background: var(--row-hover); }
 
 /* chevron indicator */
 .pose-name-cell {
@@ -151,7 +147,7 @@ h1 {
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
 }
 
 .chevron {
@@ -160,12 +156,10 @@ h1 {
   height: 18px;
   flex-shrink: 0;
   transition: transform 0.25s;
-  color: var(--lavender-mid);
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a8a46' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>") center/contain no-repeat;
 }
 
-.chevron svg { width: 18px; height: 18px; }
-
-.pose-row.open .chevron {
+details[open] > summary .chevron {
   transform: rotate(90deg);
 }
 
@@ -204,10 +198,22 @@ h1 {
   color: var(--alt-badge-text);
 }
 
-.badge svg {
+.badge-meridian::before,
+.badge-alt::before {
+  content: '';
+  display: inline-block;
   width: 12px;
   height: 12px;
   flex-shrink: 0;
+  background: center/contain no-repeat;
+}
+
+.badge-meridian::before {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c5820' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='16'/><line x1='8' y1='12' x2='16' y2='12'/></svg>");
+}
+
+.badge-alt::before {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a3e14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z'/><path d='M12 8v4l3 3'/></svg>");
 }
 
 /* sensation cell */
@@ -217,27 +223,17 @@ h1 {
   font-style: italic;
 }
 
-/* ---------- Expanded detail row ---------- */
-.detail-row { display: none; }
-
-.detail-row.open {
-  display: table-row;
-}
-
-.detail-cell {
-  padding: 0 !important;
-}
-
+/* ---------- Expanded detail ---------- */
 .detail-inner {
   background: var(--expand-bg);
-  border-left: 4px solid var(--lavender);
+  border-left: 4px solid var(--forest);
   border-bottom: 2px solid var(--expand-border);
   padding: 1.2rem 1.5rem 1.4rem 1.8rem;
 }
 
 .detail-inner h3 {
   font-size: 1rem;
-  color: var(--lavender-dark);
+  color: var(--forest-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -281,7 +277,7 @@ h1 {
 
 /* ---------- Decorative footer strip ---------- */
 .deco-bottom {
-  background: linear-gradient(135deg, var(--olive-dark) 0%, var(--olive) 60%, var(--olive-light) 100%);
+  background: linear-gradient(135deg, #7a3e14 0%, #b05a30 60%, #d48a58 100%);
   padding: 0.5rem 1.5rem 0;
   display: flex;
   align-items: flex-end;
@@ -289,10 +285,56 @@ h1 {
   min-height: 64px;
 }
 
+/* ---------- Mobile-only detail info (hidden on desktop) ---------- */
+.mobile-info { display: none; }
+
 /* ---------- Responsive ---------- */
-@media (max-width: 640px) {
-  .pose-table thead th:nth-child(3),
-  .pose-table tbody td:nth-child(3) { display: none; }
+@media (max-width: 768px) {
+  .pose-header,
+  .pose-item > summary {
+    grid-template-columns: 1fr auto;
+  }
+
+  .col-alternatives,
+  .col-meridians,
+  .col-sensation { display: none; }
 
   h1 { font-size: 1.4rem; }
+
+  .mobile-info { display: block; }
+
+  main { padding: 1.2rem 1rem 2rem; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  /* Expand all poses */
+  .pose-item > .detail-inner { display: block !important; }
+
+  /* Show all columns */
+  .col-alternatives,
+  .col-meridians,
+  .col-sensation { display: revert; }
+
+  .pose-header,
+  .pose-item > summary {
+    grid-template-columns: 2fr 0.65fr 1.8fr 2fr 2fr;
+  }
+
+  /* Hide mobile-only info (columns visible in print) */
+  .mobile-info { display: none !important; }
+
+  /* Don't split a pose across pages */
+  .pose-item { break-inside: avoid; }
+
+  /* Hide decorative and interactive elements */
+  .deco-top, .deco-bottom, .lang-switcher { display: none; }
+  .chevron { display: none; }
+
+  /* Clean appearance */
+  .pose-table-wrapper { box-shadow: none; border: 1px solid var(--sage-light); }
+  .pose-item > summary { background: none !important; cursor: default; }
+  .detail-inner { border-left: 2px solid var(--olive-light); }
+
+  main { padding: 1rem; }
 }
