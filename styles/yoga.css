@@ -37,6 +37,10 @@ body {
   flex-direction: column;
 }
 
+p {
+  margin: 0.5em;
+}
+
 /* ---------- Decorative header strip ---------- */
 .deco-top {
   background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-mid) 60%, var(--forest) 100%);
