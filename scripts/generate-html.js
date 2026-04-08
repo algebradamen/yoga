@@ -1,3 +1,14 @@
+/**
+ * @fileoverview Generates static HTML pages from parsed track JSON files.
+ *
+ * Reads all `.json` files from the `generated/` directory (produced by
+ * `parse-track-yaml.js`), renders each track into a full HTML page with a
+ * pose table, and writes the output to `dist/<track-name>/index.html`.
+ * Also renders a `dist/index.html` listing all tracks.
+ *
+ * Usage: `node scripts/generate-html.js`
+ */
+
 import fs from 'fs'
 import path from 'path'
 import markdownit from 'markdown-it'

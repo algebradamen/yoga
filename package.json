@@ -4,8 +4,10 @@
   "description": "Edita's Yoga and Pilates sessions",
   "main": "index.js",
   "scripts": {
-    "test": "node scripts/parse-track-yaml.js && node scripts/generate-html.js",
-    "generate": "node scripts/generate-html.js"
+    "generate:json": "node scripts/parse-track-yaml.js",
+    "generate:html": "node scripts/generate-html.js",
+    "generate": "npm run generate:json && npm run generate:html",
+    "dist": "npm run generate"
   },
   "repository": {
     "type": "git",

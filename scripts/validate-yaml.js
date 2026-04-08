@@ -1,3 +1,13 @@
+/**
+ * @fileoverview Validates one or more yoga track YAML files against the schema.
+ *
+ * Accepts file paths as command-line arguments; falls back to a default set of
+ * files if none are provided. Validates each file against `track.schema.json`
+ * using AJV and reports pass/fail per file.
+ *
+ * Usage: `node scripts/validate-yaml.js [file1.yaml file2.yaml ...]`
+ */
+
 import fs from 'fs'
 import path from 'path'
 import YAML from 'yaml'
