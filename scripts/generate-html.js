@@ -59,13 +59,13 @@ function renderTrack(track) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${track.Name}</title>
-  <link rel="stylesheet" href="../../styles/yoga.css" />
+  <link rel="stylesheet" href="../styles/yoga.css" />
 </head>
 <body>
 
 <!-- ===== TOP DECORATION ===== -->
 <div class="deco-top" aria-hidden="true">
-  <img src="../../images/deco-top.svg" width="340" height="60" alt=""/>
+  <img src="../images/deco-top.svg" width="340" height="60" alt=""/>
   <nav class="lang-switcher" aria-label="Language">
     <a href="index.html" class="active" aria-current="page">EN</a>
     <a href="index.no.html">NO</a>
@@ -93,7 +93,7 @@ function renderTrack(track) {
 
 <!-- ===== BOTTOM DECORATION ===== -->
 <div class="deco-bottom" aria-hidden="true">
-  <img src="../../images/deco-bottom.svg" width="340" height="60" alt=""/>
+  <img src="../images/deco-bottom.svg" width="340" height="60" alt=""/>
 </div>
 
 </body>
@@ -113,15 +113,15 @@ function renderIndex(tracks) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
   <title>Edita's Yoga &amp; Pilates Sessions</title>
-  <link rel="stylesheet" href="../styles/yoga.css" />
+  <link rel="stylesheet" href="styles/yoga.css" />
 </head>
 <body>
 
 <!-- ===== TOP DECORATION ===== -->
 <div class="deco-top" aria-hidden="true">
-  <img src="../images/deco-top.svg" width="340" height="60" alt=""/>
+  <img src="images/deco-top.svg" width="340" height="60" alt=""/>
 </div>
 
 <!-- ===== MAIN ===== -->
@@ -138,7 +138,7 @@ function renderIndex(tracks) {
 
 <!-- ===== BOTTOM DECORATION ===== -->
 <div class="deco-bottom" aria-hidden="true">
-  <img src="../images/deco-bottom.svg" width="340" height="60" alt=""/>
+  <img src="images/deco-bottom.svg" width="340" height="60" alt=""/>
 </div>
 
 </body>
@@ -171,4 +171,25 @@ for (const file of jsonFiles) {
 const indexPath = path.join(distDir, 'index.html')
 fs.writeFileSync(indexPath, renderIndex(tracks))
 console.log(`✓ index  →  dist/index.html`)
+
+// Copy static assets into dist so it can be served independently
+function copyDir(src, dest) {
+  fs.mkdirSync(dest, { recursive: true })
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name)
+    const destPath = path.join(dest, entry.name)
+    if (entry.isDirectory()) {
+      copyDir(srcPath, destPath)
+    } else {
+      fs.copyFileSync(srcPath, destPath)
+    }
+  }
+}
+
+const stylesDir = path.join(root, 'styles')
+const imagesDir = path.join(root, 'images')
+copyDir(stylesDir, path.join(distDir, 'styles'))
+console.log(`✓ styles/  →  dist/styles/`)
+copyDir(imagesDir, path.join(distDir, 'images'))
+console.log(`✓ images/  →  dist/images/`)
 
