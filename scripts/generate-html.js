@@ -43,10 +43,12 @@ function parseFilename(file) {
   return { baseName: noExt, locale: 'en' }
 }
 
-function renderLangSwitcher(availableLocales, currentLocale) {
+// basePath must be root-relative and end with '/' (e.g. '/' or '/yin-60-track/')
+// so links work regardless of whether the browser URL has a trailing slash.
+function renderLangSwitcher(availableLocales, currentLocale, basePath) {
   return availableLocales.map(locale => {
     const { label } = LOCALES[locale] ?? { label: locale.toUpperCase() }
-    const href = localeOutputFile(locale)
+    const href = basePath + localeOutputFile(locale)
     return locale === currentLocale
       ? `<a href="${href}" class="active" aria-current="page">${label}</a>`
       : `<a href="${href}">${label}</a>`
@@ -88,10 +90,10 @@ function renderPose(pose, t) {
     </details>`
 }
 
-function renderTrack(track, locale, availableLocales, warnings) {
+function renderTrack(track, locale, availableLocales, baseName, warnings) {
   const { lang } = LOCALES[locale] ?? { lang: locale }
   const t = makeT(locale, warnings)
-  const langSwitcher = renderLangSwitcher(availableLocales, locale)
+  const langSwitcher = renderLangSwitcher(availableLocales, locale, `/${baseName}/`)
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -144,7 +146,7 @@ function renderTrack(track, locale, availableLocales, warnings) {
 
 function renderIndex(tracks, locale, availableLocales, warnings) {
   const { lang } = LOCALES[locale] ?? { lang: locale }
-  const langSwitcher = renderLangSwitcher(availableLocales, locale)
+  const langSwitcher = renderLangSwitcher(availableLocales, locale, '/')
   const cards = tracks
     .map(({ baseName, track }) => `
   <a class="session-card" href="${baseName}/${localeOutputFile(locale)}">
@@ -232,7 +234,7 @@ for (const [baseName, localeMap] of groups) {
   for (const [locale, track] of localeMap) {
     const outFile = localeOutputFile(locale)
     const outPath = path.join(outDir, outFile)
-    fs.writeFileSync(outPath, renderTrack(track, locale, availableLocales, warnings))
+    fs.writeFileSync(outPath, renderTrack(track, locale, availableLocales, baseName, warnings))
     console.log(`✓ ${baseName}.${locale}  →  dist/${baseName}/${outFile}`)
   }
 
