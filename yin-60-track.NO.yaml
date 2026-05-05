@@ -14,7 +14,7 @@ Poses:
 
 
   - Name: Åpningsmeditasjon
-    Duration: 3
+    Duration: 4
     Sensation:
       - Pustbevissthet
       - Forankring
@@ -87,7 +87,7 @@ Poses:
 
 
   - Name: "Øyenstikker – Høyre side"
-    Duration: 3
+    Duration: 4
     Description: |
       Fra et bredt sittende spredt bein, fold over det høyre benet. La overkroppen slippe passivt
       mot det høyre benet uten å trekke.
@@ -104,7 +104,7 @@ Poses:
 
 
   - Name: "Øyenstikker – Venstre side"
-    Duration: 3
+    Duration: 4
     Description: |
       Fold over det venstre benet. La overkroppen slippe passivt mot det venstre benet uten å trekke.
 
@@ -120,7 +120,7 @@ Poses:
 
 
   - Name: "Øyenstikker – Midten"
-    Duration: 3
+    Duration: 4
     Description: |
       Fold forover ned midten av spagaten. La ryggraden runde og overkroppen smelte
       mot gulvet.
@@ -137,7 +137,7 @@ Poses:
 
 
   - Name: Sfinks
-    Duration: 3
+    Duration: 4
     Description: |
       Ligg på magen. Plasser albuene litt foran skuldrene og hvil på underarmene. La
       magen mykne mot gulvet.
@@ -175,7 +175,7 @@ Poses:
 
 
   - Name: "Svane – Høyre side"
-    Duration: 4
+    Duration: 5
     Description: |
       Fra liggende stilling, bring høyre kne frem og ut til siden, senk leggen mot horisontalen.
       Venstre bein strekkes bak.
@@ -197,7 +197,7 @@ Poses:
 
 
   - Name: "Svane – Venstre side"
-    Duration: 4
+    Duration: 5
     Description: |
       Gjenta på venstre side.
 
@@ -218,7 +218,7 @@ Poses:
 
 
   - Name: Liggende sommerfugl (Supta Baddha Konasana)
-    Duration: 4
+    Duration: 5
     Description: |
       Ligg på ryggen med en bolster på langs under ryggraden. Fotsålene mot hverandre, knærne støttet.
 
@@ -268,7 +268,7 @@ Poses:
 
 
   - Name: Avsluttende Shavasana
-    Duration: 10
+    Duration: 11
     Description: |
       Total hvile. La kroppen integrere øvelsen fullt ut.
 

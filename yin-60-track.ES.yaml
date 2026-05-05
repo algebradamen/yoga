@@ -14,7 +14,7 @@ Poses:
 
 
   - Name: Meditación Inicial
-    Duration: 3
+    Duration: 4
     Sensation:
       - Conciencia de la respiración
       - Arraigo
@@ -87,7 +87,7 @@ Poses:
 
 
   - Name: "Libélula – Lado Derecho"
-    Duration: 3
+    Duration: 4
     Description: |
       Desde una posición sentada con piernas abiertas, dóblate sobre la pierna derecha. Permite que el torso
       se libere pasivamente hacia la pierna derecha sin tirar.
@@ -104,7 +104,7 @@ Poses:
 
 
   - Name: "Libélula – Lado Izquierdo"
-    Duration: 3
+    Duration: 4
     Description: |
       Dóblate sobre la pierna izquierda. Permite que el torso se libere pasivamente hacia la pierna izquierda sin tirar.
 
@@ -120,7 +120,7 @@ Poses:
 
 
   - Name: "Libélula – Centro"
-    Duration: 3
+    Duration: 4
     Description: |
       Dóblate hacia adelante por el centro del espagat. Permite que la columna se redondee y el torso se derrita
       hacia el suelo.
@@ -137,7 +137,7 @@ Poses:
 
 
   - Name: Esfinge
-    Duration: 3
+    Duration: 4
     Description: |
       Recuéstate boca abajo. Coloca los codos ligeramente adelante de los hombros y descansa sobre los antebrazos.
       Permite que el vientre se suavice hacia el suelo.
@@ -175,7 +175,7 @@ Poses:
 
 
   - Name: "Cisne – Lado Derecho"
-    Duration: 4
+    Duration: 5
     Description: |
       Desde una posición boca abajo, lleva la rodilla derecha hacia adelante y hacia el lado, bajando la espinilla
       hacia horizontal. La pierna izquierda se extiende hacia atrás.
@@ -197,7 +197,7 @@ Poses:
 
 
   - Name: "Cisne – Lado Izquierdo"
-    Duration: 4
+    Duration: 5
     Description: |
       Repite en el lado izquierdo.
 
@@ -218,7 +218,7 @@ Poses:
 
 
   - Name: Mariposa Reclinada (Supta Baddha Konasana)
-    Duration: 4
+    Duration: 5
     Description: |
       Recuéstate boca arriba con un bolster a lo largo debajo de la columna. Plantas de los pies juntas, rodillas apoyadas.
 
@@ -268,7 +268,7 @@ Poses:
 
 
   - Name: Shavasana Final
-    Duration: 10
+    Duration: 11
     Description: |
       Descanso total. Permite que el cuerpo integre la práctica por completo.
 

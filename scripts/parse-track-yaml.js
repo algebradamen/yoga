@@ -62,9 +62,18 @@ for (const file of yamlFiles) {
   const poseTotal        = posesWithDuration.reduce((s, p) => s + p.Duration, 0)
   const stated           = result.Duration
   if (poseTotal !== stated) {
-    const sign   = poseTotal > stated ? `+${poseTotal - stated}` : `${poseTotal - stated}`
-    const noInfo = posesWithout.length ? ` (${posesWithout.length} pose(s) have no duration: ${posesWithout.map(p => p.Name).join(', ')})` : ''
-    warnings.push(`  ⚠ ${file}: pose durations sum to ${poseTotal} min, stated track duration is ${stated} min (${sign})${noInfo}`)
+    const diff    = poseTotal - stated
+    const sign    = diff > 0 ? `+${diff}` : `${diff}`
+    const pct     = Math.round(Math.abs(diff) / stated * 100)
+    const noInfo  = posesWithout.length ? ` (${posesWithout.length} pose(s) have no duration: ${posesWithout.map(p => p.Name).join(', ')})` : ''
+    const msg     = `${file}: pose durations sum to ${poseTotal} min, stated track duration is ${stated} min (${sign}, ${pct}%)${noInfo}`
+    if (pct > 10) {
+      console.error(`✗ ${msg}`)
+      allOk = false
+      continue
+    } else {
+      warnings.push(`  ⚠ ${msg}`)
+    }
   }
 
   const outName = file.replace(/\.ya?ml$/, '.json')

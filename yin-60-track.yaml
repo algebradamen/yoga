@@ -14,7 +14,7 @@ Poses:
 
 
   - Name: Opening Meditation
-    Duration: 3
+    Duration: 4
     Sensation:
       - Breath awareness
       - Grounding
@@ -86,7 +86,7 @@ Poses:
 
 
   - Name: "Dragonfly – Right Side"
-    Duration: 3
+    Duration: 4
     Description: |
       From a wide seated straddle, fold over the right leg. Allow the torso to release passively
       toward the right leg without pulling.
@@ -103,7 +103,7 @@ Poses:
 
 
   - Name: "Dragonfly – Left Side"
-    Duration: 3
+    Duration: 4
     Description: |
       Fold over the left leg. Allow the torso to release passively toward the left leg without pulling.
 
@@ -119,7 +119,7 @@ Poses:
 
 
   - Name: "Dragonfly – Centre"
-    Duration: 3
+    Duration: 4
     Description: |
       Fold forward down the middle of the straddle. Allow the spine to round and the torso to melt
       toward the floor.
@@ -136,7 +136,7 @@ Poses:
 
 
   - Name: Sphinx
-    Duration: 3
+    Duration: 4
     Description: |
       Lie on the belly. Place elbows slightly forward of shoulders and rest onto forearms. Allow the
       belly to soften toward the floor.
@@ -174,7 +174,7 @@ Poses:
 
 
   - Name: "Swan – Right Side"
-    Duration: 4
+    Duration: 5
     Description: |
       From a prone position, bring the right knee forward and out to the side, lowering the shin toward
       horizontal. Left leg extends behind.
@@ -196,7 +196,7 @@ Poses:
 
 
   - Name: "Swan – Left Side"
-    Duration: 4
+    Duration: 5
     Description: |
       Repeat on the left side.
 
@@ -217,7 +217,7 @@ Poses:
 
 
   - Name: Reclined Butterfly (Supta Baddha Konasana)
-    Duration: 4
+    Duration: 5
     Description: |
       Lie on the back with a bolster lengthwise under the spine. Soles of feet together, knees supported.
 
@@ -267,7 +267,7 @@ Poses:
 
 
   - Name: Final Shavasana
-    Duration: 10
+    Duration: 11
     Description: |
       Total rest. Allow the body to integrate the practice fully.
 
