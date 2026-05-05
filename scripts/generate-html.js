@@ -28,7 +28,7 @@ const LOCALES = {
 }
 
 function localeOutputFile(locale) {
-  return locale === 'en' ? 'index.html' : `index.${locale}.html`
+  return locale === 'no' ? 'index.html' : `index.${locale}.html`
 }
 
 // Parse a JSON filename into { baseName, locale }
@@ -137,17 +137,22 @@ function renderTrack(track, locale, availableLocales, warnings) {
 </html>`
 }
 
-function renderIndex(tracks, warnings) {
-  const t = makeT('en', warnings)
-  const items = tracks
+function renderIndex(tracks, locale, availableLocales, warnings) {
+  const { lang } = LOCALES[locale] ?? { lang: locale }
+  const langSwitcher = renderLangSwitcher(availableLocales, locale)
+  const cards = tracks
     .map(({ baseName, track }) => `
-    <div class="pose-item" style="padding: 0.75rem 1rem;">
-      <a href="${baseName}/">${track.Name}</a>
-    </div>`)
+  <a class="session-card" href="${baseName}/${localeOutputFile(locale)}">
+    <div class="session-card-header">
+      <h2>${track.Name}</h2>
+      <span class="session-duration">${track.Duration} min</span>
+    </div>
+    ${track.Description ? `<div class="session-card-description">${md.render(track.Description)}</div>` : ''}
+  </a>`)
     .join('')
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -160,17 +165,16 @@ function renderIndex(tracks, warnings) {
 <!-- ===== TOP DECORATION ===== -->
 <div class="deco-top" aria-hidden="true">
   <img src="images/deco-top.svg" width="340" height="60" alt=""/>
+  <nav class="lang-switcher" aria-label="Language">
+    ${langSwitcher}
+  </nav>
 </div>
 
 <!-- ===== MAIN ===== -->
 <main>
   <h1>Edita's Yoga &amp; Pilates Sessions</h1>
-
-  <div class="pose-table-wrapper">
-    <div class="pose-header" style="grid-template-columns: 1fr;">
-      <span class="col-pose">${t('col_session')}</span>
-    </div>
-    ${items}
+  <div class="session-grid">
+    ${cards}
   </div>
 </main>
 
@@ -206,7 +210,9 @@ for (const file of jsonFiles) {
 
 // Render all locale variants for each track
 const warnings = []
-const indexTracks = []
+// groupsByLocale: Map<locale, Array<{ baseName, track }>>
+const groupsByLocale = new Map()
+
 for (const [baseName, localeMap] of groups) {
   const outDir = path.join(distDir, baseName)
   fs.mkdirSync(outDir, { recursive: true })
@@ -223,14 +229,26 @@ for (const [baseName, localeMap] of groups) {
     console.log(`✓ ${baseName}.${locale}  →  dist/${baseName}/${outFile}`)
   }
 
-  // Use the EN version for the index listing (fallback to first available)
-  const indexTrack = localeMap.get('en') ?? localeMap.values().next().value
-  indexTracks.push({ baseName, track: indexTrack })
+  // Collect each locale's track for the front page
+  for (const locale of localeMap.keys()) {
+    if (!groupsByLocale.has(locale)) groupsByLocale.set(locale, [])
+    groupsByLocale.get(locale).push({ baseName, track: localeMap.get(locale) })
+  }
 }
 
-const indexPath = path.join(distDir, 'index.html')
-fs.writeFileSync(indexPath, renderIndex(indexTracks, warnings))
-console.log(`✓ index  →  dist/index.html`)
+// All locales that exist across all tracks, EN first
+const allLocales = [...groupsByLocale.keys()].sort((a, b) =>
+  a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)
+)
+
+// Render one front page per locale; each card links to that locale's track page
+for (const locale of allLocales) {
+  const indexTracks = groupsByLocale.get(locale)
+  const outFile = localeOutputFile(locale)
+  const indexPath = path.join(distDir, outFile)
+  fs.writeFileSync(indexPath, renderIndex(indexTracks, locale, allLocales, warnings))
+  console.log(`✓ index.${locale}  →  dist/${outFile}`)
+}
 
 if (warnings.length > 0) {
   console.warn('---')

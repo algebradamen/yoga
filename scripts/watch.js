@@ -1,23 +1,9 @@
 import { spawn } from 'child_process';
 import { watch } from 'fs';
-import { readdir } from 'fs/promises';
 import { join } from 'path';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-
-async function findWatchTargets() {
-  const rootEntries = await readdir(ROOT);
-  const rootFiles = rootEntries
-    .filter(f => f.endsWith('.yaml') || f.endsWith('.yml') || f.endsWith('.json'))
-    .map(f => ({ path: join(ROOT, f), label: f }));
-
-  const scriptsDir = join(ROOT, 'scripts');
-  const scriptEntries = await readdir(scriptsDir);
-  const scriptFiles = scriptEntries
-    .map(f => ({ path: join(scriptsDir, f), label: `scripts/${f}` }));
-
-  return [...rootFiles, ...scriptFiles];
-}
+const SCRIPTS_DIR = join(ROOT, 'scripts');
 
 function run(cmd, args, opts = {}) {
   const proc = spawn(cmd, args, { stdio: 'inherit', ...opts });
@@ -61,8 +47,8 @@ async function cycle() {
 
 let debounceTimer = null;
 
-async function onChange(filename) {
-  console.log(`\n[watch] change detected: ${filename}`);
+function onChange(label) {
+  console.log(`\n[watch] change detected: ${label}`);
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(async () => {
     stopServe();
@@ -73,11 +59,19 @@ async function onChange(filename) {
 async function main() {
   await cycle();
 
-  const targets = await findWatchTargets();
-  console.log(`[watch] watching ${targets.length} file(s) for changes...`);
-  for (const { path, label } of targets) {
-    watch(path, () => onChange(label));
-  }
+  // Watch directories so atomic-save editors (write-then-rename) don't drop the watcher
+  watch(ROOT, (_, filename) => {
+    if (!filename) return;
+    if (filename.endsWith('.yaml') || filename.endsWith('.yml') || filename.endsWith('.json')) {
+      onChange(filename);
+    }
+  });
+
+  watch(SCRIPTS_DIR, (_, filename) => {
+    if (filename) onChange(`scripts/${filename}`);
+  });
+
+  console.log('[watch] watching root (yaml/json) and scripts/ for changes...');
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
