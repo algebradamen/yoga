@@ -4,7 +4,7 @@
   "description": "Edita's Yoga and Pilates sessions",
   "main": "index.js",
   "scripts": {
-    "generate:json": "node scripts/parse-track-yaml.js",
+    "generate:json": "node scripts/parse-track-yaml.js",write a binary search in python
     "generate:html": "node scripts/generate-html.js",
     "generate": "npm run generate:json && npm run generate:html",
     "dist": "npm run generate",

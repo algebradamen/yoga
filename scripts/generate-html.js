@@ -4,6 +4,7 @@
  * Reads all `.json` files from the `generated/` directory (produced by
  * `parse-track-yaml.js`), renders each track into a full HTML page with a
  * pose table, and writes the output to `dist/<track-name>/index.html`.
+ * Locale variants (e.g. `track.NO.json`) are written as `index.no.html` etc.
  * Also renders a `dist/index.html` listing all tracks.
  *
  * Usage: `node scripts/generate-html.js`
@@ -17,6 +18,39 @@ const md = markdownit()
 const root = path.resolve('./scripts', '..')
 const generatedDir = path.join(root, 'generated')
 const distDir = path.join(root, 'dist')
+
+// Locale metadata: display label and html lang attribute
+const LOCALES = {
+  en: { label: 'EN', lang: 'en' },
+  no: { label: 'NO', lang: 'no' },
+  es: { label: 'ES', lang: 'es' },
+}
+
+function localeOutputFile(locale) {
+  return locale === 'en' ? 'index.html' : `index.${locale}.html`
+}
+
+// Parse a JSON filename into { baseName, locale }
+// e.g. "yin-60-track.NO.json" → { baseName: "yin-60-track", locale: "no" }
+// e.g. "yin-60-track.json"    → { baseName: "yin-60-track", locale: "en" }
+function parseFilename(file) {
+  const noExt = file.replace(/\.json$/, '')
+  const match = noExt.match(/\.([A-Z]{2})$/)
+  if (match) {
+    return { baseName: noExt.slice(0, -(match[0].length)), locale: match[1].toLowerCase() }
+  }
+  return { baseName: noExt, locale: 'en' }
+}
+
+function renderLangSwitcher(availableLocales, currentLocale) {
+  return availableLocales.map(locale => {
+    const { label } = LOCALES[locale] ?? { label: locale.toUpperCase() }
+    const href = localeOutputFile(locale)
+    return locale === currentLocale
+      ? `<a href="${href}" class="active" aria-current="page">${label}</a>`
+      : `<a href="${href}">${label}</a>`
+  }).join('\n    ')
+}
 
 function renderPose(pose) {
   const meridianBadges = Array.isArray(pose.Meridians)
@@ -52,9 +86,11 @@ function renderPose(pose) {
     </details>`
 }
 
-function renderTrack(track) {
+function renderTrack(track, locale, availableLocales) {
+  const { lang } = LOCALES[locale] ?? { lang: locale }
+  const langSwitcher = renderLangSwitcher(availableLocales, locale)
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,8 +103,7 @@ function renderTrack(track) {
 <div class="deco-top" aria-hidden="true">
   <img src="../images/deco-top.svg" width="340" height="60" alt=""/>
   <nav class="lang-switcher" aria-label="Language">
-    <a href="index.html" class="active" aria-current="page">EN</a>
-    <a href="index.no.html">NO</a>
+    ${langSwitcher}
   </nav>
 </div>
 
@@ -102,9 +137,9 @@ function renderTrack(track) {
 
 function renderIndex(tracks) {
   const items = tracks
-    .map(({ name, track }) => `
+    .map(({ baseName, track }) => `
     <div class="pose-item" style="padding: 0.75rem 1rem;">
-      <a href="${name}/">${track.Name}</a>
+      <a href="${baseName}/">${track.Name}</a>
     </div>`)
     .join('')
 
@@ -156,20 +191,41 @@ if (jsonFiles.length === 0) {
 
 fs.mkdirSync(distDir, { recursive: true })
 
-const tracks = []
+// Group files by base track name, collecting locale variants
+// groups: Map<baseName, Map<locale, track>>
+const groups = new Map()
 for (const file of jsonFiles) {
+  const { baseName, locale } = parseFilename(file)
   const track = JSON.parse(fs.readFileSync(path.join(generatedDir, file), 'utf-8'))
-  const name = file.replace(/\.json$/, '')
-  const outDir = path.join(distDir, name)
+  if (!groups.has(baseName)) groups.set(baseName, new Map())
+  groups.get(baseName).set(locale, track)
+}
+
+// Render all locale variants for each track
+const indexTracks = []
+for (const [baseName, localeMap] of groups) {
+  const outDir = path.join(distDir, baseName)
   fs.mkdirSync(outDir, { recursive: true })
-  const outPath = path.join(outDir, 'index.html')
-  fs.writeFileSync(outPath, renderTrack(track))
-  console.log(`✓ ${file}  →  dist/${name}/index.html`)
-  tracks.push({ name, track })
+
+  // Sort locales so EN comes first, then alphabetically
+  const availableLocales = [...localeMap.keys()].sort((a, b) =>
+    a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)
+  )
+
+  for (const [locale, track] of localeMap) {
+    const outFile = localeOutputFile(locale)
+    const outPath = path.join(outDir, outFile)
+    fs.writeFileSync(outPath, renderTrack(track, locale, availableLocales))
+    console.log(`✓ ${baseName}.${locale}  →  dist/${baseName}/${outFile}`)
+  }
+
+  // Use the EN version for the index listing (fallback to first available)
+  const indexTrack = localeMap.get('en') ?? localeMap.values().next().value
+  indexTracks.push({ baseName, track: indexTrack })
 }
 
 const indexPath = path.join(distDir, 'index.html')
-fs.writeFileSync(indexPath, renderIndex(tracks))
+fs.writeFileSync(indexPath, renderIndex(indexTracks))
 console.log(`✓ index  →  dist/index.html`)
 
 // Copy static assets into dist so it can be served independently
@@ -192,4 +248,3 @@ copyDir(stylesDir, path.join(distDir, 'styles'))
 console.log(`✓ styles/  →  dist/styles/`)
 copyDir(imagesDir, path.join(distDir, 'images'))
 console.log(`✓ images/  →  dist/images/`)
-
