@@ -66,7 +66,7 @@ function renderPose(pose, t) {
         </div>
         <span class="col-duration duration-cell">${pose.Duration ? pose.Duration + ' min' : ''}</span>
         <div class="col-meridians badges">${meridianBadges}</div>
-        <span class="col-sensation sensation-cell">${pose.Sensation ? pose.Sensation.map(s => `<span class="nowrap">${s}</span>`).join(' · ') : ''}</span>
+        <span class="col-sensation sensation-cell">${pose.Sensation ? pose.Sensation.join(' · ') : ''}</span>
       </summary>
       <div class="detail-inner">
         <h3>${pose.Name}</h3>

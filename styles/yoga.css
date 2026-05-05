@@ -321,8 +321,6 @@ details[open] > summary .chevron {
   font-style: italic;
 }
 
-.nowrap { white-space: nowrap; }
-
 .detail-inner ul li { white-space: nowrap; }
 
 /* ---------- Expanded detail ---------- */
