@@ -1,0 +1,51 @@
+name: Translate tracks
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Translate tracks
+        run: npm run translate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Commit and push translations
+        run: |
+          CHANGED=$(git diff --name-only)
+          if [ -z "$CHANGED" ]; then
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+
+          FILE_LIST=$(echo "$CHANGED" | awk '{print "  - " $0}')
+          TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add $CHANGED
+          git commit -m "translate tracks to EN/ES from NO source
+
+Automatically translated by Claude on ${TIMESTAMP}.
+
+Updated files:
+${FILE_LIST}"
+          git push
