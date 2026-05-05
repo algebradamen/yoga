@@ -1,72 +1,85 @@
-Description of content
+Specification
 ===
 
-On the top-level of this repository is a list of yoga lessons, e.g. `yin-60-track.md`.
+## Overview
 
-Each Markdown file describes a yoga session, and contains a list of
-yoga poses, with some or all of this information:
+Static site generator for yoga and pilates session guides. YAML source files are validated, parsed to JSON, then rendered into multilingual static HTML pages.
 
-- The name of the pose
-- Duration of the pose in minutes
-- Alternative poses, e.g. if the pose is too difficult or painful
-- Meridians that are affected by the pose
-- Sensation
+## Source format
 
-Target
-=== 
+Each session is described by a YAML file in the project root. Norwegian is the canonical source language. File naming:
 
-For each top-level Markdown file, such as `yin-60-track.md`, we want to create a similarly named directory, e.g.
-`yin-60-track`.
+| File | Language |
+|---|---|
+| `my-session.NO.yaml` | Norwegian (source) |
+| `my-session.yaml` | English |
+| `my-session.ES.yaml` | Spanish |
 
-Inside that folder, there should be web pages corresponding to the yoga lesson.
+The full schema is in `track.schema.json`. A session file contains:
 
-If alternatives and/or meridians are missing from the yoga lesson, find alternatives and meridians on the web.
+- `Name` — session title (string)
+- `Duration` — total duration in minutes (integer)
+- `Description` — optional markdown text shown as a subtitle
+- `Poses` — ordered list of poses, each with:
+  - `Name` — pose name (string)
+  - `Duration` — duration in minutes (integer, optional)
+  - `Description` — markdown description shown in the expanded detail row
+  - `Meridians` — list of meridian names (optional)
+  - `Sensation` — list of sensation descriptions (optional)
+  - `Rebound` — object with `Description` (string) and `Duration` (integer, minutes); rebound duration is **not** counted toward the session total
+  - `Alternatives` — list of objects with `Name` and optional `Description`
 
-The yoga lesson should be presented in a table format, with columns for the pose name, duration, alternatives,
-meridians, and sensation. Each row in the table represents a different pose.
+The parse script validates all files against the schema and warns if pose durations deviate from the stated session duration by more than 10% (and fails if deviation exceeds 10%).
 
-When we expand a row, we should see a textual description of the pose. After this, a     
-corresponding description of the alternative poses should be appended.
+## Build pipeline
 
+```
+*.NO.yaml / *.yaml / *.ES.yaml
+        ↓  parse-track-yaml.js  (schema validation, duration check)
+   generated/*.json
+        ↓  generate-html.js
+      dist/
+```
 
+Run with `npm run generate`. The `generated/` and `dist/` directories are not committed.
 
-Layout / Design
-===
+## Internationalisation
 
-Use bright yoga-inspired colors, such as pastel pinks background, purples like lavender flowers, and green like olive
-leaves.
-Lavender flower on the top of the page, and olive leaves on the bottom.
-The table should have a clean and modern
-design, with clear typography and ample spacing. Each row should have a subtle hover effect to indicate interactivity.
-The expanded section should be visually distinct, perhaps with a different background color or a border to separate it
-from the main table. The "Meridians" and "Alternatives" columns should use icons or badges to make the information
-easily scannable.
+Norwegian (`no`) is the default locale — `index.html` in every directory is the Norwegian version.
 
-The page should be responsive and look good on both desktop and mobile devices. The layout should adapt to different
-screen sizes, ensuring that the content remains accessible and visually appealing on all devices.
+| Locale | Output file |
+|---|---|
+| `no` | `index.html` |
+| `en` | `index.en.html` |
+| `es` | `index.es.html` |
 
-For the table, skip columns "Sensation" and "Meridians" on mobile, and only show the pose name and duration.
-The alternatives can be shown as icons or badges in the same column as the pose name.
+UI strings (column headers, section labels, tooltips) are defined in `scripts/i18n.js`. If a locale or key is missing, the English value is used and a warning is emitted.
 
-If the sensation and meridians are not displayed in the table on mobile, they should still be included in the expanded
-section when a row is clicked.
+The front page (`dist/index.html`) is also generated per locale, with each card linking to the matching locale's session page. A language switcher in the top bar links between all available locales.
 
-The 
+## Layout and design
 
-Internationalisation
-===
+Colors are olive and forest green on a sage background, with a warm terracotta footer. Shared styles live in `styles/yoga.css`.
 
-The main page for each yoga lesson should be named `index.html` and available in English, and the same content should be
-available in Norwegian on a separate page.
+The session page uses an expandable table layout:
 
-Locale variants use the naming convention `index.[locale].html` (e.g. `index.no.html` for Norwegian).
-Each page includes a discrete language-switcher link in the top-right corner.
+- **Columns:** Pose · Duration · Meridians · Sensation
+- On **mobile**, Meridians and Sensation columns are hidden; they appear in the expanded detail section instead.
+- Each row expands to show the full pose description, rebound section, and alternatives.
 
-Each page should be available in English and Norwegian. The content of the yoga lessons should be the same in both
-languages, but the descriptions of the poses should be translated to Norwegian.
+The front page shows session cards with the title, duration badge, and description.
 
+A discrete **print button** (printer icon, top-right of the session title) calls `window.print()`. The browser print dialog lets the user print or save as PDF. The button is hidden in print output. All poses are expanded in print view.
 
-CSS
-===
+## Translation workflow
 
-Shared styles live in `styles/yoga.css` at the project root, referenced from lesson pages as `../styles/yoga.css`.
+`npm run translate` (see `scripts/translate-tracks.js`) reads every `.NO.yaml` file and calls `claude --print --dangerously-skip-permissions` once per target language, piping the prompt via stdin. It writes the translated YAML and prints a proposed `git commit` command but does not commit.
+
+Requires `ANTHROPIC_API_KEY` in the environment. A manual GitHub Actions workflow (`.github/workflows/translate.yml`) automates this in CI using a repository secret.
+
+## CSS conventions
+
+- `styles/yoga.css` is the single shared stylesheet, copied into `dist/styles/` at build time.
+- Session pages reference it as `../styles/yoga.css`; the front page as `styles/yoga.css`.
+- CSS custom properties (defined on `:root`) are used for all colors.
+- Print styles are in a `@media print` block at the end of the file.

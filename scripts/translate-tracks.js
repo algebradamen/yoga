@@ -16,11 +16,12 @@
  *   No interactive login is needed; claude -p runs non-interactively via the API key.
  */
 
-import { spawnSync } from 'child_process'
+import { spawn } from 'child_process'
 import fs from 'fs'
 import path from 'path'
 
 const ROOT = new URL('..', import.meta.url).pathname
+const TIMEOUT_MS = 300_000
 
 const TARGETS = [
   { lang: 'English', outName: base => `${base}.yaml` },
@@ -41,70 +42,86 @@ Rules:
 YAML to translate:
 ${noContent}`
 
-  const result = spawnSync('claude', ['-p', prompt], {
-    encoding: 'utf-8',
-    maxBuffer: 4 * 1024 * 1024,
-    timeout: 120_000,
+  return new Promise((resolve, reject) => {
+    const proc = spawn('claude', ['--print', '--dangerously-skip-permissions'], {
+      stdio: ['pipe', 'pipe', 'pipe'],
+    })
+
+    let stdout = ''
+    let stderr = ''
+
+    proc.stdout.on('data', chunk => { stdout += chunk })
+    proc.stderr.on('data', chunk => { stderr += chunk })
+    proc.on('error', reject)
+    proc.on('close', code => {
+      if (code !== 0) reject(new Error(`claude exited ${code}: ${stderr.trim()}`))
+      else resolve(stdout.trim().replace(/^```ya?ml\s*/i, '').replace(/\s*```$/, ''))
+    })
+
+    const timer = setTimeout(() => { proc.kill(); reject(new Error('timed out after 5 min')) }, TIMEOUT_MS)
+    proc.on('close', () => clearTimeout(timer))
+
+    // Pipe prompt to stdin and close it so claude knows input is complete
+    proc.stdin.write(prompt, 'utf-8')
+    proc.stdin.end()
   })
-
-  if (result.error) throw result.error
-  if (result.status !== 0) throw new Error(`claude exited ${result.status}: ${result.stderr?.trim()}`)
-
-  // Strip accidental code-fence wrapping
-  return result.stdout.trim().replace(/^```ya?ml\s*/i, '').replace(/\s*```$/, '')
 }
 
-const noFiles = fs.readdirSync(ROOT).filter(f => f.endsWith('.NO.yaml')).sort()
+async function main() {
+  const noFiles = fs.readdirSync(ROOT).filter(f => f.endsWith('.NO.yaml')).sort()
 
-if (noFiles.length === 0) {
-  console.log('No .NO.yaml files found.')
-  process.exit(0)
-}
+  if (noFiles.length === 0) {
+    console.log('No .NO.yaml files found.')
+    process.exit(0)
+  }
 
-const changed = []
-const failed = []
+  const changed = []
+  const failed = []
 
-for (const noFile of noFiles) {
-  const base = noFile.replace(/\.NO\.yaml$/, '')
-  const noContent = fs.readFileSync(path.join(ROOT, noFile), 'utf-8')
+  for (const noFile of noFiles) {
+    const base = noFile.replace(/\.NO\.yaml$/, '')
+    const noContent = fs.readFileSync(path.join(ROOT, noFile), 'utf-8')
 
-  for (const { lang, outName } of TARGETS) {
-    const fileName = outName(base)
-    const filePath = path.join(ROOT, fileName)
-    process.stdout.write(`Translating ${noFile} → ${fileName} (${lang})... `)
+    for (const { lang, outName } of TARGETS) {
+      const fileName = outName(base)
+      const filePath = path.join(ROOT, fileName)
+      process.stdout.write(`Translating ${noFile} → ${fileName} (${lang})... `)
 
-    let translated
-    try {
-      translated = translate(noContent, lang)
-    } catch (e) {
-      console.log('✗')
-      console.error(`  ${e.message}`)
-      failed.push(fileName)
-      continue
-    }
+      let translated
+      try {
+        translated = await translate(noContent, lang)
+      } catch (e) {
+        console.log('✗')
+        console.error(`  ${e.message}`)
+        failed.push(fileName)
+        continue
+      }
 
-    const existing = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf-8') : null
-    if (existing === translated + '\n' || existing === translated) {
-      console.log('no changes')
-    } else {
-      fs.writeFileSync(filePath, translated + '\n')
-      console.log('✓')
-      changed.push(fileName)
+      const existing = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf-8') : null
+      if (existing === translated + '\n' || existing === translated) {
+        console.log('no changes')
+      } else {
+        fs.writeFileSync(filePath, translated + '\n')
+        console.log('✓')
+        changed.push(fileName)
+      }
     }
   }
-}
 
-console.log('\n---')
-if (failed.length > 0) {
-  console.error(`${failed.length} translation(s) failed: ${failed.join(', ')}`)
-}
-if (changed.length === 0) {
-  console.log('No files changed.')
-} else {
-  console.log(`${changed.length} file(s) updated:\n${changed.map(f => `  • ${f}`).join('\n')}`)
-  console.log(`
+  console.log('\n---')
+  if (failed.length > 0) {
+    console.error(`${failed.length} translation(s) failed: ${failed.join(', ')}`)
+  }
+  if (changed.length === 0) {
+    console.log('No files changed.')
+  } else {
+    console.log(`${changed.length} file(s) updated:\n${changed.map(f => `  • ${f}`).join('\n')}`)
+    console.log(`
 Proposed commit:
   git add ${changed.join(' ')}
   git commit -m "translate tracks to EN and ES from NO source"`)
+  }
+  console.log('---')
 }
-console.log('---')
+
+main().catch(e => { console.error(e); process.exit(1) })
