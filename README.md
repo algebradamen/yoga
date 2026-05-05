@@ -26,7 +26,7 @@ Browse to the URL printed by `serve` (usually http://localhost:3000).
 
 1. Create `my-session.NO.yaml` in the project root (Norwegian is the source language).
 2. Run `npm run generate` — the session appears on the front page.
-3. Run `npm run translate` to generate `my-session.yaml` (English) and `my-session.ES.yaml` (Spanish).
+3. Run `npm run translate` to generate `my-session.EN.yaml` (English) and `my-session.ES.yaml` (Spanish).
 
 See `track.schema.json` for the full YAML schema.
 
@@ -41,7 +41,7 @@ To run translations automatically, see `.github/workflows/translate.yml` — tri
 ```
 .
 ├── *.NO.yaml               # Session source files (Norwegian)
-├── *.yaml                  # English translations (generated)
+├── *.EN.yaml               # English translations (generated)
 ├── *.ES.yaml               # Spanish translations (generated)
 ├── track.schema.json       # AJV schema for YAML validation
 ├── styles/yoga.css         # Shared stylesheet

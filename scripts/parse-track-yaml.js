@@ -30,6 +30,8 @@ if (yamlFiles.length === 0) {
   process.exit(0)
 }
 
+// Clean before regenerating so stale JSON from deleted/renamed YAML files don't persist
+fs.rmSync(generatedDir, { recursive: true, force: true })
 fs.mkdirSync(generatedDir, { recursive: true })
 
 const warnings = []

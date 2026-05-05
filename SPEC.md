@@ -12,7 +12,7 @@ Each session is described by a YAML file in the project root. Norwegian is the c
 | File | Language |
 |---|---|
 | `my-session.NO.yaml` | Norwegian (source) |
-| `my-session.yaml` | English |
+| `my-session.EN.yaml` | English |
 | `my-session.ES.yaml` | Spanish |
 
 The full schema is in `track.schema.json`. A session file contains:

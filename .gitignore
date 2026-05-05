@@ -2483,7 +2483,6 @@
 /dist/yin-60-track/index.es.html
 /dist/yin-60-track/index.no.html
 /generated/yin-60-heart-kidney-meridian.ES.json
-/generated/yin-60-heart-kidney-meridian.NO.json
-/generated/yin-60-track.ES.json
-/generated/yin-60-track.NO.json
-dist
+generated/
+dist/
+api-key.txt

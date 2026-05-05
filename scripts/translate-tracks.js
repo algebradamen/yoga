@@ -4,16 +4,24 @@
  *
  * Usage: node scripts/translate-tracks.js
  *
+ * Authentication:
+ *   This script uses ANTHROPIC_API_KEY, NOT the OAuth tokens shown at
+ *   claude.ai/settings/claude-code (those are for interactive CLI login only).
+ *
+ *   To create an API key:
+ *     1. Go to console.anthropic.com → API Keys → Create Key.
+ *     2. Copy the key immediately — it is only shown once.
+ *     3. Set it in your shell: export ANTHROPIC_API_KEY=sk-ant-...
+ *
  * Running as a GitHub Action:
- *   1. Store your Anthropic API key as a repository secret named ANTHROPIC_API_KEY.
- *   2. In your workflow, install the CLI and expose the secret:
+ *   1. Add the API key as a repository secret named ANTHROPIC_API_KEY
+ *      (Settings → Secrets and variables → Actions → New repository secret).
+ *   2. The workflow in .github/workflows/translate.yml exposes it automatically:
  *
  *      - run: npm install -g @anthropic-ai/claude-code
  *      - run: npm run translate
  *        env:
  *          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
- *
- *   No interactive login is needed; claude -p runs non-interactively via the API key.
  */
 
 import { spawn } from 'child_process'
@@ -24,7 +32,7 @@ const ROOT = new URL('..', import.meta.url).pathname
 const TIMEOUT_MS = 300_000
 
 const TARGETS = [
-  { lang: 'English', outName: base => `${base}.yaml` },
+  { lang: 'English', outName: base => `${base}.EN.yaml` },
   { lang: 'Spanish', outName: base => `${base}.ES.yaml` },
 ]
 

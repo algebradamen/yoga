@@ -201,6 +201,8 @@ if (jsonFiles.length === 0) {
   process.exit(0)
 }
 
+// Clean dist so stale locale files from deleted/renamed tracks don't linger
+fs.rmSync(distDir, { recursive: true, force: true })
 fs.mkdirSync(distDir, { recursive: true })
 
 // Group files by base track name, collecting locale variants
