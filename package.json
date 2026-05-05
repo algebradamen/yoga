@@ -8,7 +8,8 @@
     "generate:html": "node scripts/generate-html.js",
     "generate": "npm run generate:json && npm run generate:html",
     "dist": "npm run generate",
-    "serve": "npx serve dist"
+    "serve": "npx serve dist",
+    "watch": "node scripts/watch.js"
   },
   "repository": {
     "type": "git",
