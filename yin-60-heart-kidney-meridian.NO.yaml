@@ -6,6 +6,9 @@ Description: |
   **Sekundær støtte:** Nyre, Urinblære
 
 Poses:
+
+
+
   - Name: Åpningsmeditasjon
     Duration: 3
     Description: |
@@ -16,6 +19,9 @@ Poses:
       - Forankrethet
       - Hjertbevissthet
       - Myknet pust
+
+
+
   - Name: Hengende fremoverfold
     Duration: 3
     Description: |
@@ -29,6 +35,13 @@ Poses:
       - Ryggradsfrigjøring
       - Forankring av nervesystemet
       - Åpning av baksiden av kroppen
+    Alternatives:
+        - Name: Stående fremoverfold med støtte
+          Description: |
+            Plasser hendene på blokker eller en bolster for å redusere intensiteten og oppmuntre til mer avslapning.
+
+
+
   - Name: Støttet huk (Malasana)
     Duration: 3
     Description: |
@@ -43,6 +56,9 @@ Poses:
       - Forankring
       - Bekkenstabilitet
       - Frigjøring av indre lår
+
+
+
   - Name: "Øyenstikker – Høyre side"
     Duration: 3
     Description: |
@@ -57,6 +73,9 @@ Poses:
     Sensation:
       - Indre lår, hamstrings
       - Pust som vider ut ryggradsribbeina
+
+
+
   - Name: "Øyenstikker – Venstre side"
     Duration: 3
     Description: |
@@ -71,6 +90,9 @@ Poses:
     Sensation:
       - Indre lår, hamstrings
       - Pust som vider ut ryggradsribbeina
+
+
+
   - Name: "Øyenstikker – Midten"
     Duration: 3
     Description: |
@@ -85,6 +107,9 @@ Poses:
     Sensation:
       - Indre lår, hamstrings
       - Pust som vider ut ryggradsribbeina
+
+
+
   - Name: Sfinks
     Duration: 3
     Description: |
@@ -103,6 +128,9 @@ Poses:
       - Kompresjon i korsryggen
       - Åpning av hjerterommet
       - Pusten dypner inn i de øvre ribbeina
+
+
+
   - Name: Støttet fisk
     Duration: 4
     Description: |
@@ -120,6 +148,9 @@ Poses:
       - Pusten dypner naturlig
       - Emosjonell åpenhet eller sårbarhet kan oppstå
 
+
+
+
   - Name: "Svane – Høyre side"
     Duration: 4
     Description: |
@@ -136,6 +167,9 @@ Poses:
     Sensation:
       - Dyp hofteåpning
       - Emosjonell frigjøring før hjertearbeid
+
+
+
   - Name: "Svane – Venstre side"
     Duration: 4
     Description: |
@@ -152,6 +186,9 @@ Poses:
     Sensation:
       - Dyp hofteåpning
       - Emosjonell frigjøring før hjertearbeid
+
+
+
   - Name: Smeltende hjerte (Anahatasana)
     Duration: 4
     Description: |
@@ -165,6 +202,9 @@ Poses:
     Sensation:
       - Bryst, skuldre, armhuler
       - Pustbevissthet – særlig innpust
+
+
+
   - Name: Liggende sommerfugl (Supta Baddha Konasana)
     Duration: 5
     Description: |
@@ -181,6 +221,9 @@ Poses:
       - Dyp bryst- og hjerteåpning
       - Pusten løfter hjertet
       - Full overgivelse
+
+
+
   - Name: "Liggende vridning – Høyre side"
     Duration: 3
     Description: |
@@ -195,6 +238,9 @@ Poses:
     Sensation:
       - Avgiftning
       - Emosjonell opprulling via skånsom ryggradsrotasjon
+
+
+
   - Name: "Liggende vridning – Venstre side"
     Duration: 3
     Description: |
@@ -208,6 +254,9 @@ Poses:
     Sensation:
       - Avgiftning
       - Emosjonell opprulling via skånsom ryggradsrotasjon
+
+
+
   - Name: Avsluttende Shavasana
     Duration: 9
     Description: |

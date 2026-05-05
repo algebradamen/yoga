@@ -13,6 +13,7 @@
 import fs from 'fs'
 import path from 'path'
 import markdownit from 'markdown-it'
+import { makeT } from './i18n.js'
 
 const md = markdownit()
 const root = path.resolve('./scripts', '..')
@@ -52,12 +53,9 @@ function renderLangSwitcher(availableLocales, currentLocale) {
   }).join('\n    ')
 }
 
-function renderPose(pose) {
+function renderPose(pose, t) {
   const meridianBadges = Array.isArray(pose.Meridians)
     ? pose.Meridians.map(m => `<span class="badge badge-meridian">${m}</span>`).join('')
-    : ''
-  const altBadge = pose.Alternatives
-    ? `<span class="badge badge-alt">${pose.Alternatives.Name}</span>`
     : ''
   return `
     <details class="pose-item">
@@ -67,7 +65,6 @@ function renderPose(pose) {
           ${pose.Name}
         </div>
         <span class="col-duration duration-cell">${pose.Duration ? pose.Duration + ' min' : ''}</span>
-        <div class="col-alternatives badges">${altBadge}</div>
         <div class="col-meridians badges">${meridianBadges}</div>
         <span class="col-sensation sensation-cell">${pose.Sensation ? pose.Sensation.join(' · ') : ''}</span>
       </summary>
@@ -75,19 +72,20 @@ function renderPose(pose) {
         <h3>${pose.Name}</h3>
         ${pose.Description ? `<div>${md.render(pose.Description)}</div>` : ''}
         <div class="mobile-info">
-          ${pose.Sensation ? `<div class="alt-section"><h4>Sensation</h4><ul>${pose.Sensation.map(s => `<li>${s}</li>`).join('')}</ul></div>` : ''}
+          ${pose.Sensation ? `<div class="alt-section"><h4>${t('detail_sensation')}</h4><ul>${pose.Sensation.map(s => `<li>${s}</li>`).join('')}</ul></div>` : ''}
         </div>
-        ${pose.Alternatives ? `
+        ${pose.Alternatives ? pose.Alternatives.map(a => `
         <div class="alt-section">
-          <h4>Alternative: ${pose.Alternatives.Name}</h4>
-          ${pose.Alternatives.Description ? `<div class="alt-item">${md.render(pose.Alternatives.Description)}</div>` : ''}
-        </div>` : ''}
+          <h4>${t('detail_alternative')}: ${a.Name}</h4>
+          ${a.Description ? `<div class="alt-item">${md.render(a.Description)}</div>` : ''}
+        </div>`).join('') : ''}
       </div>
     </details>`
 }
 
-function renderTrack(track, locale, availableLocales) {
+function renderTrack(track, locale, availableLocales, warnings) {
   const { lang } = LOCALES[locale] ?? { lang: locale }
+  const t = makeT(locale, warnings)
   const langSwitcher = renderLangSwitcher(availableLocales, locale)
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -114,14 +112,13 @@ function renderTrack(track, locale, availableLocales) {
 
   <div class="pose-table-wrapper">
     <div class="pose-header">
-      <span class="col-pose">Pose</span>
-      <span class="col-duration">Duration</span>
-      <span class="col-alternatives">Alternatives</span>
-      <span class="col-meridians">Meridians</span>
-      <span class="col-sensation">Sensation</span>
+      <span class="col-pose">${t('col_pose')}</span>
+      <span class="col-duration">${t('col_duration')}</span>
+      <span class="col-meridians">${t('col_meridians')}</span>
+      <span class="col-sensation">${t('col_sensation')}</span>
     </div>
 
-    ${track.Poses.map(pose => renderPose(pose)).join('')}
+    ${track.Poses.map(pose => renderPose(pose, t)).join('')}
 
   </div>
 </main>
@@ -135,7 +132,8 @@ function renderTrack(track, locale, availableLocales) {
 </html>`
 }
 
-function renderIndex(tracks) {
+function renderIndex(tracks, warnings) {
+  const t = makeT('en', warnings)
   const items = tracks
     .map(({ baseName, track }) => `
     <div class="pose-item" style="padding: 0.75rem 1rem;">
@@ -165,7 +163,7 @@ function renderIndex(tracks) {
 
   <div class="pose-table-wrapper">
     <div class="pose-header" style="grid-template-columns: 1fr;">
-      <span class="col-pose">Session</span>
+      <span class="col-pose">${t('col_session')}</span>
     </div>
     ${items}
   </div>
@@ -202,6 +200,7 @@ for (const file of jsonFiles) {
 }
 
 // Render all locale variants for each track
+const warnings = []
 const indexTracks = []
 for (const [baseName, localeMap] of groups) {
   const outDir = path.join(distDir, baseName)
@@ -215,7 +214,7 @@ for (const [baseName, localeMap] of groups) {
   for (const [locale, track] of localeMap) {
     const outFile = localeOutputFile(locale)
     const outPath = path.join(outDir, outFile)
-    fs.writeFileSync(outPath, renderTrack(track, locale, availableLocales))
+    fs.writeFileSync(outPath, renderTrack(track, locale, availableLocales, warnings))
     console.log(`✓ ${baseName}.${locale}  →  dist/${baseName}/${outFile}`)
   }
 
@@ -225,8 +224,14 @@ for (const [baseName, localeMap] of groups) {
 }
 
 const indexPath = path.join(distDir, 'index.html')
-fs.writeFileSync(indexPath, renderIndex(indexTracks))
+fs.writeFileSync(indexPath, renderIndex(indexTracks, warnings))
 console.log(`✓ index  →  dist/index.html`)
+
+if (warnings.length > 0) {
+  console.warn('---')
+  for (const w of warnings) console.warn(`  ⚠ ${w}`)
+  console.warn('---')
+}
 
 // Copy static assets into dist so it can be served independently
 function copyDir(src, dest) {

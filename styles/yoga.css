@@ -116,7 +116,7 @@ h1 {
 .pose-header,
 .pose-item > summary {
   display: grid;
-  grid-template-columns: 2fr 0.65fr 1.8fr 2fr 2fr;
+  grid-template-columns: 2fr 0.65fr 2fr 2fr;
   align-items: center;
   column-gap: 1rem;
 }
@@ -322,7 +322,7 @@ details[open] > summary .chevron {
 
   .pose-header,
   .pose-item > summary {
-    grid-template-columns: 2fr 0.65fr 1.8fr 2fr 2fr;
+    grid-template-columns: 2fr 0.65fr 2fr 2fr;
   }
 
   /* Hide mobile-only info (columns visible in print) */

@@ -10,6 +10,9 @@ Description: |
   **Meridianer:** Nyre, Urinblære, Lever og Hjerte er de primære meridianene, med sterk vekt på forankring, ryggradshydrering, ro i nervesystemet og emosjonell frigjøring.
 
 Poses:
+
+
+
   - Name: Åpningsmeditasjon
     Duration: 3
     Sensation:
@@ -24,6 +27,9 @@ Poses:
       • Pustbevissthet
       • Forankring
       • Overgang fra å gjøre til å være
+
+
+
 
   - Name: Hengende fremoverfold
     Duration: 3
@@ -56,6 +62,9 @@ Poses:
         Stå langsomt opp, stakk ryggraden, eller hvil i konstruktiv hvile.
         Legg merke til varme, pulsering eller subtil bevegelse langs ryggraden og bena.
 
+
+
+
   - Name: Støttet huk (Malasana)
     Duration: 3
     Description: |
@@ -74,6 +83,9 @@ Poses:
       - Ankler, knær, hofter, lysker
       - Kompresjon gjennom bekkenet
       - Forankring og stabilitet
+
+
+
   - Name: "Øyenstikker – Høyre side"
     Duration: 3
     Description: |
@@ -88,6 +100,9 @@ Poses:
     Sensation:
       - Indre lår, hamstrings, ryggrad
       - Bred åpning og frigjøring gjennom hofter
+
+
+
   - Name: "Øyenstikker – Venstre side"
     Duration: 3
     Description: |
@@ -101,6 +116,9 @@ Poses:
     Sensation:
       - Indre lår, hamstrings, ryggrad
       - Bred åpning og frigjøring gjennom hofter
+
+
+
   - Name: "Øyenstikker – Midten"
     Duration: 3
     Description: |
@@ -115,6 +133,9 @@ Poses:
     Sensation:
       - Indre lår, hamstrings, ryggrad
       - Bred åpning og frigjøring gjennom hofter
+
+
+
   - Name: Sfinks
     Duration: 3
     Description: |
@@ -132,6 +153,9 @@ Poses:
     Sensation:
       - Kompresjon i korsryggen
       - Åpning av forsiden av kroppen
+
+
+
   - Name: Sel
     Duration: 2
     Description: |
@@ -147,6 +171,9 @@ Poses:
     Sensation:
       - Sterkere kompresjon i korsryggen
       - Åpning av forsiden av overkroppen
+
+
+
   - Name: "Svane – Høyre side"
     Duration: 4
     Description: |
@@ -166,6 +193,9 @@ Poses:
       - Dyp hofteåpning
       - Ytre hofte og sete
       - Emosjonell frigjøring
+
+
+
   - Name: "Svane – Venstre side"
     Duration: 4
     Description: |
@@ -184,6 +214,9 @@ Poses:
       - Dyp hofteåpning
       - Ytre hofte og sete
       - Emosjonell frigjøring
+
+
+
   - Name: Liggende sommerfugl (Supta Baddha Konasana)
     Duration: 4
     Description: |
@@ -197,6 +230,9 @@ Poses:
       - Bryståpning
       - Pusteutvidelse
       - Dyp avslapning
+
+
+
   - Name: "Liggende vridning – Høyre side"
     Duration: 3
     Description: |
@@ -211,6 +247,9 @@ Poses:
       - Avgiftning
       - Emosjonell opprulling
       - Ryggradsfrigjøring
+
+
+
   - Name: "Liggende vridning – Venstre side"
     Duration: 3
     Description: |
@@ -225,6 +264,9 @@ Poses:
       - Avgiftning
       - Emosjonell opprulling
       - Ryggradsfrigjøring
+
+
+
   - Name: Avsluttende Shavasana
     Duration: 10
     Description: |

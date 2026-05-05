@@ -10,6 +10,9 @@ Description: |
   **Meridianos:** Riñón, Vejiga Urinaria, Hígado y Corazón son los meridianos primarios, con un fuerte énfasis en el arraigo, la hidratación de la columna, la calma del sistema nervioso y la liberación emocional.
 
 Poses:
+
+
+
   - Name: Meditación Inicial
     Duration: 3
     Sensation:
@@ -24,6 +27,9 @@ Poses:
       • Conciencia de la respiración
       • Arraigo
       • Transición del hacer al ser
+
+
+
 
   - Name: Colgante
     Duration: 3
@@ -56,6 +62,9 @@ Poses:
         Levántate lentamente apilando la columna, o descansa en descanso constructivo.
         Observa el calor, la pulsación o el movimiento sutil a lo largo de la columna y las piernas.
 
+
+
+
   - Name: Cuclillas Apoyada (Malasana)
     Duration: 3
     Description: |
@@ -74,6 +83,9 @@ Poses:
       - Tobillos, rodillas, caderas, ingles
       - Compresión a través de la pelvis
       - Arraigo y estabilidad
+
+
+
   - Name: "Libélula – Lado Derecho"
     Duration: 3
     Description: |
@@ -88,6 +100,9 @@ Poses:
     Sensation:
       - Piernas interiores, isquiotibiales, columna
       - Apertura amplia y liberación a través de las caderas
+
+
+
   - Name: "Libélula – Lado Izquierdo"
     Duration: 3
     Description: |
@@ -101,6 +116,9 @@ Poses:
     Sensation:
       - Piernas interiores, isquiotibiales, columna
       - Apertura amplia y liberación a través de las caderas
+
+
+
   - Name: "Libélula – Centro"
     Duration: 3
     Description: |
@@ -115,6 +133,9 @@ Poses:
     Sensation:
       - Piernas interiores, isquiotibiales, columna
       - Apertura amplia y liberación a través de las caderas
+
+
+
   - Name: Esfinge
     Duration: 3
     Description: |
@@ -132,6 +153,9 @@ Poses:
     Sensation:
       - Compresión en la espalda baja
       - Apertura del cuerpo frontal
+
+
+
   - Name: Foca
     Duration: 2
     Description: |
@@ -147,6 +171,9 @@ Poses:
     Sensation:
       - Mayor compresión en la columna lumbar
       - Apertura del torso frontal
+
+
+
   - Name: "Cisne – Lado Derecho"
     Duration: 4
     Description: |
@@ -166,6 +193,9 @@ Poses:
       - Apertura profunda de cadera
       - Cadera exterior y glúteo
       - Liberación emocional
+
+
+
   - Name: "Cisne – Lado Izquierdo"
     Duration: 4
     Description: |
@@ -184,6 +214,9 @@ Poses:
       - Apertura profunda de cadera
       - Cadera exterior y glúteo
       - Liberación emocional
+
+
+
   - Name: Mariposa Reclinada (Supta Baddha Konasana)
     Duration: 4
     Description: |
@@ -197,6 +230,9 @@ Poses:
       - Apertura del pecho
       - Expansión de la respiración
       - Relajación profunda
+
+
+
   - Name: "Torsión Reclinada – Lado Derecho"
     Duration: 3
     Description: |
@@ -211,6 +247,9 @@ Poses:
       - Desintoxicación
       - Desenredo emocional
       - Liberación de la columna
+
+
+
   - Name: "Torsión Reclinada – Lado Izquierdo"
     Duration: 3
     Description: |
@@ -225,6 +264,9 @@ Poses:
       - Desintoxicación
       - Desenredo emocional
       - Liberación de la columna
+
+
+
   - Name: Shavasana Final
     Duration: 10
     Description: |

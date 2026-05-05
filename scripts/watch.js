@@ -5,11 +5,18 @@ import { join } from 'path';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 
-async function findYamlFiles() {
-  const entries = await readdir(ROOT);
-  return entries
-    .filter(f => f.endsWith('.yaml') || f.endsWith('.yml'))
-    .map(f => join(ROOT, f));
+async function findWatchTargets() {
+  const rootEntries = await readdir(ROOT);
+  const rootFiles = rootEntries
+    .filter(f => f.endsWith('.yaml') || f.endsWith('.yml') || f.endsWith('.json'))
+    .map(f => ({ path: join(ROOT, f), label: f }));
+
+  const scriptsDir = join(ROOT, 'scripts');
+  const scriptEntries = await readdir(scriptsDir);
+  const scriptFiles = scriptEntries
+    .map(f => ({ path: join(scriptsDir, f), label: `scripts/${f}` }));
+
+  return [...rootFiles, ...scriptFiles];
 }
 
 function run(cmd, args, opts = {}) {
@@ -66,15 +73,10 @@ async function onChange(filename) {
 async function main() {
   await cycle();
 
-  const yamlFiles = await findYamlFiles();
-  if (yamlFiles.length === 0) {
-    console.log('[watch] no yaml files found to watch');
-    return;
-  }
-
-  console.log(`[watch] watching ${yamlFiles.length} yaml file(s) for changes...`);
-  for (const file of yamlFiles) {
-    watch(file, () => onChange(file));
+  const targets = await findWatchTargets();
+  console.log(`[watch] watching ${targets.length} file(s) for changes...`);
+  for (const { path, label } of targets) {
+    watch(path, () => onChange(label));
   }
 }
 

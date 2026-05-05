@@ -62,7 +62,10 @@
           "uniqueItems": true
         },
         "Alternatives": {
-          "$ref": "#/$defs/Alternative"
+          "type": "array",
+          "description": "Alternative versions of the pose",
+          "items": { "$ref": "#/$defs/Alternative" },
+          "minItems": 0
         }
       },
       "additionalProperties": false
