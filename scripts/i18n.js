@@ -8,6 +8,7 @@ export const translations = {
     detail_alternative: 'Alternative',
     detail_rebound:     'Rebound',
     col_session:      'Session',
+    print_tooltip:    'Print or save as PDF — choose "Save as PDF" in the print dialog',
   },
   no: {
     col_pose:         'Stilling',
@@ -18,6 +19,7 @@ export const translations = {
     detail_alternative: 'Alternativ',
     detail_rebound:     'Rebound',
     col_session:      'Økt',
+    print_tooltip:    'Skriv ut eller lagre som PDF — velg «Lagre som PDF» i utskriftsdialogen',
   },
   es: {
     col_pose:         'Postura',
@@ -28,6 +30,7 @@ export const translations = {
     detail_alternative: 'Alternativa',
     detail_rebound:     'Rebote',
     col_session:      'Sesión',
+    print_tooltip:    'Imprimir o guardar como PDF — elige «Guardar como PDF» en el diálogo de impresión',
   },
 }
 

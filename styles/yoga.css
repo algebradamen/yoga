@@ -91,11 +91,41 @@ main {
   padding: 2rem 1.5rem 3rem;
 }
 
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
 h1 {
   font-size: 1.9rem;
   font-weight: 700;
   color: var(--forest-dark);
-  margin-bottom: 0.4rem;
+}
+
+.print-btn {
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+  transition: opacity 0.2s, color 0.2s;
+  line-height: 0;
+}
+
+.print-btn:hover {
+  opacity: 1;
+  color: var(--forest-mid);
+}
+
+.print-btn svg {
+  width: 22px;
+  height: 22px;
 }
 
 .subtitle {
@@ -291,6 +321,10 @@ details[open] > summary .chevron {
   font-style: italic;
 }
 
+.nowrap { white-space: nowrap; }
+
+.detail-inner ul li { white-space: nowrap; }
+
 /* ---------- Expanded detail ---------- */
 .detail-inner {
   background: var(--expand-bg);
@@ -397,7 +431,7 @@ details[open] > summary .chevron {
 
   /* Hide decorative and interactive elements */
   .deco-top, .deco-bottom, .lang-switcher { display: none; }
-  .chevron { display: none; }
+  .chevron, .print-btn { display: none; }
 
   /* Clean appearance */
   .pose-table-wrapper { box-shadow: none; border: 1px solid var(--sage-light); }

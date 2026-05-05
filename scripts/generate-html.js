@@ -66,7 +66,7 @@ function renderPose(pose, t) {
         </div>
         <span class="col-duration duration-cell">${pose.Duration ? pose.Duration + ' min' : ''}</span>
         <div class="col-meridians badges">${meridianBadges}</div>
-        <span class="col-sensation sensation-cell">${pose.Sensation ? pose.Sensation.join(' · ') : ''}</span>
+        <span class="col-sensation sensation-cell">${pose.Sensation ? pose.Sensation.map(s => `<span class="nowrap">${s}</span>`).join(' · ') : ''}</span>
       </summary>
       <div class="detail-inner">
         <h3>${pose.Name}</h3>
@@ -112,7 +112,12 @@ function renderTrack(track, locale, availableLocales, warnings) {
 
 <!-- ===== MAIN ===== -->
 <main>
-  <h1>${track.Name} – ${track.Duration} min</h1>
+  <div class="page-header">
+    <h1>${track.Name} – ${track.Duration} min</h1>
+    <button class="print-btn" onclick="window.print()" title="${t('print_tooltip')}" aria-label="${t('print_tooltip')}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    </button>
+  </div>
   ${track.Description ? `<div class="subtitle">${md.render(track.Description)}</div>` : ''}
 
   <div class="pose-table-wrapper">
