@@ -12,7 +12,10 @@ Description: |
 Poses:
   - Name: Åpningsmeditasjon
     Duration: 3
-    Sensation: "Pustbevissthet · Forankring · Overgang fra å gjøre til å være"
+    Sensation:
+      - Pustbevissthet
+      - Forankring
+      - Overgang fra å gjøre til å være
     Description: |
       Ankomst i stillhet. La kroppen slå seg til ro og pusten mykne.
       Inviter deltakerne til å sette en intensjon for øvelsen – et ord, en kvalitet eller simpel tilstedeværelse.
@@ -27,7 +30,10 @@ Poses:
     Meridians:
       - Urinblære
       - Nyre
-    Sensation: "Hamstrings, legger, ryggrad, korsrygg · Skånsom ryggradsdekkompresjon · Stillhet i sinnet"
+    Sensation:
+      - Hamstrings, legger, ryggrad, korsrygg
+      - Skånsom ryggradsdekkompresjon
+      - Stillhet i sinnet
     Description: |
       Fra stående, plasser føttene hoftebrede fra hverandre. Heng sakte forover fra hoftene og la overkroppen
       slippe fullstendig. La hodet og nakken henge tungt. Knærne kan bøyes dypt. Hendene kan hvile
@@ -64,8 +70,10 @@ Poses:
       - Lever
       - Milt
       - Galleblære
-    Sensation: "Ankler, knær, hofter, lysker · Kompresjon gjennom bekkenet · Forankring og stabilitet"
-
+    Sensation:
+      - Ankler, knær, hofter, lysker
+      - Kompresjon gjennom bekkenet
+      - Forankring og stabilitet
   - Name: "Øyenstikker – Høyre side"
     Duration: 3
     Description: |
@@ -77,8 +85,9 @@ Poses:
       - Lever
       - Nyre
       - Urinblære
-    Sensation: "Indre lår, hamstrings, ryggrad · Bred åpning og frigjøring gjennom hofter"
-
+    Sensation:
+      - Indre lår, hamstrings, ryggrad
+      - Bred åpning og frigjøring gjennom hofter
   - Name: "Øyenstikker – Venstre side"
     Duration: 3
     Description: |
@@ -89,8 +98,9 @@ Poses:
       - Lever
       - Nyre
       - Urinblære
-    Sensation: "Indre lår, hamstrings, ryggrad · Bred åpning og frigjøring gjennom hofter"
-
+    Sensation:
+      - Indre lår, hamstrings, ryggrad
+      - Bred åpning og frigjøring gjennom hofter
   - Name: "Øyenstikker – Midten"
     Duration: 3
     Description: |
@@ -102,8 +112,9 @@ Poses:
       - Lever
       - Nyre
       - Urinblære
-    Sensation: "Indre lår, hamstrings, ryggrad · Bred åpning og frigjøring gjennom hofter"
-
+    Sensation:
+      - Indre lår, hamstrings, ryggrad
+      - Bred åpning og frigjøring gjennom hofter
   - Name: Sfinks
     Duration: 3
     Description: |
@@ -118,8 +129,9 @@ Poses:
       - Nyre
       - Mage
       - Milt
-    Sensation: "Kompresjon i korsryggen · Åpning av forsiden av kroppen"
-
+    Sensation:
+      - Kompresjon i korsryggen
+      - Åpning av forsiden av kroppen
   - Name: Sel
     Duration: 2
     Description: |
@@ -132,8 +144,9 @@ Poses:
       - Nyre
       - Mage
       - Milt
-    Sensation: "Sterkere kompresjon i korsryggen · Åpning av forsiden av overkroppen"
-
+    Sensation:
+      - Sterkere kompresjon i korsryggen
+      - Åpning av forsiden av overkroppen
   - Name: "Svane – Høyre side"
     Duration: 4
     Description: |
@@ -149,8 +162,10 @@ Poses:
       - Lever
       - Nyre
       - Galleblære
-    Sensation: "Dyp hofteåpning · Ytre hofte og sete · Emosjonell frigjøring"
-
+    Sensation:
+      - Dyp hofteåpning
+      - Ytre hofte og sete
+      - Emosjonell frigjøring
   - Name: "Svane – Venstre side"
     Duration: 4
     Description: |
@@ -165,8 +180,10 @@ Poses:
       - Lever
       - Nyre
       - Galleblære
-    Sensation: "Dyp hofteåpning · Ytre hofte og sete · Emosjonell frigjøring"
-
+    Sensation:
+      - Dyp hofteåpning
+      - Ytre hofte og sete
+      - Emosjonell frigjøring
   - Name: Liggende sommerfugl (Supta Baddha Konasana)
     Duration: 4
     Description: |
@@ -176,8 +193,10 @@ Poses:
     Meridians:
       - Hjerte
       - Lunge
-    Sensation: "Bryståpning · Pusteutvidelse · Dyp avslapning"
-
+    Sensation:
+      - Bryståpning
+      - Pusteutvidelse
+      - Dyp avslapning
   - Name: "Liggende vridning – Høyre side"
     Duration: 3
     Description: |
@@ -188,8 +207,10 @@ Poses:
       - Galleblære
       - Urinblære
       - Lever
-    Sensation: "Avgiftning · Emosjonell opprulling · Ryggradsfrigjøring"
-
+    Sensation:
+      - Avgiftning
+      - Emosjonell opprulling
+      - Ryggradsfrigjøring
   - Name: "Liggende vridning – Venstre side"
     Duration: 3
     Description: |
@@ -200,12 +221,17 @@ Poses:
       - Galleblære
       - Urinblære
       - Lever
-    Sensation: "Avgiftning · Emosjonell opprulling · Ryggradsfrigjøring"
-
+    Sensation:
+      - Avgiftning
+      - Emosjonell opprulling
+      - Ryggradsfrigjøring
   - Name: Avsluttende Shavasana
     Duration: 10
     Description: |
       Total hvile. La kroppen integrere øvelsen fullt ut.
 
       Kjenn ekkoet av stillingene. Hvil dypt. Gjør ingenting.
-    Sensation: "Total integrasjon · Dyp hvile · Fullstendig overgivelse"
+    Sensation:
+      - Total integrasjon
+      - Dyp hvile
+      - Fullstendig overgivelse

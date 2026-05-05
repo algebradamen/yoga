@@ -12,7 +12,10 @@ Description: |
 Poses:
   - Name: Opening Meditation
     Duration: 3
-    Sensation: "Breath awareness · Grounding · Transition from doing to being"
+    Sensation:
+      - Breath awareness
+      - Grounding
+      - Transition from doing to being
     Description: |
       Arrive in stillness. Allow the body to settle and the breath to soften.
       Invite participants to set an intention for the practice — a word, quality, or simple presence.
@@ -27,7 +30,10 @@ Poses:
     Meridians:
       - Urinary Bladder
       - Kidney
-    Sensation: "Hamstrings, calves, spine, lower back · Gentle spinal decompression · Quieting of the mind"
+    Sensation:
+      - Hamstrings, calves, spine, lower back
+      - Gentle spinal decompression
+      - Quieting of the mind
     Description: |
       From standing, place feet hip‑width apart. Slowly hinge forward from the hips and allow the upper
       body to fully release. Let the head and neck hang heavy. Knees may be deeply bent. Hands can rest
@@ -65,8 +71,10 @@ Poses:
       - Liver
       - Spleen
       - Gallbladder
-    Sensation: "Ankles, knees, hips, groins · Compression through pelvis · Grounding and stability"
-
+    Sensation:
+      - Ankles, knees, hips, groins
+      - Compression through pelvis
+      - Grounding and stability
   - Name: "Dragonfly – Right Side"
     Duration: 3
     Description: |
@@ -78,8 +86,9 @@ Poses:
       - Liver
       - Kidney
       - Urinary Bladder
-    Sensation: "Inner legs, hamstrings, spine · Broad opening and release through hips"
-
+    Sensation:
+      - Inner legs, hamstrings, spine
+      - Broad opening and release through hips
   - Name: "Dragonfly – Left Side"
     Duration: 3
     Description: |
@@ -90,8 +99,9 @@ Poses:
       - Liver
       - Kidney
       - Urinary Bladder
-    Sensation: "Inner legs, hamstrings, spine · Broad opening and release through hips"
-
+    Sensation:
+      - Inner legs, hamstrings, spine
+      - Broad opening and release through hips
   - Name: "Dragonfly – Centre"
     Duration: 3
     Description: |
@@ -103,8 +113,9 @@ Poses:
       - Liver
       - Kidney
       - Urinary Bladder
-    Sensation: "Inner legs, hamstrings, spine · Broad opening and release through hips"
-
+    Sensation:
+      - Inner legs, hamstrings, spine
+      - Broad opening and release through hips
   - Name: Sphinx
     Duration: 3
     Description: |
@@ -119,8 +130,9 @@ Poses:
       - Kidney
       - Stomach
       - Spleen
-    Sensation: "Lower back compression · Front body opening"
-
+    Sensation:
+      - Lower back compression
+      - Front body opening
   - Name: Seal
     Duration: 2
     Description: |
@@ -133,8 +145,9 @@ Poses:
       - Kidney
       - Stomach
       - Spleen
-    Sensation: "Stronger compression in lumbar spine · Front torso opening"
-
+    Sensation:
+      - Stronger compression in lumbar spine
+      - Front torso opening
   - Name: "Swan – Right Side"
     Duration: 4
     Description: |
@@ -150,8 +163,10 @@ Poses:
       - Liver
       - Kidney
       - Gallbladder
-    Sensation: "Deep hip opening · Outer hip and glute · Emotional release"
-
+    Sensation:
+      - Deep hip opening
+      - Outer hip and glute
+      - Emotional release
   - Name: "Swan – Left Side"
     Duration: 4
     Description: |
@@ -166,8 +181,10 @@ Poses:
       - Liver
       - Kidney
       - Gallbladder
-    Sensation: "Deep hip opening · Outer hip and glute · Emotional release"
-
+    Sensation:
+      - Deep hip opening
+      - Outer hip and glute
+      - Emotional release
   - Name: Reclined Butterfly (Supta Baddha Konasana)
     Duration: 4
     Description: |
@@ -177,8 +194,10 @@ Poses:
     Meridians:
       - Heart
       - Lung
-    Sensation: "Chest opening · Breath expansion · Deep relaxation"
-
+    Sensation:
+      - Chest opening
+      - Breath expansion
+      - Deep relaxation
   - Name: "Reclined Twist – Right Side"
     Duration: 3
     Description: |
@@ -189,8 +208,10 @@ Poses:
       - Gallbladder
       - Urinary Bladder
       - Liver
-    Sensation: "Detoxification · Emotional unwinding · Spinal release"
-
+    Sensation:
+      - Detoxification
+      - Emotional unwinding
+      - Spinal release
   - Name: "Reclined Twist – Left Side"
     Duration: 3
     Description: |
@@ -201,13 +222,17 @@ Poses:
       - Gallbladder
       - Urinary Bladder
       - Liver
-    Sensation: "Detoxification · Emotional unwinding · Spinal release"
-
+    Sensation:
+      - Detoxification
+      - Emotional unwinding
+      - Spinal release
   - Name: Final Shavasana
     Duration: 10
     Description: |
       Total rest. Allow the body to integrate the practice fully.
 
       Feel the echo of the postures. Rest deeply. Do nothing.
-    Sensation: "Total integration · Deep rest · Complete surrender"
-
+    Sensation:
+      - Total integration
+      - Deep rest
+      - Complete surrender

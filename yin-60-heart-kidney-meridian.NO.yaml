@@ -12,8 +12,10 @@ Poses:
       Ankomst i stillhet. Kjenn vekten av kroppen støttet av bakken.
       Inviter bevisstheten til den naturlige rytmen av pusten – uten å endre den.
       Sett en intensjon knyttet til hjertet: åpenhet, medfølelse eller tilstedeværelse.
-    Sensation: "Forankrethet · Hjertbevissthet · Myknet pust"
-
+    Sensation:
+      - Forankrethet
+      - Hjertbevissthet
+      - Myknet pust
   - Name: Hengende fremoverfold
     Duration: 3
     Description: |
@@ -23,8 +25,10 @@ Poses:
     Meridians:
       - Urinblære
       - Nyre
-    Sensation: "Ryggradsfrigjøring · Forankring av nervesystemet · Åpning av baksiden av kroppen"
-
+    Sensation:
+      - Ryggradsfrigjøring
+      - Forankring av nervesystemet
+      - Åpning av baksiden av kroppen
   - Name: Støttet huk (Malasana)
     Duration: 3
     Description: |
@@ -35,8 +39,10 @@ Poses:
       - Nyre
       - Lever
       - Milt
-    Sensation: "Forankring · Bekkenstabilitet · Frigjøring av indre lår"
-
+    Sensation:
+      - Forankring
+      - Bekkenstabilitet
+      - Frigjøring av indre lår
   - Name: "Øyenstikker – Høyre side"
     Duration: 3
     Description: |
@@ -48,8 +54,9 @@ Poses:
       - Lever
       - Nyre
       - Urinblære
-    Sensation: "Indre lår, hamstrings · Pust som vider ut ryggradsribbeina"
-
+    Sensation:
+      - Indre lår, hamstrings
+      - Pust som vider ut ryggradsribbeina
   - Name: "Øyenstikker – Venstre side"
     Duration: 3
     Description: |
@@ -61,8 +68,9 @@ Poses:
       - Lever
       - Nyre
       - Urinblære
-    Sensation: "Indre lår, hamstrings · Pust som vider ut ryggradsribbeina"
-
+    Sensation:
+      - Indre lår, hamstrings
+      - Pust som vider ut ryggradsribbeina
   - Name: "Øyenstikker – Midten"
     Duration: 3
     Description: |
@@ -74,8 +82,9 @@ Poses:
       - Lever
       - Nyre
       - Urinblære
-    Sensation: "Indre lår, hamstrings · Pust som vider ut ryggradsribbeina"
-
+    Sensation:
+      - Indre lår, hamstrings
+      - Pust som vider ut ryggradsribbeina
   - Name: Sfinks
     Duration: 3
     Description: |
@@ -90,8 +99,10 @@ Poses:
       - Nyre
       - Lunge
       - Hjerte
-    Sensation: "Kompresjon i korsryggen · Åpning av hjerterommet · Pusten dypner inn i de øvre ribbeina"
-
+    Sensation:
+      - Kompresjon i korsryggen
+      - Åpning av hjerterommet
+      - Pusten dypner inn i de øvre ribbeina
   - Name: Støttet fisk
     Duration: 4
     Description: |
@@ -104,9 +115,10 @@ Poses:
     Meridians:
       - Hjerte
       - Lunge
-    Sensation: |
-      Ekspansjon over bryst, nøkkelben, skuldre · Pusten dypner naturlig ·
-      Emosjonell åpenhet eller sårbarhet kan oppstå
+    Sensation:
+      - Ekspansjon over bryst, nøkkelben, skuldre
+      - Pusten dypner naturlig
+      - Emosjonell åpenhet eller sårbarhet kan oppstå
 
   - Name: "Svane – Høyre side"
     Duration: 4
@@ -121,8 +133,9 @@ Poses:
     Meridians:
       - Lever
       - Galleblære
-    Sensation: "Dyp hofteåpning · Emosjonell frigjøring før hjertearbeid"
-
+    Sensation:
+      - Dyp hofteåpning
+      - Emosjonell frigjøring før hjertearbeid
   - Name: "Svane – Venstre side"
     Duration: 4
     Description: |
@@ -136,8 +149,9 @@ Poses:
     Meridians:
       - Lever
       - Galleblære
-    Sensation: "Dyp hofteåpning · Emosjonell frigjøring før hjertearbeid"
-
+    Sensation:
+      - Dyp hofteåpning
+      - Emosjonell frigjøring før hjertearbeid
   - Name: Smeltende hjerte (Anahatasana)
     Duration: 4
     Description: |
@@ -148,8 +162,9 @@ Poses:
     Meridians:
       - Lunge
       - Hjerte
-    Sensation: "Bryst, skuldre, armhuler · Pustbevissthet – særlig innpust"
-
+    Sensation:
+      - Bryst, skuldre, armhuler
+      - Pustbevissthet – særlig innpust
   - Name: Liggende sommerfugl (Supta Baddha Konasana)
     Duration: 5
     Description: |
@@ -162,8 +177,10 @@ Poses:
     Meridians:
       - Hjerte
       - Lunge
-    Sensation: "Dyp bryst- og hjerteåpning · Pusten løfter hjertet · Full overgivelse"
-
+    Sensation:
+      - Dyp bryst- og hjerteåpning
+      - Pusten løfter hjertet
+      - Full overgivelse
   - Name: "Liggende vridning – Høyre side"
     Duration: 3
     Description: |
@@ -175,8 +192,9 @@ Poses:
       - Galleblære
       - Urinblære
       - Hjerte
-    Sensation: "Avgiftning · Emosjonell opprulling via skånsom ryggradsrotasjon"
-
+    Sensation:
+      - Avgiftning
+      - Emosjonell opprulling via skånsom ryggradsrotasjon
   - Name: "Liggende vridning – Venstre side"
     Duration: 3
     Description: |
@@ -187,11 +205,15 @@ Poses:
       - Galleblære
       - Urinblære
       - Hjerte
-    Sensation: "Avgiftning · Emosjonell opprulling via skånsom ryggradsrotasjon"
-
+    Sensation:
+      - Avgiftning
+      - Emosjonell opprulling via skånsom ryggradsrotasjon
   - Name: Avsluttende Shavasana
     Duration: 9
     Description: |
       Total hvile. Inviter mykhet bak hjertet og en lett, uanstrengt pust.
       La effektene av øvelsen integreres fullt ut.
-    Sensation: "Mykhet bak hjertet · Uanstrengt pust · Full integrasjon"
+    Sensation:
+      - Mykhet bak hjertet
+      - Uanstrengt pust
+      - Full integrasjon

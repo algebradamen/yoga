@@ -69,13 +69,13 @@ function renderPose(pose) {
         <span class="col-duration duration-cell">${pose.Duration ? pose.Duration + ' min' : ''}</span>
         <div class="col-alternatives badges">${altBadge}</div>
         <div class="col-meridians badges">${meridianBadges}</div>
-        <span class="col-sensation sensation-cell">${pose.Sensation || ''}</span>
+        <span class="col-sensation sensation-cell">${pose.Sensation ? pose.Sensation.join(' · ') : ''}</span>
       </summary>
       <div class="detail-inner">
         <h3>${pose.Name}</h3>
         ${pose.Description ? `<div>${md.render(pose.Description)}</div>` : ''}
         <div class="mobile-info">
-          ${pose.Sensation ? `<div class="alt-section"><h4>Sensation</h4><p>${pose.Sensation}</p></div>` : ''}
+          ${pose.Sensation ? `<div class="alt-section"><h4>Sensation</h4><ul>${pose.Sensation.map(s => `<li>${s}</li>`).join('')}</ul></div>` : ''}
         </div>
         ${pose.Alternatives ? `
         <div class="alt-section">

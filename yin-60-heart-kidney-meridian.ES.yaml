@@ -12,8 +12,10 @@ Poses:
       Llega en quietud. Siente el peso del cuerpo apoyado por el suelo.
       Invita la conciencia al ritmo natural de la respiración – sin cambiarlo.
       Establece una intención conectada al corazón: apertura, compasión o presencia.
-    Sensation: "Arraigo · Conciencia del corazón · Suavización de la respiración"
-
+    Sensation:
+      - Arraigo
+      - Conciencia del corazón
+      - Suavización de la respiración
   - Name: Colgante
     Duration: 3
     Description: |
@@ -23,8 +25,10 @@ Poses:
     Meridians:
       - Vejiga Urinaria
       - Riñón
-    Sensation: "Liberación de la columna · Arraigo del sistema nervioso · Apertura de la cadena posterior"
-
+    Sensation:
+      - Liberación de la columna
+      - Arraigo del sistema nervioso
+      - Apertura de la cadena posterior
   - Name: Cuclillas Apoyada (Malasana)
     Duration: 3
     Description: |
@@ -35,8 +39,10 @@ Poses:
       - Riñón
       - Hígado
       - Bazo
-    Sensation: "Arraigo · Estabilidad pélvica · Liberación de piernas interiores"
-
+    Sensation:
+      - Arraigo
+      - Estabilidad pélvica
+      - Liberación de piernas interiores
   - Name: "Libélula – Lado Derecho"
     Duration: 3
     Description: |
@@ -48,8 +54,9 @@ Poses:
       - Hígado
       - Riñón
       - Vejiga Urinaria
-    Sensation: "Piernas interiores, isquiotibiales · Respiración expandiendo las costillas de la espalda"
-
+    Sensation:
+      - Piernas interiores, isquiotibiales
+      - Respiración expandiendo las costillas de la espalda
   - Name: "Libélula – Lado Izquierdo"
     Duration: 3
     Description: |
@@ -61,8 +68,9 @@ Poses:
       - Hígado
       - Riñón
       - Vejiga Urinaria
-    Sensation: "Piernas interiores, isquiotibiales · Respiración expandiendo las costillas de la espalda"
-
+    Sensation:
+      - Piernas interiores, isquiotibiales
+      - Respiración expandiendo las costillas de la espalda
   - Name: "Libélula – Centro"
     Duration: 3
     Description: |
@@ -74,8 +82,9 @@ Poses:
       - Hígado
       - Riñón
       - Vejiga Urinaria
-    Sensation: "Piernas interiores, isquiotibiales · Respiración expandiendo las costillas de la espalda"
-
+    Sensation:
+      - Piernas interiores, isquiotibiales
+      - Respiración expandiendo las costillas de la espalda
   - Name: Esfinge
     Duration: 3
     Description: |
@@ -90,8 +99,10 @@ Poses:
       - Riñón
       - Pulmón
       - Corazón
-    Sensation: "Compresión en la espalda baja · Apertura del espacio del corazón · Respiración profundizando hacia las costillas superiores"
-
+    Sensation:
+      - Compresión en la espalda baja
+      - Apertura del espacio del corazón
+      - Respiración profundizando hacia las costillas superiores
   - Name: Pez Apoyado
     Duration: 4
     Description: |
@@ -104,9 +115,10 @@ Poses:
     Meridians:
       - Corazón
       - Pulmón
-    Sensation: |
-      Expansión a través del pecho, clavículas, hombros · Respiración profundizando naturalmente ·
-      Puede surgir apertura emocional o vulnerabilidad
+    Sensation:
+      - Expansión a través del pecho, clavículas, hombros
+      - Respiración profundizando naturalmente
+      - Puede surgir apertura emocional o vulnerabilidad
 
   - Name: "Cisne – Lado Derecho"
     Duration: 4
@@ -121,8 +133,9 @@ Poses:
     Meridians:
       - Hígado
       - Vesícula Biliar
-    Sensation: "Apertura profunda de cadera · Liberación emocional antes del trabajo del corazón"
-
+    Sensation:
+      - Apertura profunda de cadera
+      - Liberación emocional antes del trabajo del corazón
   - Name: "Cisne – Lado Izquierdo"
     Duration: 4
     Description: |
@@ -136,8 +149,9 @@ Poses:
     Meridians:
       - Hígado
       - Vesícula Biliar
-    Sensation: "Apertura profunda de cadera · Liberación emocional antes del trabajo del corazón"
-
+    Sensation:
+      - Apertura profunda de cadera
+      - Liberación emocional antes del trabajo del corazón
   - Name: Corazón Derretido (Anahatasana)
     Duration: 4
     Description: |
@@ -148,8 +162,9 @@ Poses:
     Meridians:
       - Pulmón
       - Corazón
-    Sensation: "Pecho, hombros, axilas · Conciencia de la respiración – especialmente la inhalación"
-
+    Sensation:
+      - Pecho, hombros, axilas
+      - Conciencia de la respiración – especialmente la inhalación
   - Name: Mariposa Reclinada (Supta Baddha Konasana)
     Duration: 5
     Description: |
@@ -162,8 +177,10 @@ Poses:
     Meridians:
       - Corazón
       - Pulmón
-    Sensation: "Apertura profunda del pecho y el corazón · Respiración elevando el corazón · Rendición completa"
-
+    Sensation:
+      - Apertura profunda del pecho y el corazón
+      - Respiración elevando el corazón
+      - Rendición completa
   - Name: "Torsión Reclinada – Lado Derecho"
     Duration: 3
     Description: |
@@ -175,8 +192,9 @@ Poses:
       - Vesícula Biliar
       - Vejiga Urinaria
       - Corazón
-    Sensation: "Desintoxicación · Desenredo emocional mediante rotación suave de la columna"
-
+    Sensation:
+      - Desintoxicación
+      - Desenredo emocional mediante rotación suave de la columna
   - Name: "Torsión Reclinada – Lado Izquierdo"
     Duration: 3
     Description: |
@@ -187,11 +205,15 @@ Poses:
       - Vesícula Biliar
       - Vejiga Urinaria
       - Corazón
-    Sensation: "Desintoxicación · Desenredo emocional mediante rotación suave de la columna"
-
+    Sensation:
+      - Desintoxicación
+      - Desenredo emocional mediante rotación suave de la columna
   - Name: Shavasana Final
     Duration: 9
     Description: |
       Descanso total. Invita suavidad detrás del corazón y una respiración fácil y sin esfuerzo.
       Permite que los efectos de la práctica se integren plenamente.
-    Sensation: "Suavidad detrás del corazón · Respiración sin esfuerzo · Integración completa"
+    Sensation:
+      - Suavidad detrás del corazón
+      - Respiración sin esfuerzo
+      - Integración completa

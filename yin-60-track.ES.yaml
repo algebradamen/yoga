@@ -12,7 +12,10 @@ Description: |
 Poses:
   - Name: Meditación Inicial
     Duration: 3
-    Sensation: "Conciencia de la respiración · Arraigo · Transición del hacer al ser"
+    Sensation:
+      - Conciencia de la respiración
+      - Arraigo
+      - Transición del hacer al ser
     Description: |
       Llega en quietud. Permite que el cuerpo se asiente y la respiración se suavice.
       Invita a los participantes a establecer una intención para la práctica – una palabra, una cualidad o simple presencia.
@@ -27,7 +30,10 @@ Poses:
     Meridians:
       - Vejiga Urinaria
       - Riñón
-    Sensation: "Isquiotibiales, pantorrillas, columna, espalda baja · Descompresión suave de la columna · Aquietamiento de la mente"
+    Sensation:
+      - Isquiotibiales, pantorrillas, columna, espalda baja
+      - Descompresión suave de la columna
+      - Aquietamiento de la mente
     Description: |
       De pie, coloca los pies a la anchura de las caderas. Inclínate lentamente hacia adelante desde las caderas
       y permite que la parte superior del cuerpo se libere por completo. Deja que la cabeza y el cuello cuelguen pesados.
@@ -64,8 +70,10 @@ Poses:
       - Hígado
       - Bazo
       - Vesícula Biliar
-    Sensation: "Tobillos, rodillas, caderas, ingles · Compresión a través de la pelvis · Arraigo y estabilidad"
-
+    Sensation:
+      - Tobillos, rodillas, caderas, ingles
+      - Compresión a través de la pelvis
+      - Arraigo y estabilidad
   - Name: "Libélula – Lado Derecho"
     Duration: 3
     Description: |
@@ -77,8 +85,9 @@ Poses:
       - Hígado
       - Riñón
       - Vejiga Urinaria
-    Sensation: "Piernas interiores, isquiotibiales, columna · Apertura amplia y liberación a través de las caderas"
-
+    Sensation:
+      - Piernas interiores, isquiotibiales, columna
+      - Apertura amplia y liberación a través de las caderas
   - Name: "Libélula – Lado Izquierdo"
     Duration: 3
     Description: |
@@ -89,8 +98,9 @@ Poses:
       - Hígado
       - Riñón
       - Vejiga Urinaria
-    Sensation: "Piernas interiores, isquiotibiales, columna · Apertura amplia y liberación a través de las caderas"
-
+    Sensation:
+      - Piernas interiores, isquiotibiales, columna
+      - Apertura amplia y liberación a través de las caderas
   - Name: "Libélula – Centro"
     Duration: 3
     Description: |
@@ -102,8 +112,9 @@ Poses:
       - Hígado
       - Riñón
       - Vejiga Urinaria
-    Sensation: "Piernas interiores, isquiotibiales, columna · Apertura amplia y liberación a través de las caderas"
-
+    Sensation:
+      - Piernas interiores, isquiotibiales, columna
+      - Apertura amplia y liberación a través de las caderas
   - Name: Esfinge
     Duration: 3
     Description: |
@@ -118,8 +129,9 @@ Poses:
       - Riñón
       - Estómago
       - Bazo
-    Sensation: "Compresión en la espalda baja · Apertura del cuerpo frontal"
-
+    Sensation:
+      - Compresión en la espalda baja
+      - Apertura del cuerpo frontal
   - Name: Foca
     Duration: 2
     Description: |
@@ -132,8 +144,9 @@ Poses:
       - Riñón
       - Estómago
       - Bazo
-    Sensation: "Mayor compresión en la columna lumbar · Apertura del torso frontal"
-
+    Sensation:
+      - Mayor compresión en la columna lumbar
+      - Apertura del torso frontal
   - Name: "Cisne – Lado Derecho"
     Duration: 4
     Description: |
@@ -149,8 +162,10 @@ Poses:
       - Hígado
       - Riñón
       - Vesícula Biliar
-    Sensation: "Apertura profunda de cadera · Cadera exterior y glúteo · Liberación emocional"
-
+    Sensation:
+      - Apertura profunda de cadera
+      - Cadera exterior y glúteo
+      - Liberación emocional
   - Name: "Cisne – Lado Izquierdo"
     Duration: 4
     Description: |
@@ -165,8 +180,10 @@ Poses:
       - Hígado
       - Riñón
       - Vesícula Biliar
-    Sensation: "Apertura profunda de cadera · Cadera exterior y glúteo · Liberación emocional"
-
+    Sensation:
+      - Apertura profunda de cadera
+      - Cadera exterior y glúteo
+      - Liberación emocional
   - Name: Mariposa Reclinada (Supta Baddha Konasana)
     Duration: 4
     Description: |
@@ -176,8 +193,10 @@ Poses:
     Meridians:
       - Corazón
       - Pulmón
-    Sensation: "Apertura del pecho · Expansión de la respiración · Relajación profunda"
-
+    Sensation:
+      - Apertura del pecho
+      - Expansión de la respiración
+      - Relajación profunda
   - Name: "Torsión Reclinada – Lado Derecho"
     Duration: 3
     Description: |
@@ -188,8 +207,10 @@ Poses:
       - Vesícula Biliar
       - Vejiga Urinaria
       - Hígado
-    Sensation: "Desintoxicación · Desenredo emocional · Liberación de la columna"
-
+    Sensation:
+      - Desintoxicación
+      - Desenredo emocional
+      - Liberación de la columna
   - Name: "Torsión Reclinada – Lado Izquierdo"
     Duration: 3
     Description: |
@@ -200,12 +221,17 @@ Poses:
       - Vesícula Biliar
       - Vejiga Urinaria
       - Hígado
-    Sensation: "Desintoxicación · Desenredo emocional · Liberación de la columna"
-
+    Sensation:
+      - Desintoxicación
+      - Desenredo emocional
+      - Liberación de la columna
   - Name: Shavasana Final
     Duration: 10
     Description: |
       Descanso total. Permite que el cuerpo integre la práctica por completo.
 
       Siente el eco de las posturas. Descansa profundamente. No hagas nada.
-    Sensation: "Integración total · Descanso profundo · Rendición completa"
+    Sensation:
+      - Integración total
+      - Descanso profundo
+      - Rendición completa

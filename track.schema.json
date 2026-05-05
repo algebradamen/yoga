@@ -48,8 +48,10 @@
           "description": "Markdown-formatted description and instructions for the pose"
         },
         "Sensation": {
-          "type": "string",
-          "description": "Description of the physical or emotional sensation of the pose"
+          "type": "array",
+          "description": "Physical or emotional sensations of the pose",
+          "items": { "type": "string" },
+          "minItems": 1
         },
         "Meridians": {
           "type": "array",
