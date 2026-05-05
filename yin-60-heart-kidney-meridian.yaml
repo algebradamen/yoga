@@ -26,8 +26,9 @@ Poses:
     Duration: 3
     Description: |
       Standing Forward Fold – Yin version. Ground the nervous system before opening the chest and breath.
-
-      **Rebound:** Constructive rest or standing pause – 1–2 minutes.
+    Rebound:
+      Description: Constructive rest or standing pause
+      Duration: 1
     Meridians:
       - Urinary Bladder
       - Kidney
@@ -42,8 +43,9 @@ Poses:
     Duration: 3
     Description: |
       Creates stability and rooting — preparing for heart opening later.
-
-      **Rebound:** Seated stillness – 1 minute.
+    Rebound:
+      Description: Seated stillness
+      Duration: 1
     Meridians:
       - Kidney
       - Liver
@@ -134,8 +136,9 @@ Poses:
       Head and neck supported. Legs extended or bent, arms opening wide with palms up.
 
       **Yin Reminder:** Support is essential — this pose should feel *held*, not strained.
-
-      **Rebound:** Shavasana or constructive rest – 1 minute.
+    Rebound:
+      Description: Shavasana or constructive rest
+      Duration: 1
     Meridians:
       - Heart
       - Lung
@@ -174,8 +177,9 @@ Poses:
       **Full Swan:** 1 minute.
 
       **Sleeping Swan:** 3 minutes.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Liver
       - Gallbladder
@@ -190,8 +194,9 @@ Poses:
     Description: |
       From tabletop, keep hips over knees and slowly melt the chest toward the floor.
       Forehead or chin rests on support. Arms extended or bent.
-
-      **Rebound:** Child's Pose – 1 minute.
+    Rebound:
+      Description: Child's Pose
+      Duration: 1
     Meridians:
       - Lung
       - Heart
@@ -208,8 +213,9 @@ Poses:
       Arms may open wide or rest on the belly and heart.
 
       Feel the breath gently lifting the heart.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Heart
       - Lung
@@ -225,8 +231,9 @@ Poses:
     Description: |
       Draw knees in, send right knee to the left, supported by bolster.
       Left leg relaxed long. Shoulders heavy.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Gallbladder
       - Urinary Bladder
@@ -241,8 +248,9 @@ Poses:
     Duration: 3
     Description: |
       Repeat on opposite side.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Gallbladder
       - Urinary Bladder

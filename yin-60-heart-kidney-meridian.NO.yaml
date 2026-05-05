@@ -26,8 +26,9 @@ Poses:
     Duration: 3
     Description: |
       Stående fremoverfold – Yin-versjon. Forankre nervesystemet før du åpner brystet og pusten.
-
-      **Rebound:** Konstruktiv hvile eller stående pause – 1–2 minutter.
+    Rebound:
+      Description: Konstruktiv hvile eller stående pause
+      Duration: 1
     Meridians:
       - Urinblære
       - Nyre
@@ -46,8 +47,9 @@ Poses:
     Duration: 3
     Description: |
       Skaper stabilitet og forankring – som forberedelse til hjerte-åpning senere.
-
-      **Rebound:** Sittende stillhet – 1 minutt.
+    Rebound:
+      Description: Sittende stillhet
+      Duration: 1
     Meridians:
       - Nyre
       - Lever
@@ -138,8 +140,9 @@ Poses:
       Hodet og nakken støttet. Bena strakt eller bøyd, armene åpner seg vidt med håndflatene opp.
 
       **Yin-påminnelse:** Støtte er essensielt – denne stillingen skal føles *holdt*, ikke anstrengt.
-
-      **Rebound:** Shavasana eller konstruktiv hvile – 1 minutt.
+    Rebound:
+      Description: Shavasana eller konstruktiv hvile
+      Duration: 1
     Meridians:
       - Hjerte
       - Lunge
@@ -178,8 +181,9 @@ Poses:
       **Full svane:** 1 minutt.
 
       **Sovende svane:** 3 minutter.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Lever
       - Galleblære
@@ -194,8 +198,9 @@ Poses:
     Description: |
       Fra bordhunds positur, hold hoftene over knærne og smelt sakte brystet mot gulvet.
       Panne eller hake hviler på støtte. Armene strakte eller bøyde.
-
-      **Rebound:** Barnets positur – 1 minutt.
+    Rebound:
+      Description: Barnets positur
+      Duration: 1
     Meridians:
       - Lunge
       - Hjerte
@@ -212,8 +217,9 @@ Poses:
       Armene kan åpne seg vidt eller hvile på magen og hjertet.
 
       Kjenn pusten som forsiktig løfter hjertet.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Hjerte
       - Lunge
@@ -229,8 +235,9 @@ Poses:
     Description: |
       Trekk knærne inn, send høyre kne til venstre, støttet av bolster.
       Venstre bein avslappet og langt. Skuldrene tunge.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Galleblære
       - Urinblære
@@ -245,8 +252,9 @@ Poses:
     Duration: 3
     Description: |
       Gjenta på motsatt side.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Galleblære
       - Urinblære

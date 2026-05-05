@@ -6,6 +6,7 @@ export const translations = {
     col_sensation:    'Sensation',
     detail_sensation: 'Sensation',
     detail_alternative: 'Alternative',
+    detail_rebound:     'Rebound',
     col_session:      'Session',
   },
   no: {
@@ -15,6 +16,7 @@ export const translations = {
     col_sensation:    'Sensasjon',
     detail_sensation: 'Sensasjon',
     detail_alternative: 'Alternativ',
+    detail_rebound:     'Rebound',
     col_session:      'Økt',
   },
   es: {
@@ -24,6 +26,7 @@ export const translations = {
     col_sensation:    'Sensación',
     detail_sensation: 'Sensación',
     detail_alternative: 'Alternativa',
+    detail_rebound:     'Rebote',
     col_session:      'Sesión',
   },
 }

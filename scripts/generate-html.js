@@ -74,6 +74,11 @@ function renderPose(pose, t) {
         <div class="mobile-info">
           ${pose.Sensation ? `<div class="alt-section"><h4>${t('detail_sensation')}</h4><ul>${pose.Sensation.map(s => `<li>${s}</li>`).join('')}</ul></div>` : ''}
         </div>
+        ${pose.Rebound ? `
+        <div class="alt-section">
+          <h4>${t('detail_rebound')} – ${pose.Rebound.Duration} min</h4>
+          <p>${pose.Rebound.Description}</p>
+        </div>` : ''}
         ${pose.Alternatives ? pose.Alternatives.map(a => `
         <div class="alt-section">
           <h4>${t('detail_alternative')}: ${a.Name}</h4>

@@ -57,10 +57,11 @@ Poses:
           • Stillhet i sinnet
 
       **Yin-påminnelse:** Ubehag er greit. Smerte er et signal om å justere eller komme ut av stillingen.
-
-      ### Rebound – 1–2 minutter
+    Rebound:
+      Description: |
         Stå langsomt opp, stakk ryggraden, eller hvil i konstruktiv hvile.
         Legg merke til varme, pulsering eller subtil bevegelse langs ryggraden og bena.
+      Duration: 1
 
 
 
@@ -204,8 +205,9 @@ Poses:
       **Full svane:** 1 minutt. Bli løftet på hender.
 
       **Sovende svane:** 3 minutter. Fold overkroppen forover.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Lever
       - Nyre
@@ -221,8 +223,9 @@ Poses:
     Duration: 5
     Description: |
       Ligg på ryggen med en bolster på langs under ryggraden. Fotsålene mot hverandre, knærne støttet.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Hjerte
       - Lunge
@@ -237,8 +240,9 @@ Poses:
     Duration: 3
     Description: |
       Trekk knærne inn, send høyre kne til venstre, støttet av bolster. Venstre bein avslappet og langt. Skuldrene tunge.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Galleblære
       - Urinblære
@@ -254,8 +258,9 @@ Poses:
     Duration: 3
     Description: |
       Gjenta på motsatt side.
-
-      **Rebound:** Shavasana – 1 minutt.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Galleblære
       - Urinblære

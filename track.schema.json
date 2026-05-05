@@ -66,6 +66,26 @@
           "description": "Alternative versions of the pose",
           "items": { "$ref": "#/$defs/Alternative" },
           "minItems": 0
+        },
+        "Rebound": {
+          "$ref": "#/$defs/Rebound"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Rebound": {
+      "type": "object",
+      "required": ["Description", "Duration"],
+      "description": "Rebound/integration movement after the pose",
+      "properties": {
+        "Description": {
+          "type": "string",
+          "description": "What to do during the rebound"
+        },
+        "Duration": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Duration of the rebound in minutes"
         }
       },
       "additionalProperties": false

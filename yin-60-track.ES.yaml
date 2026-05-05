@@ -57,10 +57,11 @@ Poses:
           • Aquietamiento de la mente
 
       **Recordatorio Yin:** La incomodidad está bien. El dolor es una señal para ajustar o salir de la postura.
-
-      ### Rebote – 1–2 minutos
+    Rebound:
+      Description: |
         Levántate lentamente apilando la columna, o descansa en descanso constructivo.
         Observa el calor, la pulsación o el movimiento sutil a lo largo de la columna y las piernas.
+      Duration: 1
 
 
 
@@ -204,8 +205,9 @@ Poses:
       **Cisne completo:** 1 minuto. Permanece levantado sobre las manos.
 
       **Cisne durmiente:** 3 minutos. Dobla el torso hacia adelante.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Hígado
       - Riñón
@@ -221,8 +223,9 @@ Poses:
     Duration: 5
     Description: |
       Recuéstate boca arriba con un bolster a lo largo debajo de la columna. Plantas de los pies juntas, rodillas apoyadas.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Corazón
       - Pulmón
@@ -237,8 +240,9 @@ Poses:
     Duration: 3
     Description: |
       Lleva las rodillas hacia adentro, envía la rodilla derecha a la izquierda, apoyada por el bolster. Pierna izquierda relajada y larga. Hombros pesados.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Vesícula Biliar
       - Vejiga Urinaria
@@ -254,8 +258,9 @@ Poses:
     Duration: 3
     Description: |
       Repite en el lado contrario.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Vesícula Biliar
       - Vejiga Urinaria

@@ -22,7 +22,7 @@ Poses:
     Description: |
       Arrive in stillness. Allow the body to settle and the breath to soften.
       Invite participants to set an intention for the practice — a word, quality, or simple presence.
-      
+
       **Focus:**  
       • Breath awareness
       • Grounding
@@ -46,21 +46,22 @@ Poses:
       on blocks, a bolster, or hang freely.
 
       This is a passive shape — allow gravity to create gentle traction through the spine.
-      
+
       **Meridians & Energetic Focus:**  
         • Primary: Urinary Bladder, Kidney
         • Secondary: Nervous system (parasympathetic)
-          
+
       **Sensation & Awareness:**
           • Hamstrings, calves, spine, lower back
           • Gentle spinal decompression
           • Quieting of the mind
 
       **Yin Reminder:** Discomfort is okay. Pain is a signal to adjust or come out.
-      
-      ### Rebound – 1–2 minutes  
+    Rebound:
+      Description: |
         Stand slowly, stacking the spine, or rest in constructive rest.
         Notice warmth, pulsation, or subtle movement along the spine and legs.
+      Duration: 1
 
 
 
@@ -203,8 +204,9 @@ Poses:
       **Full Swan:** 1 minute. Stay lifted on hands.
 
       **Sleeping Swan:** 3 minutes. Fold the torso forward.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Liver
       - Kidney
@@ -220,8 +222,9 @@ Poses:
     Duration: 5
     Description: |
       Lie on the back with a bolster lengthwise under the spine. Soles of feet together, knees supported.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Heart
       - Lung
@@ -236,8 +239,9 @@ Poses:
     Duration: 3
     Description: |
       Draw knees in, send right knee left, supported by bolster. Left leg relaxed long. Shoulders heavy.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Gallbladder
       - Urinary Bladder
@@ -253,8 +257,9 @@ Poses:
     Duration: 3
     Description: |
       Repeat on opposite side.
-
-      **Rebound:** Shavasana – 1 minute.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Gallbladder
       - Urinary Bladder

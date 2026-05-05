@@ -26,8 +26,9 @@ Poses:
     Duration: 3
     Description: |
       Flexión de pie hacia adelante – versión Yin. Arraiga el sistema nervioso antes de abrir el pecho y la respiración.
-
-      **Rebote:** Descanso constructivo o pausa de pie – 1–2 minutos.
+    Rebound:
+      Description: Descanso constructivo o pausa de pie
+      Duration: 1
     Meridians:
       - Vejiga Urinaria
       - Riñón
@@ -42,8 +43,9 @@ Poses:
     Duration: 3
     Description: |
       Crea estabilidad y arraigo – preparando para la apertura del corazón más adelante.
-
-      **Rebote:** Quietud sentada – 1 minuto.
+    Rebound:
+      Description: Quietud sentada
+      Duration: 1
     Meridians:
       - Riñón
       - Hígado
@@ -134,8 +136,9 @@ Poses:
       Cabeza y cuello apoyados. Piernas extendidas o dobladas, brazos abriéndose ampliamente con las palmas hacia arriba.
 
       **Recordatorio Yin:** El apoyo es esencial – esta postura debe sentirse *sostenida*, no forzada.
-
-      **Rebote:** Shavasana o descanso constructivo – 1 minuto.
+    Rebound:
+      Description: Shavasana o descanso constructivo
+      Duration: 1
     Meridians:
       - Corazón
       - Pulmón
@@ -174,8 +177,9 @@ Poses:
       **Cisne completo:** 1 minuto.
 
       **Cisne durmiente:** 3 minutos.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Hígado
       - Vesícula Biliar
@@ -190,8 +194,9 @@ Poses:
     Description: |
       Desde la postura de la mesa, mantén las caderas sobre las rodillas y derrite lentamente el pecho hacia el suelo.
       La frente o el mentón descansan sobre un apoyo. Los brazos extendidos o doblados.
-
-      **Rebote:** Postura del niño – 1 minuto.
+    Rebound:
+      Description: Postura del niño
+      Duration: 1
     Meridians:
       - Pulmón
       - Corazón
@@ -208,8 +213,9 @@ Poses:
       Los brazos pueden abrirse ampliamente o descansar sobre el vientre y el corazón.
 
       Siente la respiración levantando suavemente el corazón.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Corazón
       - Pulmón
@@ -225,8 +231,9 @@ Poses:
     Description: |
       Lleva las rodillas hacia adentro, envía la rodilla derecha a la izquierda, apoyada por el bolster.
       Pierna izquierda relajada y larga. Hombros pesados.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Vesícula Biliar
       - Vejiga Urinaria
@@ -241,8 +248,9 @@ Poses:
     Duration: 3
     Description: |
       Repite en el lado contrario.
-
-      **Rebote:** Shavasana – 1 minuto.
+    Rebound:
+      Description: Shavasana
+      Duration: 1
     Meridians:
       - Vesícula Biliar
       - Vejiga Urinaria
