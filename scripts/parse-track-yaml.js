@@ -32,6 +32,7 @@ if (yamlFiles.length === 0) {
 
 fs.mkdirSync(generatedDir, { recursive: true })
 
+const warnings = []
 let allOk = true
 for (const file of yamlFiles) {
   const inputPath = path.join(root, file)
@@ -63,13 +64,19 @@ for (const file of yamlFiles) {
   if (poseTotal !== stated) {
     const sign   = poseTotal > stated ? `+${poseTotal - stated}` : `${poseTotal - stated}`
     const noInfo = posesWithout.length ? ` (${posesWithout.length} pose(s) have no duration: ${posesWithout.map(p => p.Name).join(', ')})` : ''
-    console.warn(`  ⚠ ${file}: pose durations sum to ${poseTotal} min, stated track duration is ${stated} min (${sign})${noInfo}`)
+    warnings.push(`  ⚠ ${file}: pose durations sum to ${poseTotal} min, stated track duration is ${stated} min (${sign})${noInfo}`)
   }
 
   const outName = file.replace(/\.ya?ml$/, '.json')
   const outPath = path.join(generatedDir, outName)
   fs.writeFileSync(outPath, JSON.stringify(result, null, 2))
   console.log(`✓ ${file}  →  generated/${outName}`)
+}
+
+if (warnings.length > 0) {
+  console.warn('---')
+  for (const w of warnings) console.warn(w)
+  console.warn('---')
 }
 
 process.exit(allOk ? 0 : 1)
