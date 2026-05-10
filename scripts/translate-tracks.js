@@ -53,9 +53,10 @@ ${noContent}`
 
   return new Promise((resolve, reject) => {
     const start = Date.now()
-    console.error(`  [claude] spawning process`)
+    const args = ['--print', '--dangerously-skip-permissions']
+    console.error(`  [claude] command: claude ${args.join(' ')}`)
 
-    const proc = spawn('claude', ['--print', '--dangerously-skip-permissions'], {
+    const proc = spawn('claude', args, {
       stdio: ['pipe', 'pipe', 'pipe'],
     })
 
