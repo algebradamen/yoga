@@ -73,9 +73,19 @@ function renderPose(pose, t) {
       <div class="detail-inner">
         <h3>${pose.Name}</h3>
         ${pose.Description ? `<div>${md.render(pose.Description)}</div>` : ''}
+        ${pose.Instructions ? `
+        <div class="alt-section">
+          <h4>${t('detail_instructions')}</h4>
+          <div>${md.render(pose.Instructions)}</div>
+        </div>` : ''}
         <div class="mobile-info">
           ${pose.Sensation ? `<div class="alt-section"><h4>${t('detail_sensation')}</h4><ul>${pose.Sensation.map(s => `<li>${s}</li>`).join('')}</ul></div>` : ''}
         </div>
+        ${pose.Transition ? `
+        <div class="alt-section">
+          <h4>${t('detail_transition')}</h4>
+          <p>${pose.Transition}</p>
+        </div>` : ''}
         ${pose.Rebound ? `
         <div class="alt-section">
           <h4>${t('detail_rebound')} – ${pose.Rebound.Duration} min</h4>
