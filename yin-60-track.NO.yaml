@@ -90,7 +90,9 @@ Poses:
       Ligger på ryggen med et bolster under ryggen på langs, knærne ut til siden
       mens en har fotsålene samlet. La brystet åpne seg. Bygg gjerne opp med blokker under knærne for mer støtte og åpning. 
 
-      **Rebound:** Ligge på siden i 0,5 min.
+    Rebound:
+      Description: Ligge på siden i fosterstilling før du setter deg opp i sittende posisjon.
+      Duration: 0,5
     Meridians:
       - Hjerte
       - Lunge
@@ -107,7 +109,9 @@ Poses:
       Håndflaten vender nedover og armene er strakt plassert under bekkenet. Len hodet bakover. 
       La brystet åpne seg og pusten bevege seg inn i hjerterommet.
 
-      **Rebound:** Ligge flatt på ryggen i 0,5 min. Observer pusten og hvordan kroppen føles etter fiskeposisjonen.
+    Rebound:
+      Description: Ligge flatt på ryggen. Observer pusten og hvordan kroppen føles etter fiskeposisjonen.
+      Duration: 0,5
     Meridians:
       - Hjerte
       - Lunge
@@ -115,19 +119,22 @@ Poses:
       - Ekspansjon i brystet
       - Åpning av halsen
       - Pusten dypner naturlig
+    Transition: Fra shavasana legg deg på magen og forbered deg på sfinksposisjonen.
 
 
 
   - Name: Sfinks
     Duration: 4
+    Description: |
+      Ligg på magen. Plasser albuene litt foran skuldrene og hvil på underarmene.
+      La magen smelte mot gulvet. Kjenn hvordan det føles i nedre korsrygg. hvis "sensasjonen" er for dyp, flytt albuene litt fremover for mindre kompresjon, eller trekk dem litt tilbake for mer kompresjon.
+      Du kan gjerne bygge opp med en bolster under brystet for mer støtte og en mykere åpning.
+
+      Legg merke til pusten som beveger seg inn i de øvre ribbeina og hjerterommet.
     Rebound:
       Description: Ligg flat på magen, snu hodet mot høyre og dra høyre kne oppover langs gulvet
       Duration: 1
-    Description: |
-      Ligg på magen. Plasser albuene litt foran skuldrene og hvil på underarmene.
-      La magen mykne mot gulvet.
-
-      Legg merke til pusten som beveger seg inn i de øvre ribbeina og hjerterommet.
+    
     Meridians:
       - Urinblære
       - Nyre
@@ -139,15 +146,14 @@ Poses:
       - Pustkontakt i øvre ribbein
 
 
-
   - Name: Sfinks – Sel-variant
     Duration: 4
-    Rebound:
-      Description: Ligg flat på magen, snu hodet mot venstre og dra venstre kne oppover langs gulvet
-      Duration: 1
     Description: |
       Rett armene mer ut for en dypere ryggbøy og kompresjon.
       Hold skuldrene avslappet ned fra ørene.
+    Rebound:
+      Description: Ligg flat på magen, snu hodet mot venstre og dra venstre kne oppover langs gulvet
+      Duration: 1
     Meridians:
       - Urinblære
       - Nyre
@@ -157,16 +163,16 @@ Poses:
       - Dypere korsryggkompresjon
       - Åpning av mageregionen
       - Varmefølelse i kjernen
-
+    Transition: Rull over på ryggen og forbered deg på støttet bro. Legg en bolster eller blokk under korsbenet for støtte.
 
 
   - Name: Støttet bro
     Duration: 4
-    Description: |
-      Legg en blokk under korsbenet for støttet bro.
-      La kroppen synke ned i blokken og pust inn langs ryggen.
+    Description: 
+      Start liggende på ryggen med bøyde knær.Løft hoftene nok til å legge en blokk under korsbenet for støttet bro.
+      La kroppen synke ned i blokken og pust inn langs ryggen. Nå kan du holde armene ut til siden og gå fottene fra bekkenet for å strekke dem ut. 
 
-      **Rebound:** Ta ut blokken og klem knærne inn mot hverandre i 0,5 min.
+    Rebound: Ta ut blokken og klem knærne inn mot hverandre i 0,5 min.
     Meridians:
       - Nyre
       - Urinblære
