@@ -180,20 +180,25 @@ Poses:
       - Åpning av hoftefleksorer
       - Støtte i sakrumregionen
       - Ro i nedre rygg
-
+    Transition: Rull over på magen og forbered deg på svaneposisjonen.
 
 
   - Name: "Svane – Høyre side"
     Duration: 5
-    Rebound:
-      Description: Barnets positur
-      Duration: 1
     Description: |
-      Bring høyre kne frem og ut til siden, venstre bein strekkes bak.
+      Stå i hunden som ser ned. Strekk ut høyre bein og bring høyre kne frem mellom armene og len ut til høyre siden. 
+      Ta en sjekk på hvordan det kjenens i kneet ditt. Hvis det kjennes bra i kneet, kan du flekse right fot og la hælen være i gulvet. 
+      Hvis det kjennes ubehagelig i kneet, kan du holde foten flekset og la hælen løfte seg litt fra gulvet.
+      Venstre bein strekkes bak med tærne i gulvet. La overkroppen lene seg fremover og la armene støtte deg.
+      Hvis du vil ha en dypere åpning kan du prøve full svane ved å løfte deg opp på hendene og la kompresjonen i hoften øke. Hvis du ønsker en mer rolig og meditativ åpning, kan du prøve sovende svane ved å fold overkroppen forover over det fremre benet.
 
       **Full svane:** 3 minutter. Bli løftet på hender, kompresjon i høyre hofte.
 
       **Sovende svane:** 1 minutt. Fold overkroppen forover over det fremre benet.
+    Rebound:
+      Description: Barnets stilling
+      Duration: 1
+    
     Meridians:
       - Galleblære
       - Lever
@@ -206,32 +211,40 @@ Poses:
 
   - Name: "Svane – Venstre side"
     Duration: 5
-    Rebound:
-      Description: Barnets positur
-      Duration: 1
     Description: |
-      Gjenta på venstre side.
+      Stå i hunden som ser ned. Strekk ut venstre bein og bring venstre kne frem mellom armene og len ut til venstre siden.
+      Ta en sjekk på hvordan det kjenens i kneet ditt. Hvis det kjennes bra i kneet, kan du flekse venstre fot og la hælen være i gulvet. 
+      Hvis det kjennes ubehagelig i kneet, kan du holde foten flekset og la hælen løfte seg litt fra gulvet.
+      Høyre bein strekkes bak med tærne i gulvet. La overkroppen lene seg fremover og la armene støtte deg.
+      Hvis du vil ha en dypere åpning kan du prøve full svane ved å løfte deg opp på hendene og la kompresjonen i hoften øke. Hvis du ønsker en mer rolig og meditativ åpning, kan du prøve sovende svane ved å fold overkroppen forover over det fremre benet.
+      **Full svane:** 3 minutter. Bli løftet på hender, kompresjon i venstre hofte.
 
-      **Full svane:** 3 minutter.
+      **Sovende svane:** 1 minutt. Fold overkroppen forover over det fremre benet.
 
-      **Sovende svane:** 1 minutt.
-    Meridians:
+    Rebound:
+      Description: Barnets stilling
+      Duration: 1
+        Meridians:
       - Galleblære
       - Lever
     Sensation:
       - Dyp hofteåpning
       - Emosjonell frigjøring
       - Rotasjon i hofteleddet
+    Transition: Rull over og legg deg på ryggen for å forberede deg på Recline twist. Gjør klar en bolster på høyre side av kroppen for støtte under vridningen.  
 
 
-
-  - Name: "Liggende vridning – Høyre side"
+  - Name: "Recline twist – Høyre side"
     Duration: 3
     Description: |
-      Trekk knærne inn og send høyre kne til venstre, gjerne støttet av bolster.
-      Skuldrene tunge mot gulvet.
+      Trekk knærne inn mot brystet og send venstre kne til høyre side av kroppen, gjerne støttet av bolster.
+      Åpne dine armer ut som to vinger og la tyngden av knærne og overkroppen skape en mild vridning i ryggraden. 
+      La hodet hvile mot gulvet eller vend det i motsatt retning av knærne for en dypere vridning.
+      Begge skuldrene er hviler gulvet.
 
-      **Rebound:** Shavasana 0,5 min.
+    Rebound:
+      Description: Shavasana, observer pusten og hvordan kroppen føles etter vridningen.
+      Duration: 0.5
     Meridians:
       - Galleblære
       - Urinblære
@@ -244,12 +257,16 @@ Poses:
 
 
 
-  - Name: "Liggende vridning – Venstre side"
+  - Name: "Recline twist – Venstre side"
     Duration: 3
     Description: |
-      Gjenta på motsatt side.
-
-      **Rebound:** Shavasana 0,5 min.
+      Trekk knærne inn mot brystet og send høyre kne til venstre side av kroppen, gjerne støttet av bolster.
+      Åpne dine armer ut som to vinger og la tyngden av knærne og overkroppen skape en mild vridning i ryggraden. 
+      La hodet hvile mot gulvet eller vend det i motsatt retning av knærne for en dypere vridning.
+      Begge skuldrene er hviler gulvet.
+    Rebound:
+      Description: Shavasana, observer pusten og hvordan kroppen føles etter vridningen.
+      Duration: 0.5
     Meridians:
       - Galleblære
       - Urinblære
@@ -265,8 +282,9 @@ Poses:
   - Name: Shavasana
     Duration: 8
     Description: |
-      Total hvile. Inviter mykhet bak hjertet og en lett, uanstrengt pust.
-      La effektene av øvelsen integreres fullt ut.
+      Tid for å hvile. Shavasan er avslutnign av din praksis en naturlig del av reisen. La kroppen synke ned i underlaget og la pusten være naturlig og uanstrengt.
+        La kroppen og sinnet smelte sammen. Legg merke til energien og det som har åpnet seg i løpet av praksisen. 
+        Kjenn hvordan det føles å være i kroppen din akkurat nå, og la en følelse av takknemlighet for deg selv og din praksis vokse frem.
     Sensation:
       - Full hvile og integrasjon
       - Uanstrengt pust
