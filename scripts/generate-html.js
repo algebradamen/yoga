@@ -4,6 +4,7 @@
  * Reads all `.json` files from the `generated/` directory (produced by
  * `parse-track-yaml.js`), renders each track into a full HTML page with a
  * pose table, and writes the output to `dist/<track-name>/index.html`.
+ * Locale variants (e.g. `track.NO.json`) are written as `index.no.html` etc.
  * Also renders a `dist/index.html` listing all tracks.
  *
  * Usage: `node scripts/generate-html.js`
@@ -12,18 +13,51 @@
 import fs from 'fs'
 import path from 'path'
 import markdownit from 'markdown-it'
+import { makeT } from './i18n.js'
 
 const md = markdownit()
 const root = path.resolve('./scripts', '..')
 const generatedDir = path.join(root, 'generated')
 const distDir = path.join(root, 'dist')
 
-function renderPose(pose) {
+// Locale metadata: display label and html lang attribute
+const LOCALES = {
+  en: { label: 'EN', lang: 'en' },
+  no: { label: 'NO', lang: 'no' },
+  es: { label: 'ES', lang: 'es' },
+}
+
+function localeOutputFile(locale) {
+  return locale === 'no' ? 'index.html' : `index.${locale}.html`
+}
+
+// Parse a JSON filename into { baseName, locale }
+// e.g. "yin-60-track.NO.json" → { baseName: "yin-60-track", locale: "no" }
+// e.g. "yin-60-track.json"    → { baseName: "yin-60-track", locale: "en" }
+function parseFilename(file) {
+  const noExt = file.replace(/\.json$/, '')
+  const match = noExt.match(/\.([A-Z]{2})$/)
+  if (match) {
+    return { baseName: noExt.slice(0, -(match[0].length)), locale: match[1].toLowerCase() }
+  }
+  return { baseName: noExt, locale: 'en' }
+}
+
+// basePath must be root-relative and end with '/' (e.g. '/' or '/yin-60-track/')
+// so links work regardless of whether the browser URL has a trailing slash.
+function renderLangSwitcher(availableLocales, currentLocale, basePath) {
+  return availableLocales.map(locale => {
+    const { label } = LOCALES[locale] ?? { label: locale.toUpperCase() }
+    const href = basePath + localeOutputFile(locale)
+    return locale === currentLocale
+      ? `<a href="${href}" class="active" aria-current="page">${label}</a>`
+      : `<a href="${href}">${label}</a>`
+  }).join('\n    ')
+}
+
+function renderPose(pose, t) {
   const meridianBadges = Array.isArray(pose.Meridians)
     ? pose.Meridians.map(m => `<span class="badge badge-meridian">${m}</span>`).join('')
-    : ''
-  const altBadge = pose.Alternatives
-    ? `<span class="badge badge-alt">${pose.Alternatives.Name}</span>`
     : ''
   return `
     <details class="pose-item">
@@ -33,28 +67,35 @@ function renderPose(pose) {
           ${pose.Name}
         </div>
         <span class="col-duration duration-cell">${pose.Duration ? pose.Duration + ' min' : ''}</span>
-        <div class="col-alternatives badges">${altBadge}</div>
         <div class="col-meridians badges">${meridianBadges}</div>
-        <span class="col-sensation sensation-cell">${pose.Sensation || ''}</span>
+        <span class="col-sensation sensation-cell">${pose.Sensation ? pose.Sensation.join(' · ') : ''}</span>
       </summary>
       <div class="detail-inner">
         <h3>${pose.Name}</h3>
         ${pose.Description ? `<div>${md.render(pose.Description)}</div>` : ''}
         <div class="mobile-info">
-          ${pose.Sensation ? `<div class="alt-section"><h4>Sensation</h4><p>${pose.Sensation}</p></div>` : ''}
+          ${pose.Sensation ? `<div class="alt-section"><h4>${t('detail_sensation')}</h4><ul>${pose.Sensation.map(s => `<li>${s}</li>`).join('')}</ul></div>` : ''}
         </div>
-        ${pose.Alternatives ? `
+        ${pose.Rebound ? `
         <div class="alt-section">
-          <h4>Alternative: ${pose.Alternatives.Name}</h4>
-          ${pose.Alternatives.Description ? `<div class="alt-item">${md.render(pose.Alternatives.Description)}</div>` : ''}
+          <h4>${t('detail_rebound')} – ${pose.Rebound.Duration} min</h4>
+          <p>${pose.Rebound.Description}</p>
         </div>` : ''}
+        ${pose.Alternatives ? pose.Alternatives.map(a => `
+        <div class="alt-section">
+          <h4>${t('detail_alternative')}: ${a.Name}</h4>
+          ${a.Description ? `<div class="alt-item">${md.render(a.Description)}</div>` : ''}
+        </div>`).join('') : ''}
       </div>
     </details>`
 }
 
-function renderTrack(track) {
+function renderTrack(track, locale, availableLocales, baseName, warnings) {
+  const { lang } = LOCALES[locale] ?? { lang: locale }
+  const t = makeT(locale, warnings)
+  const langSwitcher = renderLangSwitcher(availableLocales, locale, `/${baseName}/`)
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,26 +108,29 @@ function renderTrack(track) {
 <div class="deco-top" aria-hidden="true">
   <img src="../images/deco-top.svg" width="340" height="60" alt=""/>
   <nav class="lang-switcher" aria-label="Language">
-    <a href="index.html" class="active" aria-current="page">EN</a>
-    <a href="index.no.html">NO</a>
+    ${langSwitcher}
   </nav>
 </div>
 
 <!-- ===== MAIN ===== -->
 <main>
-  <h1>${track.Name} – ${track.Duration} min</h1>
+  <div class="page-header">
+    <h1>${track.Name} – ${track.Duration} min</h1>
+    <button class="print-btn" onclick="window.print()" title="${t('print_tooltip')}" aria-label="${t('print_tooltip')}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    </button>
+  </div>
   ${track.Description ? `<div class="subtitle">${md.render(track.Description)}</div>` : ''}
 
   <div class="pose-table-wrapper">
     <div class="pose-header">
-      <span class="col-pose">Pose</span>
-      <span class="col-duration">Duration</span>
-      <span class="col-alternatives">Alternatives</span>
-      <span class="col-meridians">Meridians</span>
-      <span class="col-sensation">Sensation</span>
+      <span class="col-pose">${t('col_pose')}</span>
+      <span class="col-duration">${t('col_duration')}</span>
+      <span class="col-meridians">${t('col_meridians')}</span>
+      <span class="col-sensation">${t('col_sensation')}</span>
     </div>
 
-    ${track.Poses.map(pose => renderPose(pose)).join('')}
+    ${track.Poses.map(pose => renderPose(pose, t)).join('')}
 
   </div>
 </main>
@@ -100,16 +144,22 @@ function renderTrack(track) {
 </html>`
 }
 
-function renderIndex(tracks) {
-  const items = tracks
-    .map(({ name, track }) => `
-    <div class="pose-item" style="padding: 0.75rem 1rem;">
-      <a href="${name}/">${track.Name}</a>
-    </div>`)
+function renderIndex(tracks, locale, availableLocales, warnings) {
+  const { lang } = LOCALES[locale] ?? { lang: locale }
+  const langSwitcher = renderLangSwitcher(availableLocales, locale, '/')
+  const cards = tracks
+    .map(({ baseName, track }) => `
+  <a class="session-card" href="${baseName}/${localeOutputFile(locale)}">
+    <div class="session-card-header">
+      <h2>${track.Name}</h2>
+      <span class="session-duration">${track.Duration} min</span>
+    </div>
+    ${track.Description ? `<div class="session-card-description">${md.render(track.Description)}</div>` : ''}
+  </a>`)
     .join('')
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,17 +172,16 @@ function renderIndex(tracks) {
 <!-- ===== TOP DECORATION ===== -->
 <div class="deco-top" aria-hidden="true">
   <img src="images/deco-top.svg" width="340" height="60" alt=""/>
+  <nav class="lang-switcher" aria-label="Language">
+    ${langSwitcher}
+  </nav>
 </div>
 
 <!-- ===== MAIN ===== -->
 <main>
   <h1>Edita's Yoga &amp; Pilates Sessions</h1>
-
-  <div class="pose-table-wrapper">
-    <div class="pose-header" style="grid-template-columns: 1fr;">
-      <span class="col-pose">Session</span>
-    </div>
-    ${items}
+  <div class="session-grid">
+    ${cards}
   </div>
 </main>
 
@@ -154,23 +203,67 @@ if (jsonFiles.length === 0) {
   process.exit(0)
 }
 
+// Clean dist so stale locale files from deleted/renamed tracks don't linger
+fs.rmSync(distDir, { recursive: true, force: true })
 fs.mkdirSync(distDir, { recursive: true })
 
-const tracks = []
+// Group files by base track name, collecting locale variants
+// groups: Map<baseName, Map<locale, track>>
+const groups = new Map()
 for (const file of jsonFiles) {
+  const { baseName, locale } = parseFilename(file)
   const track = JSON.parse(fs.readFileSync(path.join(generatedDir, file), 'utf-8'))
-  const name = file.replace(/\.json$/, '')
-  const outDir = path.join(distDir, name)
-  fs.mkdirSync(outDir, { recursive: true })
-  const outPath = path.join(outDir, 'index.html')
-  fs.writeFileSync(outPath, renderTrack(track))
-  console.log(`✓ ${file}  →  dist/${name}/index.html`)
-  tracks.push({ name, track })
+  if (!groups.has(baseName)) groups.set(baseName, new Map())
+  groups.get(baseName).set(locale, track)
 }
 
-const indexPath = path.join(distDir, 'index.html')
-fs.writeFileSync(indexPath, renderIndex(tracks))
-console.log(`✓ index  →  dist/index.html`)
+// Render all locale variants for each track
+const warnings = []
+// groupsByLocale: Map<locale, Array<{ baseName, track }>>
+const groupsByLocale = new Map()
+
+for (const [baseName, localeMap] of groups) {
+  const outDir = path.join(distDir, baseName)
+  fs.mkdirSync(outDir, { recursive: true })
+
+  // Sort locales so EN comes first, then alphabetically
+  const availableLocales = [...localeMap.keys()].sort((a, b) =>
+    a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)
+  )
+
+  for (const [locale, track] of localeMap) {
+    const outFile = localeOutputFile(locale)
+    const outPath = path.join(outDir, outFile)
+    fs.writeFileSync(outPath, renderTrack(track, locale, availableLocales, baseName, warnings))
+    console.log(`✓ ${baseName}.${locale}  →  dist/${baseName}/${outFile}`)
+  }
+
+  // Collect each locale's track for the front page
+  for (const locale of localeMap.keys()) {
+    if (!groupsByLocale.has(locale)) groupsByLocale.set(locale, [])
+    groupsByLocale.get(locale).push({ baseName, track: localeMap.get(locale) })
+  }
+}
+
+// All locales that exist across all tracks, EN first
+const allLocales = [...groupsByLocale.keys()].sort((a, b) =>
+  a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)
+)
+
+// Render one front page per locale; each card links to that locale's track page
+for (const locale of allLocales) {
+  const indexTracks = groupsByLocale.get(locale)
+  const outFile = localeOutputFile(locale)
+  const indexPath = path.join(distDir, outFile)
+  fs.writeFileSync(indexPath, renderIndex(indexTracks, locale, allLocales, warnings))
+  console.log(`✓ index.${locale}  →  dist/${outFile}`)
+}
+
+if (warnings.length > 0) {
+  console.warn('---')
+  for (const w of warnings) console.warn(`  ⚠ ${w}`)
+  console.warn('---')
+}
 
 // Copy static assets into dist so it can be served independently
 function copyDir(src, dest) {
@@ -192,4 +285,3 @@ copyDir(stylesDir, path.join(distDir, 'styles'))
 console.log(`✓ styles/  →  dist/styles/`)
 copyDir(imagesDir, path.join(distDir, 'images'))
 console.log(`✓ images/  →  dist/images/`)
-

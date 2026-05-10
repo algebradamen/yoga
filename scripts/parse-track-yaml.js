@@ -30,8 +30,11 @@ if (yamlFiles.length === 0) {
   process.exit(0)
 }
 
+// Clean before regenerating so stale JSON from deleted/renamed YAML files don't persist
+fs.rmSync(generatedDir, { recursive: true, force: true })
 fs.mkdirSync(generatedDir, { recursive: true })
 
+const warnings = []
 let allOk = true
 for (const file of yamlFiles) {
   const inputPath = path.join(root, file)
@@ -61,15 +64,30 @@ for (const file of yamlFiles) {
   const poseTotal        = posesWithDuration.reduce((s, p) => s + p.Duration, 0)
   const stated           = result.Duration
   if (poseTotal !== stated) {
-    const sign   = poseTotal > stated ? `+${poseTotal - stated}` : `${poseTotal - stated}`
-    const noInfo = posesWithout.length ? ` (${posesWithout.length} pose(s) have no duration: ${posesWithout.map(p => p.Name).join(', ')})` : ''
-    console.warn(`  ⚠ ${file}: pose durations sum to ${poseTotal} min, stated track duration is ${stated} min (${sign})${noInfo}`)
+    const diff    = poseTotal - stated
+    const sign    = diff > 0 ? `+${diff}` : `${diff}`
+    const pct     = Math.round(Math.abs(diff) / stated * 100)
+    const noInfo  = posesWithout.length ? ` (${posesWithout.length} pose(s) have no duration: ${posesWithout.map(p => p.Name).join(', ')})` : ''
+    const msg     = `${file}: pose durations sum to ${poseTotal} min, stated track duration is ${stated} min (${sign}, ${pct}%)${noInfo}`
+    if (pct > 10) {
+      console.error(`✗ ${msg}`)
+      allOk = false
+      continue
+    } else {
+      warnings.push(`  ⚠ ${msg}`)
+    }
   }
 
   const outName = file.replace(/\.ya?ml$/, '.json')
   const outPath = path.join(generatedDir, outName)
   fs.writeFileSync(outPath, JSON.stringify(result, null, 2))
   console.log(`✓ ${file}  →  generated/${outName}`)
+}
+
+if (warnings.length > 0) {
+  console.warn('---')
+  for (const w of warnings) console.warn(w)
+  console.warn('---')
 }
 
 process.exit(allOk ? 0 : 1)
