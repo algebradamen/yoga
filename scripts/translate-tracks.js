@@ -30,7 +30,7 @@ import path from 'path'
 import { validateTrack } from './validate-track.js'
 
 const ROOT = new URL('..', import.meta.url).pathname
-const TIMEOUT_MS = 60_000
+const TIMEOUT_MS = 180_000
 
 const TARGETS = [
   { lang: 'English', outName: base => `${base}.EN.yaml` },
@@ -81,7 +81,7 @@ ${noContent}`
       else resolve(stdout.trim().replace(/^```ya?ml\s*/i, '').replace(/\s*```$/, ''))
     })
 
-    const timer = setTimeout(() => { proc.kill(); reject(new Error('timed out after 1 min')) }, TIMEOUT_MS)
+    const timer = setTimeout(() => { proc.kill(); reject(new Error('timed out after 3 min')) }, TIMEOUT_MS)
     proc.on('close', () => clearTimeout(timer))
 
     console.error(`  [claude] sending ${prompt.length} char prompt`)
