@@ -21,6 +21,23 @@ const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'))
 const ajv = new Ajv({ strict: false })
 const validate = ajv.compile(schema)
 
+function parseDuration(v) {
+  if (typeof v === 'number') return v
+  if (typeof v === 'string') {
+    const n = parseFloat(v.replace(',', '.'))
+    return isNaN(n) ? v : n
+  }
+  return v
+}
+
+function normalizeDurations(track) {
+  if (track.Duration != null) track.Duration = parseDuration(track.Duration)
+  for (const pose of track.Poses ?? []) {
+    if (pose.Duration != null) pose.Duration = parseDuration(pose.Duration)
+    if (pose.Rebound?.Duration != null) pose.Rebound.Duration = parseDuration(pose.Rebound.Duration)
+  }
+}
+
 // Find all .yaml files in the project root
 const yamlFiles = fs.readdirSync(root)
   .filter(f => f.endsWith('.yaml') || f.endsWith('.yml'))
@@ -48,6 +65,7 @@ for (const file of yamlFiles) {
     continue
   }
 
+  normalizeDurations(result)
   const valid = validate(result)
   if (!valid) {
     console.error(`✗ ${file}: schema validation failed`)

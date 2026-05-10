@@ -32,8 +32,9 @@ Poses:
     Description: |
       Stående fremoverfold – Yin-versjon. Forankrer nervesystemet
       før bryst og pust åpnes. La armene og hodet henge tungt.
-
-      **Rebound:** Stå oppreist i 0,5 min.
+    Rebound:
+      Duration: 0,5
+      Description: Stå oppreist.
     Meridians:
       - Urinblære
       - Nyre
@@ -172,7 +173,9 @@ Poses:
       Start liggende på ryggen med bøyde knær.Løft hoftene nok til å legge en blokk under korsbenet for støttet bro.
       La kroppen synke ned i blokken og pust inn langs ryggen. Nå kan du holde armene ut til siden og gå fottene fra bekkenet for å strekke dem ut. 
 
-    Rebound: Ta ut blokken og klem knærne inn mot hverandre i 0,5 min.
+    Rebound:
+      Description: Ta ut blokken og klem knærne inn mot hverandre i 0,5 min.
+      Duration: 0,5
     Meridians:
       - Nyre
       - Urinblære
