@@ -1,11 +1,11 @@
-Name: "Yin Yoga – 60 Minutes"
+Name: "Yin Yoga"
 Duration: 60
 Description: |
   **Theme:** Heart · Lung · Kidney · Urinary Bladder · Gallbladder
 
-  **Primary Meridians:** Heart, Lung
+  **Primary meridians:** Heart, Lung.
 
-  **Support:** Kidney, Urinary Bladder, Gallbladder, Liver
+  **Support:** Kidney, Urinary Bladder, Gallbladder, Liver.
 
 Poses:
 
@@ -14,38 +14,47 @@ Poses:
   - Name: Landing
     Duration: 5
     Description: |
-      Arrive in stillness in a comfortable seat or constructive rest.
-      Set an intention for the session and become aware of the breath.
-      Let body and mind tune in — without changing anything.
+      Welcome to this 60-minute Yin Yoga session. Find a comfortable position, perhaps on a bolster or cushion. Close your eyes and take a few deep breaths. Feel the contact with the ground and let your body land in the present moment.
+      Invite a sense of calm and presence. Set an intention for your practice today – what do you wish to open up to, or let go of?
+
+      We breathe in through the nose and breathe out through the nose. Let the breath be natural and effortless, and let the body soften with each exhale.
+      Today's practice focuses on opening the heart space and lungs, while supporting the kidneys and urinary bladder for a deeper sense of calm and grounding.
+
+      We take a few breaths and set our intention for the session before we om together three times and begin the practice. (a short pause with three breaths for the intention of the practice).
+      Breathe in before we om, and breathe out when we om, and repeat this three times.
     Sensation:
-      - Rest and presence
+      - Calm and presence
       - Breath awareness
       - Intention setting
 
 
 
-  - Name: Dangling (Standing Forward Fold)
+  - Name: Dangling
     Duration: 4
     Description: |
-      Standing forward fold — Yin version. Grounds the nervous system
-      before chest and breath open. Let arms and head hang heavy.
-
-      **Rebound:** Stand upright in stillness for 0.5 min.
+      Standing upright with feet a comfortable distance apart. Bend the knees and fold forward. Let the arms and head hang heavy.
+      Rest your hands on a bolster or blocks for support if you like. Let the weight of the head and arms draw you deeper into the fold, and feel how the spine releases and opens.
+    Rebound:
+      Duration: 0.5
+      Description: Bend the knees, release the arms and slowly stand up. Stand upright.
     Meridians:
       - Urinary Bladder
       - Kidney
     Sensation:
       - Spinal release
-      - Nervous system grounding
+      - Grounding of the nervous system
       - Opening of the back body
+    Transition: From standing to Squat. We stand upright and prepare to lower into a deep squat.
 
 
 
-  - Name: Supported Squat (Malasana)
+  - Name: Squat
     Duration: 3
     Description: |
-      Creates stability and grounding — preparation for heart opening.
-
+      Begin standing with feet hip-width apart, toes pointing slightly out. Bend the knees and lower into a deep squat. Let the elbows press the knees out to the sides to open the hips.
+      Keep the spine long and the chest open. Hold the hands in prayer position in front of the heart with the elbows pressing against the shins or knees. Let the weight of the body sink into the floor and feel a deep opening in the hips.
+      Creates stability and grounding – preparation for heart opening.
+    Adjustments: If it is challenging to keep the heels down, you can place a rolled-up mat or blanket under them for support.
       **Rebound:** Stand upright for 0.5 min.
     Meridians:
       - Liver
@@ -54,91 +63,100 @@ Poses:
       - Grounding
       - Pelvic stability
       - Inner thigh opening
+    Transition: From standing to Caterpillar. We sit down and stretch the legs out in front of us.
 
 
 
   - Name: Caterpillar
     Duration: 4
+    Description: |
+      Legs stretched forward, letting the upper body rest relaxed forward, perhaps on a bolster.
+      Releasing tension in the back and hips. No active stretching – let gravity do the work.
     Rebound:
       Description: Lie on the back (shavasana)
       Duration: 1
-    Description: |
-      Legs extended forward, letting the upper body rest relaxed forward, optionally on a bolster.
-      Release tension in the back and hips. No active pulling — let gravity do the work.
+
     Meridians:
       - Kidney
       - Urinary Bladder
     Sensation:
-      - Back and hip opening
-      - Release of the posterior chain
+      - Opening of back and hips
+      - Release in the posterior chain
       - Grounding
+    Transition: From shavasana we lie on our side and prepare for reclined butterfly. Place a bolster lengthwise under the back, and optionally build up with blocks if you need to come higher up.
 
 
 
   - Name: Reclined Butterfly (Supta Baddha Konasana)
     Duration: 4
     Description: |
-      Lie on the back with a bolster lengthwise under the spine, knees out to the sides
-      with soles of the feet together. Let the chest open.
+      Lying on the back with a bolster lengthwise under the back, knees out to the sides
+      while the soles of the feet are together. Let the chest open. Feel free to build up with blocks under the knees for more support and opening.
 
-      **Rebound:** Lie on the side for 0.5 min.
+    Rebound:
+      Description: Lie on the side in fetal position before sitting up to a seated position.
+      Duration: 0.5
     Meridians:
       - Heart
       - Lung
     Sensation:
       - Chest and heart opening
-      - Breath lifting the heart
+      - Breath that lifts the heart
       - Release in the groin
-
-
+    Transition: Roll onto the stomach and remove the bolster. Prepare for the fish pose.
 
   - Name: Fish
     Duration: 4
     Description: |
-      Opens the chest and throat. Support with a bolster under the upper back for a gentle Yin version.
-      Palms face up, arms open wide.
+      Opens the chest and throat. Feel free to support with a bolster under the upper back for a gentle Yin version.
+      Palms face downward and arms are stretched and placed under the pelvis. Tilt the head back.
+      Let the chest open and the breath move into the heart space.
 
-      **Rebound:** Lie flat on the back for 0.5 min.
+    Rebound:
+      Description: Lie flat on the back. Observe the breath and how the body feels after the fish pose.
+      Duration: 0.5
     Meridians:
       - Heart
       - Lung
     Sensation:
-      - Expansion across the chest
+      - Expansion in the chest
       - Opening of the throat
-      - Breath naturally deepening
+      - The breath naturally deepens
+    Transition: From shavasana lie on your stomach and prepare for the sphinx pose.
 
 
 
   - Name: Sphinx
     Duration: 4
-    Rebound:
-      Description: Lie flat on the belly, turn head to the right and draw the right knee up along the floor
-      Duration: 1
     Description: |
-      Lie on the belly. Place elbows slightly forward of the shoulders and rest on the forearms.
-      Let the belly soften toward the floor.
+      Lie on your stomach. Place the elbows slightly in front of the shoulders and rest on the forearms.
+      Let the belly melt toward the floor. Notice how it feels in the lower back. If the "sensation" is too deep, move the elbows slightly forward for less compression, or pull them slightly back for more compression.
+      You are welcome to build up with a bolster under the chest for more support and a gentler opening.
 
       Notice the breath moving into the upper ribs and heart space.
+    Rebound:
+      Description: Lie flat on the stomach, turn the head to the right and draw the right knee upward along the floor
+      Duration: 1
+
     Meridians:
       - Urinary Bladder
       - Kidney
       - Stomach
       - Spleen
     Sensation:
-      - Lower back compression
-      - Heart space opening
+      - Compression in the lower back
+      - Opening of the heart space
       - Breath awareness in the upper ribs
-
 
 
   - Name: Sphinx – Seal Variation
     Duration: 4
-    Rebound:
-      Description: Lie flat on the belly, turn head to the left and draw the left knee up along the floor
-      Duration: 1
     Description: |
       Straighten the arms further for a deeper backbend and compression.
-      Keep shoulders relaxed away from the ears.
+      Keep the shoulders relaxed away from the ears.
+    Rebound:
+      Description: Lie flat on the stomach, turn the head to the left and draw the left knee upward along the floor
+      Duration: 1
     Meridians:
       - Urinary Bladder
       - Kidney
@@ -148,75 +166,90 @@ Poses:
       - Deeper lower back compression
       - Opening of the abdominal region
       - Warmth in the core
-
+    Transition: Roll onto the back and prepare for supported bridge. Place a bolster or block under the sacrum for support.
 
 
   - Name: Supported Bridge
     Duration: 4
-    Description: |
-      Place a block under the sacrum for supported bridge.
-      Let the body sink into the block and breathe along the spine.
+    Description:
+      Begin lying on the back with bent knees. Lift the hips just enough to place a block under the sacrum for supported bridge.
+      Let the body sink into the block and breathe into the back. Now you can extend the arms out to the sides and walk the feet away from the pelvis to stretch them out.
 
-      **Rebound:** Remove the block and draw knees in toward each other for 0.5 min.
+    Rebound:
+      Description: Remove the block and squeeze the knees together for 0.5 min.
+      Duration: 0.5
     Meridians:
       - Kidney
       - Urinary Bladder
     Sensation:
-      - Hip flexor opening
+      - Opening of the hip flexors
       - Support in the sacral region
-      - Ease in the lower back
-
+      - Calm in the lower back
+    Transition: Roll onto the stomach and prepare for the swan pose.
 
 
   - Name: "Swan – Right Side"
     Duration: 5
+    Description: |
+      Begin in downward facing dog. Extend the right leg and bring the right knee forward between the arms and lean out to the right side.
+      Check in with how it feels in your knee. If it feels good in the knee, you can flex the right foot and let the heel rest on the floor.
+      If it feels uncomfortable in the knee, you can keep the foot flexed and let the heel lift slightly from the floor.
+      The left leg stretches back with the toes on the floor. Let the upper body lean forward and let the arms support you.
+      If you want a deeper opening you can try full swan by lifting up onto the hands and letting the compression in the hip increase. If you prefer a more calm and meditative opening, you can try sleeping swan by folding the upper body forward over the front leg.
+
+      **Full Swan:** 3 minutes. Lifted on hands, compression in the right hip.
+
+      **Sleeping Swan:** 1 minute. Fold the upper body forward over the front leg.
     Rebound:
       Description: Child's Pose
       Duration: 1
-    Description: |
-      Bring the right knee forward and out to the side, left leg extends behind.
 
-      **Full Swan:** 3 minutes. Stay lifted on hands, compression in the right hip.
-
-      **Sleeping Swan:** 1 minute. Fold the torso forward over the front leg.
     Meridians:
       - Gallbladder
       - Liver
     Sensation:
       - Deep hip opening
       - Emotional release
-      - Hip joint rotation
+      - Rotation in the hip joint
 
 
 
   - Name: "Swan – Left Side"
     Duration: 5
+    Description: |
+      Begin in downward facing dog. Extend the left leg and bring the left knee forward between the arms and lean out to the left side.
+      Check in with how it feels in your knee. If it feels good in the knee, you can flex the left foot and let the heel rest on the floor.
+      If it feels uncomfortable in the knee, you can keep the foot flexed and let the heel lift slightly from the floor.
+      The right leg stretches back with the toes on the floor. Let the upper body lean forward and let the arms support you.
+      If you want a deeper opening you can try full swan by lifting up onto the hands and letting the compression in the hip increase. If you prefer a more calm and meditative opening, you can try sleeping swan by folding the upper body forward over the front leg.
+      **Full Swan:** 3 minutes. Lifted on hands, compression in the left hip.
+
+      **Sleeping Swan:** 1 minute. Fold the upper body forward over the front leg.
+
     Rebound:
       Description: Child's Pose
       Duration: 1
-    Description: |
-      Repeat on the left side.
-
-      **Full Swan:** 3 minutes.
-
-      **Sleeping Swan:** 1 minute.
     Meridians:
-      - Gallbladder
-      - Liver
+    - Gallbladder
+    - Liver
     Sensation:
       - Deep hip opening
       - Emotional release
-      - Hip joint rotation
-
+      - Rotation in the hip joint
+    Transition: Roll over and lie on the back to prepare for Reclined Twist. Place a bolster on the right side of the body for support during the twist.
 
 
   - Name: "Reclined Twist – Right Side"
     Duration: 3
     Description: |
-      Draw knees in and send the right knee to the left, supported by a bolster if available.
-      Shoulders heavy toward the floor.
+      Draw the knees into the chest and send the left knee to the right side of the body, supported by a bolster if you like.
+      Open your arms out like two wings and let the weight of the knees and upper body create a gentle twist in the spine.
+      Let the head rest on the floor or turn it in the opposite direction of the knees for a deeper twist.
+      Both shoulders rest on the floor.
 
-      **Rebound:** Shavasana 0.5 min.
+    Rebound:
+      Description: Shavasana, observe the breath and how the body feels after the twist.
+      Duration: 0.5
     Meridians:
       - Gallbladder
       - Urinary Bladder
@@ -224,7 +257,7 @@ Poses:
       - Lung
     Sensation:
       - Detoxification
-      - Emotional unwinding through spinal rotation
+      - Emotional unraveling through spinal rotation
       - Lightness in the chest
 
 
@@ -232,9 +265,13 @@ Poses:
   - Name: "Reclined Twist – Left Side"
     Duration: 3
     Description: |
-      Repeat on the opposite side.
-
-      **Rebound:** Shavasana 0.5 min.
+      Draw the knees into the chest and send the right knee to the left side of the body, supported by a bolster if you like.
+      Open your arms out like two wings and let the weight of the knees and upper body create a gentle twist in the spine.
+      Let the head rest on the floor or turn it in the opposite direction of the knees for a deeper twist.
+      Both shoulders rest on the floor.
+    Rebound:
+      Description: Shavasana, observe the breath and how the body feels after the twist.
+      Duration: 0.5
     Meridians:
       - Gallbladder
       - Urinary Bladder
@@ -242,7 +279,7 @@ Poses:
       - Lung
     Sensation:
       - Detoxification
-      - Emotional unwinding through spinal rotation
+      - Emotional unraveling through spinal rotation
       - Lightness in the chest
 
 
@@ -250,8 +287,13 @@ Poses:
   - Name: Shavasana
     Duration: 8
     Description: |
-      Total rest. Invite softness behind the heart and an easy, effortless breath.
-      Allow the effects of the practice to integrate fully.
+      Time to rest. Shavasana is the closing of your practice, a natural part of the journey. Let the body sink into the ground and let the breath be natural and effortless.
+        Let the body and mind melt together. Notice the energy and what has opened up during the practice.
+        Feel how it feels to be in your body right now, and let a sense of gratitude for yourself and your practice grow.
+        A small mantra of gratitude.
+         "I am grateful for my body and my practice. I am open to what has opened in me today, and I carry this calm and openness with me."
+         "I am grateful for the love and support in my heart space. I am open to giving and receiving love in all aspects of my life."
+         "May my thoughts, words and actions be filled with love and compassion. I am grateful for the opportunity to open my heart and share my love with the world."
     Sensation:
       - Full rest and integration
       - Effortless breath
