@@ -116,7 +116,7 @@ function renderTrack(track, locale, availableLocales, baseName, warnings) {
 
 <!-- ===== TOP DECORATION ===== -->
 <div class="deco-top" aria-hidden="true">
-  <img src="../images/deco-top.svg" width="340" height="60" alt=""/>
+  <img src="../images/deco-top.svg" width="340" height="100" alt=""/>
   <nav class="lang-switcher" aria-label="Language">
     ${langSwitcher}
   </nav>
