@@ -61,6 +61,20 @@
           },
           "uniqueItems": true
         },
+        "Instructions": {
+          "type": "string",
+          "description": "Step-by-step instructions for entering the pose"
+        },
+        "Counterpose": {
+          "type": "object",
+          "description": "A counterpose to perform after this pose",
+          "required": ["Name"],
+          "properties": {
+            "Name": { "type": "string" },
+            "Description": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
         "Transition": {
           "type": "string",
           "description": "How to transition into this pose"
