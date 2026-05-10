@@ -27,6 +27,7 @@
 import { spawn } from 'child_process'
 import fs from 'fs'
 import path from 'path'
+import { validateTrack } from './validate-track.js'
 
 const ROOT = new URL('..', import.meta.url).pathname
 const TIMEOUT_MS = 300_000
@@ -101,6 +102,15 @@ async function main() {
       } catch (e) {
         console.log('✗')
         console.error(`  ${e.message}`)
+        failed.push(fileName)
+        continue
+      }
+
+      const { ok, errors } = validateTrack(translated)
+      if (!ok) {
+        console.log('✗')
+        console.error(`  validation failed:`)
+        for (const e of errors) console.error(`    ${e}`)
         failed.push(fileName)
         continue
       }
