@@ -21,10 +21,15 @@ const TARGETS = [
 ]
 
 if (!process.env.ANTHROPIC_API_KEY) {
-  console.error('Error: ANTHROPIC_API_KEY is not set.')
-  console.error('Get a key at console.anthropic.com → API Keys, then:')
-  console.error('  export ANTHROPIC_API_KEY=sk-ant-...')
-  process.exit(1)
+  const keyFile = path.join(ROOT, 'api-key.txt')
+  if (fs.existsSync(keyFile)) {
+    process.env.ANTHROPIC_API_KEY = fs.readFileSync(keyFile, 'utf-8').trim()
+  } else {
+    console.error('Error: ANTHROPIC_API_KEY is not set and api-key.txt was not found.')
+    console.error('Either set the environment variable or create api-key.txt with your key.')
+    console.error('Get a key at console.anthropic.com → API Keys.')
+    process.exit(1)
+  }
 }
 
 const client = new Anthropic()
