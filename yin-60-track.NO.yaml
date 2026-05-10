@@ -227,7 +227,7 @@ Poses:
     Rebound:
       Description: Barnets stilling
       Duration: 1
-        Meridians:
+      Meridians:
       - Galleblære
       - Lever
     Sensation:
