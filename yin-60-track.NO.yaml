@@ -60,17 +60,19 @@ Poses:
       - Forankring
       - Bekkenstabilitet
       - Indre lår-åpning
+    Overgang: Fra stående til caterpillar. Vi setter oss ned og strekker beina ut foran oss. 
 
 
 
   - Name: Caterpillar
     Duration: 4
-    Rebound:
-      Description: Ligge på ryggen (shavasana)
-      Duration: 1
     Description: |
       Beina strakt frem, lar overkroppen hvile avslappet forover, gjerne på et bolster.
       Slipper spenninger i rygg og hofter. Ingen aktiv strekking – la tyngden gjøre jobben.
+    Rebound:
+      Description: Ligge på ryggen (shavasana)
+      Duration: 1
+    
     Meridians:
       - Nyre
       - Urinblære
@@ -78,6 +80,7 @@ Poses:
       - Åpning av rygg og hofter
       - Avspanning i bakre kjede
       - Forankring
+     Overgang: Fra shavasana legger vi oss på siden og forbereder oss på liggende sommerfugl.Gjør klar en bolster på langs under ryggen, og eventulet bygg opp med blokker hvis du trenger å komme høyere opp.
 
 
 
@@ -85,7 +88,7 @@ Poses:
     Duration: 4
     Description: |
       Ligger på ryggen med et bolster under ryggen på langs, knærne ut til siden
-      mens en har fotsålene samlet. La brystet åpne seg.
+      mens en har fotsålene samlet. La brystet åpne seg. Bygg gjerne opp med blokker under knærne for mer støtte og åpning. 
 
       **Rebound:** Ligge på siden i 0,5 min.
     Meridians:
@@ -95,16 +98,16 @@ Poses:
       - Bryst- og hjerteåpning
       - Pust som løfter hjertet
       - Avspanning i lysken
-
-
+      Overgang: Rull over på magen og ta ut bolstereen. Forbered deg på fiskeposisjonen.
 
   - Name: Fisk
     Duration: 4
     Description: |
       Åpner bryst og hals. Støtt gjerne med bolster under øvre rygg for en myk Yin-versjon.
-      Palmene vender oppover, armene åpner seg bredt.
+      Håndflaten vender nedover og armene er strakt plassert under bekkenet. Len hodet bakover. 
+      La brystet åpne seg og pusten bevege seg inn i hjerterommet.
 
-      **Rebound:** Ligge flatt på ryggen i 0,5 min.
+      **Rebound:** Ligge flatt på ryggen i 0,5 min. Observer pusten og hvordan kroppen føles etter fiskeposisjonen.
     Meridians:
       - Hjerte
       - Lunge
