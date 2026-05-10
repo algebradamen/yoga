@@ -52,7 +52,10 @@ for (const file of yamlFiles) {
   if (!valid) {
     console.error(`✗ ${file}: schema validation failed`)
     for (const err of validate.errors) {
-      console.error(`    ${err.instancePath || '(root)'}: ${err.message}`)
+      let path = err.instancePath
+      if (err.keyword === 'required') path += '/' + err.params.missingProperty
+      else if (err.keyword === 'additionalProperties') path += '/' + err.params.additionalProperty
+      console.error(`    ${path || '(root)'}: ${err.message}`)
     }
     allOk = false
     continue

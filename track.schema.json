@@ -61,6 +61,14 @@
           },
           "uniqueItems": true
         },
+        "Transition": {
+          "type": "string",
+          "description": "How to transition into this pose"
+        },
+        "Adjustments": {
+          "type": "string",
+          "description": "Modifications or props for accessibility"
+        },
         "Alternatives": {
           "type": "array",
           "description": "Alternative versions of the pose",
