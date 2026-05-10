@@ -32,8 +32,9 @@ Poses:
     Description: |
       Stående fremoverfold – Yin-versjon. Forankrer nervesystemet
       før bryst og pust åpnes. La armene og hodet henge tungt.
-
-      **Rebound:** Stå oppreist i 0,5 min.
+    Rebound:
+      Duration: 0,5
+      Description: Stå oppreist.
     Meridians:
       - Urinblære
       - Nyre
