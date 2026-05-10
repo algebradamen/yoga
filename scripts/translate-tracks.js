@@ -20,6 +20,13 @@ const TARGETS = [
   { lang: 'Spanish', outName: base => `${base}.ES.yaml` },
 ]
 
+if (!process.env.ANTHROPIC_API_KEY) {
+  console.error('Error: ANTHROPIC_API_KEY is not set.')
+  console.error('Get a key at console.anthropic.com → API Keys, then:')
+  console.error('  export ANTHROPIC_API_KEY=sk-ant-...')
+  process.exit(1)
+}
+
 const client = new Anthropic()
 
 async function translate(noContent, targetLang) {
