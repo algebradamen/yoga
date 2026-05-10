@@ -227,9 +227,9 @@ Poses:
     Rebound:
       Description: Barnets stilling
       Duration: 1
-        Meridians:
-      - Galleblære
-      - Lever
+    Meridians:
+    - Galleblære
+    - Lever
     Sensation:
       - Dyp hofteåpning
       - Emosjonell frigjøring

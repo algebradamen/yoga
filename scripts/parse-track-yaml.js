@@ -10,33 +10,10 @@
 
 import fs from 'fs'
 import path from 'path'
-import YAML from 'yaml'
-import Ajv from 'ajv/dist/2020.js'
+import { validateTrack } from './validate-track.js'
 
 const root = path.resolve('./scripts', '..')
 const generatedDir = path.join(root, 'generated')
-
-const schemaPath = path.join(root, 'track.schema.json')
-const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'))
-const ajv = new Ajv({ strict: false })
-const validate = ajv.compile(schema)
-
-function parseDuration(v) {
-  if (typeof v === 'number') return v
-  if (typeof v === 'string') {
-    const n = parseFloat(v.replace(',', '.'))
-    return isNaN(n) ? v : n
-  }
-  return v
-}
-
-function normalizeDurations(track) {
-  if (track.Duration != null) track.Duration = parseDuration(track.Duration)
-  for (const pose of track.Poses ?? []) {
-    if (pose.Duration != null) pose.Duration = parseDuration(pose.Duration)
-    if (pose.Rebound?.Duration != null) pose.Rebound.Duration = parseDuration(pose.Rebound.Duration)
-  }
-}
 
 // Find all .yaml files in the project root
 const yamlFiles = fs.readdirSync(root)
@@ -56,25 +33,11 @@ let allOk = true
 for (const file of yamlFiles) {
   const inputPath = path.join(root, file)
   const content = fs.readFileSync(inputPath, 'utf-8')
-  let result
-  try {
-    result = YAML.parse(content)
-  } catch (e) {
-    console.error(`✗ ${file}: YAML parse error – ${e.message}`)
-    allOk = false
-    continue
-  }
-
-  normalizeDurations(result)
-  const valid = validate(result)
-  if (!valid) {
-    console.error(`✗ ${file}: schema validation failed`)
-    for (const err of validate.errors) {
-      let path = err.instancePath
-      if (err.keyword === 'required') path += '/' + err.params.missingProperty
-      else if (err.keyword === 'additionalProperties') path += '/' + err.params.additionalProperty
-      console.error(`    ${path || '(root)'}: ${err.message}`)
-    }
+  const { ok, data: result, errors } = validateTrack(content)
+  if (!ok) {
+    const isYaml = errors[0].startsWith('YAML')
+    console.error(`✗ ${file}: ${isYaml ? errors[0] : 'schema validation failed'}`)
+    if (!isYaml) for (const e of errors) console.error(`    ${e}`)
     allOk = false
     continue
   }
