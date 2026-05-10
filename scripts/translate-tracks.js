@@ -30,7 +30,7 @@ import path from 'path'
 import { validateTrack } from './validate-track.js'
 
 const ROOT = new URL('..', import.meta.url).pathname
-const TIMEOUT_MS = 300_000
+const TIMEOUT_MS = 60_000
 
 const TARGETS = [
   { lang: 'English', outName: base => `${base}.EN.yaml` },
@@ -52,6 +52,9 @@ YAML to translate:
 ${noContent}`
 
   return new Promise((resolve, reject) => {
+    const start = Date.now()
+    console.error(`  [claude] spawning process`)
+
     const proc = spawn('claude', ['--print', '--dangerously-skip-permissions'], {
       stdio: ['pipe', 'pipe', 'pipe'],
     })
@@ -59,18 +62,29 @@ ${noContent}`
     let stdout = ''
     let stderr = ''
 
-    proc.stdout.on('data', chunk => { stdout += chunk })
-    proc.stderr.on('data', chunk => { stderr += chunk })
-    proc.on('error', reject)
+    proc.stdout.on('data', chunk => {
+      stdout += chunk
+      console.error(`  [claude] received ${stdout.length} bytes so far`)
+    })
+    proc.stderr.on('data', chunk => {
+      stderr += chunk
+      process.stderr.write(`  [claude:stderr] ${chunk}`)
+    })
+    proc.on('error', err => {
+      console.error(`  [claude] process error: ${err.message}`)
+      reject(err)
+    })
     proc.on('close', code => {
+      const elapsed = ((Date.now() - start) / 1000).toFixed(1)
+      console.error(`  [claude] exited with code ${code} after ${elapsed}s`)
       if (code !== 0) reject(new Error(`claude exited ${code}: ${stderr.trim()}`))
       else resolve(stdout.trim().replace(/^```ya?ml\s*/i, '').replace(/\s*```$/, ''))
     })
 
-    const timer = setTimeout(() => { proc.kill(); reject(new Error('timed out after 5 min')) }, TIMEOUT_MS)
+    const timer = setTimeout(() => { proc.kill(); reject(new Error('timed out after 1 min')) }, TIMEOUT_MS)
     proc.on('close', () => clearTimeout(timer))
 
-    // Pipe prompt to stdin and close it so claude knows input is complete
+    console.error(`  [claude] sending ${prompt.length} char prompt`)
     proc.stdin.write(prompt, 'utf-8')
     proc.stdin.end()
   })
