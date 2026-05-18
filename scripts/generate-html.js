@@ -176,6 +176,9 @@ function renderIndex(tracks, locale, availableLocales, warnings) {
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
   <title>Edita's Yoga &amp; Pilates Sessions</title>
   <link rel="stylesheet" href="styles/yoga.css" />
+    <!-- Basic visitor tracking - privacy-friendly, GDPR-compliant, European -->
+    <script data-goatcounter="https://dv8.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </head>
 <body>
 
