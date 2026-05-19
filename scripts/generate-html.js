@@ -45,6 +45,31 @@ function parseFilename(file) {
 
 // basePath must be root-relative and end with '/' (e.g. '/' or '/yin-60-track/')
 // so links work regardless of whether the browser URL has a trailing slash.
+function renderTopDeco(imgBase, langSwitcherHtml) {
+  return `<!-- ===== TOP DECORATION ===== -->
+<div class="deco-top" aria-hidden="true">
+  <svg width="340" height="100" viewBox="0 0 340 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <path id="deco-wave" d="M5 88 Q40 68 80 73 Q120 78 160 58 Q200 38 260 48 Q300 56 335 43"/>
+    </defs>
+    <text font-family="'Dancing Script', cursive" font-size="36" font-weight="500" fill="rgba(0,0,0,0.65)">
+      <textPath href="#deco-wave">flow by Edita</textPath>
+    </text>
+  </svg>
+  <img src="${imgBase}deco-top-leaves.svg" width="340" height="100" alt=""/>
+  <nav class="lang-switcher" aria-label="Language">
+    ${langSwitcherHtml}
+  </nav>
+</div>`
+}
+
+function renderBottomDeco(imgSrc) {
+  return `<!-- ===== BOTTOM DECORATION ===== -->
+<div class="deco-bottom" aria-hidden="true">
+  <img src="${imgSrc}" width="340" height="60" alt=""/>
+</div>`
+}
+
 function renderLangSwitcher(availableLocales, currentLocale, basePath) {
   return availableLocales.map(locale => {
     const { label } = LOCALES[locale] ?? { label: locale.toUpperCase() }
@@ -114,13 +139,7 @@ function renderTrack(track, locale, availableLocales, baseName, warnings) {
 </head>
 <body>
 
-<!-- ===== TOP DECORATION ===== -->
-<div class="deco-top" aria-hidden="true">
-  <img src="../images/deco-top.svg" width="340" height="100" alt=""/>
-  <nav class="lang-switcher" aria-label="Language">
-    ${langSwitcher}
-  </nav>
-</div>
+${renderTopDeco('../images/', langSwitcher)}
 
 <!-- ===== MAIN ===== -->
 <main>
@@ -145,10 +164,7 @@ function renderTrack(track, locale, availableLocales, baseName, warnings) {
   </div>
 </main>
 
-<!-- ===== BOTTOM DECORATION ===== -->
-<div class="deco-bottom" aria-hidden="true">
-  <img src="../images/deco-bottom.svg" width="340" height="60" alt=""/>
-</div>
+${renderBottomDeco('../images/deco-bottom.svg')}
 
 </body>
 </html>`
@@ -190,13 +206,7 @@ function renderIndex(tracks, locale, availableLocales, warnings) {
 </head>
 <body>
 
-<!-- ===== TOP DECORATION ===== -->
-<div class="deco-top" aria-hidden="true">
-  <img src="images/deco-top.svg" width="340" height="60" alt=""/>
-  <nav class="lang-switcher" aria-label="Language">
-    ${langSwitcher}
-  </nav>
-</div>
+${renderTopDeco('images/', langSwitcher)}
 
 <!-- ===== MAIN ===== -->
 <main>
@@ -206,10 +216,7 @@ function renderIndex(tracks, locale, availableLocales, warnings) {
   </div>
 </main>
 
-<!-- ===== BOTTOM DECORATION ===== -->
-<div class="deco-bottom" aria-hidden="true">
-  <img src="images/deco-bottom.svg" width="340" height="60" alt=""/>
-</div>
+${renderBottomDeco('images/deco-bottom.svg')}
 
 </body>
 </html>`

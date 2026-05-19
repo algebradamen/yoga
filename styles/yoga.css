@@ -3,6 +3,8 @@
    Colors: olive green, forest green, warm terracotta
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
 :root {
   --sage-bg:       #f2f5ed;
   --sage-light:    #ddebc4;
@@ -47,6 +49,7 @@ p {
   padding: 0.5rem 1.5rem 0;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   gap: 0.6rem;
   min-height: 80px;
   position: relative;
