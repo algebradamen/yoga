@@ -45,7 +45,7 @@ p {
 
 /* ---------- Decorative header strip ---------- */
 .deco-top {
-  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-mid) 60%, var(--forest) 100%);
+  background: linear-gradient(135deg, #4d7838 0%, var(--forest-mid) 60%, var(--forest) 100%);
   padding: 0.5rem 1.5rem 0;
   display: flex;
   align-items: flex-end;

@@ -50,10 +50,10 @@ function renderTopDeco(imgBase, langSwitcherHtml) {
 <div class="deco-top" aria-hidden="true">
   <svg width="340" height="100" viewBox="0 0 340 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
-      <path id="deco-wave" d="M5 88 Q40 68 80 73 Q120 78 160 58 Q200 38 260 48 Q300 56 335 43"/>
+      <path id="deco-wave" d="M5 78 Q40 58 80 63 Q120 68 160 48 Q200 28 260 38 Q300 46 335 33"/>
     </defs>
-    <text font-family="'Dancing Script', cursive" font-size="36" font-weight="500" fill="rgba(0,0,0,0.65)">
-      <textPath href="#deco-wave">flow by Edita</textPath>
+    <text font-family="'Dancing Script', cursive" font-size="36" font-weight="500" fill="#5c2e0f">
+      <textPath href="#deco-wave">flow with Edita</textPath>
     </text>
   </svg>
   <img src="${imgBase}deco-top-leaves.svg" width="340" height="100" alt=""/>
