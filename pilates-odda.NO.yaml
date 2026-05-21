@@ -1,0 +1,225 @@
+Name: "Pilates – Odda"
+Duration: 60
+Description: |
+  **Lærer:** Edita
+
+  **Pilates-prinsipper:** Fokus – konsentrasjon · Flow – flyt · Pust · Kontroll · Presisjon · Senteret – power house
+
+Poses:
+
+  - Name: Introduksjon og pilates-pust
+    Duration: 5
+    Description: |
+      **Lateral Thorakal pust:**
+      I Pilates puster vi inn gjennom nesen og ut gjennom munnen (tynt blad mellom leppene).
+      Pusten kobler kropp og sinn og hjelper deg å aktivere kjernen. I Pilates bruker vi lateral
+      Thorakal pust – ribbena åpner seg ut og bak på innpust. Dette gir plass til kjernen samtidig som
+      kroppen får oksygen og ro.
+
+      *Cue:* "fyll ribbena som et trekkspill" / "Utpusten lukker ribbeina som et trekkespill"
+
+      **Utførelse:** Bøy knærne i støtteposisjon. Legg henden på ribbeina. Pust inn og kjenn utvidelse
+      sideveis og bakover. Pust ut og aktiver kjernen lett.
+
+  - Name: "Pelvic tilt / Imprint"
+    Duration: 2
+    Description: |
+      **Startposisjon:** Ligg på ryggen med bøyde knær, føttene i hoftebreddenes avstand, og en fot
+      lengde mellom foten og bekken.
+
+      **Utførelse:** På utpust vipp bekkenet bakover slik at korsryggen smelter mot matten. På innpust,
+      gå tilbake til nøytral. Repeter et par ganger.
+
+  - Name: Toe Taps
+    Duration: 3
+    Description: |
+      6 pust på hver side.
+
+      **Startposisjon:** Ligg på ryggen, ben i tabletop (90 grader hofte og kne).
+
+      **Utførelse:** Pust inn. På utpust senker du en tå til gulvet om gangen. Pust inn før tilbake. Bytt
+      side. Pust ut når du senker tå til gulvet og pust inn tilbake.
+    Adjustments: |
+      *Lærercues:* Imprint anbefales. Bruk magen og pusten til å føre foten ned. Prøv å være bevisst
+      på at hoftenøyer ikke jobber, men magen.
+    Transition: Overgang til Dead bug.
+
+  - Name: "Dead bug – vekslende"
+    Duration: 3
+    Description: |
+      6 pust på hver side.
+
+      **Startposisjon:** Ligg på ryggen, armer opp mot taket, ben i tabletop.
+
+      **Utførelse:** Pust inn. På utpust senker du en arm bakover og motsatt ben ned. Pust inn før
+      tilbake. Bytt side. Pust ut når du strekker, inn tilbake.
+    Adjustments: |
+      *Lærercues:* "Som et korsett rundt midjen" / "Bevær trykket i korsryggen". Pass på så ikke
+      korsryggen svaier – "Stopp før du mister kontakten".
+    Transition: Vi holder dead bug pose og går over i begge-sides-varianten.
+
+  - Name: "Dead bug – begge"
+    Duration: 2
+    Description: |
+      6 pust.
+
+      **Startposisjon:** Ligg på ryggen, armer opp mot taket, ben i tabletop.
+
+      **Utførelse:** Pust inn. På utpust senker du begge armene bakover og begge beina ned skrått.
+      Pust inn før tilbake. Pust ut når du strekker, inn tilbake.
+    Adjustments: |
+      *Lærercues:* "Som et korsett rundt midjen" / "Bevær trykket i korsryggen". Pass på så ikke
+      korsryggen svaier – "Stopp før du mister kontakten".
+    Transition: Strekk ut beina og legg deg på siden. Ta et par pust her før du står på alle fire.
+
+  - Name: Cat and cow
+    Duration: 2
+    Description: |
+      6 pust.
+
+      **Startposisjon:** Hender og knær på matte, nøytral rygg.
+
+      **Utførelse:** Pust inn. På utpust rund rygg virvel for virvel. Vi starter bevegelsen fra bekken og
+      ruller virvel for virvel.
+      Pust inn. På utpust svai ryggen virvel for virvel og vi starter fra bekken igjen. Nakken og hodet
+      plasseres sist.
+    Transition: Fra cat and cow går vi over til stående svømmer.
+
+  - Name: "Stående svømmer"
+    Duration: 4
+    Description: |
+      5 på hver side = 10 pust/øvelser. En side om gangen.
+
+      **Startposisjon:** Stå på alle 4.
+
+      **Utførelse:** Pust inn. På utpust strekk ut høyre bein og venstre arm og pust inn på vei tilbake til
+      utgangsposisjonen. Bekken og ryggsøyle i nøytral posisjon.
+    Transition: Fra svømmeren går vi på alle 4 og over i hunden som ser ned.
+
+  - Name: Planke og hunden som ser ned
+    Duration: 3
+    Description: |
+      5 repetisjoner.
+
+      **Startposisjon:** Hunden som ser ned.
+
+      **Utførelse:** Pust inn og på utpust går vi over i planke. Pust inn og på utpust over i hunden som
+      ser ned.
+
+  - Name: Hunden som ser ned og et bein opp mot motsatt albu
+    Duration: 3
+    Description: |
+      3 pust på hver side.
+
+      **Startposisjon:** Hunden som ser ned.
+
+      **Utførelse:** Pust inn. På utpust strekk opp høyre bein, bøy i kne og før kne mot motsatt venstre
+      albue. Pust inn og pust ut, strekk ut foten. Pust inn, bøy kne og på utpust før høyre kne mot
+      venstre albue. Ta tre repetisjoner (tre pust). Og bytt side.
+    Transition: Hunden som ser ned og rull opp virvel for virvel, med skuldrene og nakken plassert sist.
+
+  - Name: "Balanseøvelse – stående"
+    Duration: 5
+    Description: |
+      6 repetisjoner på hver side.
+
+      **Startposisjon:** Stå rett med begge føttene i bakken.
+
+      **Utførelse:** Pust inn og løft høyre fot (90 graders vinkel, mellom hofte og lår). Pust ut og før foten
+      bak, og kroppen frem (armene i prayer) eller armene rett opp og hold skuldrene nede. Pust inn,
+      send foten frem stående på en fot. Pust inn stående på en fot og pust ut, send tilbake. 6
+      repetisjoner. På siste holde i 6 sekunder og rolig sende foten frem, og senke foten.
+      Bytt side.
+    Transition: Stående rulle nedover virvel for virvel. Gå armene opp til toppen av matta til hunden som ser ned.
+
+  - Name: Planke og sideplanke
+    Duration: 5
+    Description: |
+      **Rett planke:** 5 pust.
+
+      **Startposisjon:** Hunden som ser ned.
+
+      **Utførelse:** Fra hunden som ser ned går du over i planke med å føre kroppen frem og beina litt
+      lenger bak. Stå fem pust i rett planke.
+
+      **Side planke:** Fra rett planke, gå over til høyre sideplanke (5 pust), deretter over til rett planke
+      (1 pust) og derifra til venstre sideplanke (5 pust).
+    Rebound:
+      Description: Child pose – 5 pust.
+      Duration: 1
+
+  - Name: C kurve
+    Duration: 6
+    Description: |
+      **Startposisjon:** Sitte med rett rygg.
+
+      **Utførelse:** Bøy knær i startposisjon og send overkroppen bakover med en C kurve i ryggen.
+      Rett armene, ha rette skuldre. Hvis du vil ha større utfordring kan du ha rette bein i 60 graders
+      vinkel. Send kroppen frem på innpust og tilbake til startposisjon på utpust. 5 repetisjoner.
+
+      **Utvidelse:** På utpust. Før høyre arm bak og bøy i albuen, se over mot høyre hånd. Send armen
+      tilbake til å peke rett frem på innpust.
+      På utpust send venstre arm bakover og bøy i albuen, se over mot venstre hånd. På innpust
+      send armen rett frem.
+      6 repetisjoner (pust) på hver side.
+
+      Hvis en ønsker enda en utvidelse så kan en strekke begge beina frem (60 graders vinkel) og
+      begge armene bak og opp så tilbake til ugangs posisjon og repetere 5 ganger.
+    Transition: Legg den ned på ryggen.
+
+  - Name: Criss-Cross
+    Duration: 3
+    Description: |
+      6 pust på hver side.
+
+      **Startposisjon:** Ryggliggende, hender bak hodet, beina i tabletop.
+
+      **Utførelse:** Ha hendene bak nakken. Pust inn og på utpust løft hodet/skuldre. Pust inn og på
+      utpust roter høyre albue mot motsatt venstre kne, mens du strekker høyre fot. På innpust trekk
+      tilbake til midten. Pust inn og på utpust, send venstre albue mot høyre kne, mens du strekker
+      venstre fot. Pust inn tilbake til midten. 6 pust på hver side.
+
+      Bekkenplassering: Imprint
+
+      *Cue:* Tenk skulder mot kne, ikke albue. Kjenn når du roterer at du bruker mage skrå.
+
+  - Name: Roll upp
+    Duration: 5
+    Description: |
+      10 repetisjoner.
+
+      **Startposisjon:** Ryggliggende, beina peker rett frem og føttene lett pointet, armer bakover.
+
+      **Utførelse:**
+      - På innpust send armene til tynningen og rull opp med armene peke rett mot taket
+        mens skuldrene og hodet er lett løftet (husk at nakken skal ikke løfte her), bruke magen på innpust.
+      - På utpust fortsett å rulle oppover, virvel for virvel med magen, fremover med fingrene peke mot tærne.
+      - På innpust begynner du å rulle bakover, frem til bakken er helt i kontakt med matten og
+        skuldrene og armene peker rett frem (parallelle med beina).
+      - På utpust fortsett å rulle bakover, virvel for virvel, frem til armene er med tynningen.
+      - På innpust fortsett oppover til armene peker rett opp og skuldrene og hode løftet.
+
+  - Name: Roll like a ball
+    Duration: 3
+    Description: |
+      **Startposisjon:** Sitt på sitteknutene, hold knærne tett, rund rygg, blikket mot navlen.
+
+      **Utførelse:** Pust inn og på utpust, rull bak til skuldrene og opp igjen, hold balanse og bruk
+      magen. Beina skal ikke bevege seg.
+    Adjustments: |
+      *Modifikasjoner:* Hold bak lårene.
+
+      *Instruktørtips:* "Hold en liten ballform – ikke la den sprekke".
+
+  - Name: Pil
+    Duration: 5
+    Description: |
+      6 repetisjoner, hold den siste i 5 pust.
+
+      **Startposisjon:** Ligg på magen, armene bak kroppen, pannen i matten.
+
+      **Utførelse:** Pust inn og på utpust hold i bekkene mens du løfter hodet, bryst og armer og bein,
+      klem skulderbladene sammen. Pust inn tilbake. Og repeter 6 ganger, mens du holder den siste i
+      5 pust.
+
+      *Instruktørens tips:* Tenk lang nakke, se mot matten.
