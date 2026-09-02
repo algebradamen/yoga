@@ -48,6 +48,7 @@ function parseFilename(file) {
 function renderTopDeco(imgBase, langSwitcherHtml) {
   return `<!-- ===== TOP DECORATION ===== -->
 <div class="deco-top" aria-hidden="true">
+  <img src="${imgBase}olive-chain-concept.svg" width="340" height="100" alt=""/>
   <svg width="340" height="100" viewBox="0 0 340 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <path id="deco-wave" d="M5 78 Q40 58 80 63 Q120 68 160 48 Q200 28 260 38 Q300 46 335 33"/>
@@ -56,7 +57,6 @@ function renderTopDeco(imgBase, langSwitcherHtml) {
       <textPath href="#deco-wave">flow with Edita</textPath>
     </text>
   </svg>
-  <img src="${imgBase}deco-top-leaves.svg" width="340" height="100" alt=""/>
   <nav class="lang-switcher" aria-label="Language">
     ${langSwitcherHtml}
   </nav>
