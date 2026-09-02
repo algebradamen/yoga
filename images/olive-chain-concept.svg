@@ -18,19 +18,16 @@
         stroke="#3f5d2f" stroke-width="2.5" stroke-linecap="round"/>
   <path d="M23 35C49 31 75 42 101 34C128 28 151 40 177 34C202 29 226 42 251 36C276 31 300 45 322 39"
         stroke="#6f8c45" stroke-width="1.5" stroke-linecap="round" opacity=".9"/>
+  <path d="M64 35C61 27 58 21 53 16M108 31C112 23 116 18 123 14M161 32C158 24 157 18 160 12M213 34C217 26 223 21 230 17M269 37C267 29 269 23 275 17M307 38C312 32 317 28 324 25"
+        stroke="#4d6b35" stroke-width="1.2" stroke-linecap="round"/>
 
   <!-- Alternating olive leaves. -->
   <g fill="url(#olive-leaf)" stroke="#415e31" stroke-width=".7">
     <ellipse cx="45" cy="29" rx="15" ry="4.5" transform="rotate(-10 45 29)"/>
-    <ellipse cx="70" cy="31" rx="14" ry="4.3" transform="rotate(18 70 31)"/>
     <ellipse cx="96" cy="27" rx="15" ry="4.5" transform="rotate(-10 96 27)"/>
-    <ellipse cx="119" cy="26" rx="14" ry="4.3" transform="rotate(17 119 26)"/>
     <ellipse cx="145" cy="29" rx="15" ry="4.5" transform="rotate(-10 145 29)"/>
-    <ellipse cx="170" cy="27" rx="14" ry="4.3" transform="rotate(16 170 27)"/>
     <ellipse cx="196" cy="28" rx="15" ry="4.5" transform="rotate(-9 196 28)"/>
-    <ellipse cx="222" cy="31" rx="14" ry="4.3" transform="rotate(16 222 31)"/>
     <ellipse cx="249" cy="30" rx="15" ry="4.5" transform="rotate(-8 249 30)"/>
-    <ellipse cx="276" cy="35" rx="14" ry="4.3" transform="rotate(15 276 35)"/>
     <ellipse cx="301" cy="32" rx="15" ry="4.5" transform="rotate(-8 301 32)"/>
   </g>
 
