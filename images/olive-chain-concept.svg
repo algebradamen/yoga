@@ -14,9 +14,9 @@
   </defs>
 
   <!-- Two branches form a compact, natural chain within the header corner. -->
-  <path d="M18 88C56 71 84 77 119 59C153 42 186 52 218 36C251 20 284 29 325 11"
+  <path d="M18 88C42 67 70 84 94 68C119 51 143 65 169 47C195 29 218 52 244 34C270 16 294 34 325 11"
         stroke="#3f5d2f" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M23 95C65 80 91 86 126 69C158 54 188 63 221 47C255 31 286 39 322 23"
+  <path d="M23 95C49 77 74 93 101 77C128 61 151 75 177 57C202 40 226 62 251 44C276 27 300 45 322 23"
         stroke="#6f8c45" stroke-width="1.5" stroke-linecap="round" opacity=".9"/>
 
   <!-- Alternating olive leaves. -->
