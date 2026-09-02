@@ -56,7 +56,7 @@ function renderTopDeco(imgBase, langSwitcherHtml) {
       <textPath href="#deco-wave">flow with Edita</textPath>
     </text>
   </svg>
-  <img src="${imgBase}olive-chain-concept.svg" width="340" height="100" alt=""/>
+  <img class="olive-chain" src="${imgBase}olive-chain-concept.svg" width="340" height="100" alt=""/>
   <nav class="lang-switcher" aria-label="Language">
     ${langSwitcherHtml}
   </nav>

@@ -57,6 +57,15 @@ p {
 
 .deco-top svg { display: block; }
 
+.olive-chain {
+  position: absolute;
+  top: -0.5rem;
+  right: 1.5rem;
+  transform: scaleX(-1);
+  transform-origin: center;
+  pointer-events: none;
+}
+
 /* ---------- Language switcher ---------- */
 .lang-switcher {
   position: absolute;
