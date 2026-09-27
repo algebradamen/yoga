@@ -10,13 +10,13 @@ Poses:
 
   - Name: "Landing"
     Description: |
-      Landing Legg dere på ryggen og lukk øynene. Kjenn at du lander på matta di, kjenne hvordan kroppen møter matta.
+      Legg dere på ryggen og lukk øynene. Kjenn at du lander på matta di, kjenne hvordan kroppen møter matta.
 
       Så puster du inn gjennom nesa..og ut gjennom munnen…Zoome inn i pusten din, hvordan det kjennes, legg merke til.
 
       **Utførelse:** Legg hendene på ribbeina slik at fingertuppene møtes. Pust inn og kjenn utvidelsen av ribbeina og at fingertuppene glir fra hverandre. Pust ut og kjenn at fingertuppene møtes..
     TeacherCues: |
-      Cue: “fyll ribbena som et trekkspill” “Utpusten lukker ribbeina som et trekkspill”
+      “fyll ribbena som et trekkspill” “Utpusten lukker ribbeina som et trekkspill”
 
   - Name: "Pelvic tilt eller inprint"
     Description: |
@@ -28,25 +28,25 @@ Poses:
 
   - Name: "Heel slides"
     Description: |
-      **Heel slides**: 6 pust på hver side Startposisjon: Ligg på ryggen, ben i støtteposisjon. Armene skal ligge langs kroppen . Utførelse: Pust inn og åpne venstre kne ut til siden og skyver du høyre fot frem Pust ut før tilbake. Jobb med å holde bekkenet i ro.
+      6 pust på hver side Startposisjon: Ligg på ryggen, ben i støtteposisjon. Armene skal ligge langs kroppen . Utførelse: Pust inn og åpne venstre kne ut til siden og skyver du høyre fot frem Pust ut før tilbake. Jobb med å holde bekkenet i ro.
 
       Bytt side. Pust inn når du skyver/strekker lang fot ut på matta og pust ut tilbake.
     TeacherCues: |
-      Lærercues: Imprint anbefales. Bruk magen og pusten til å strekke foten langs matta og holde bekkenet i ro. Prøv å være bevisst på at hoftene ikke jobber, men magen.
+      Imprint anbefales. Bruk magen og pusten til å strekke foten langs matta og holde bekkenet i ro. Prøv å være bevisst på at hoftene ikke jobber, men magen.
     Transition: |
       Ta et par pust i støtteposisjon der du sender knær over til sidene en om gangen.
 
   - Name: "One leg Circle"
     Description: |
-      **One leg Circle:** Du er i støtteposisjon, pust inn og på utpust sender du en fot opp. Tærne peker mot taket. Lag en halv sirkel på innpust og tilbake halv sirkel på utpust. Gjør 10 repetisjoner på hver side.
+      Du er i støtteposisjon, pust inn og på utpust sender du en fot opp. Tærne peker mot taket. Lag en halv sirkel på innpust og tilbake halv sirkel på utpust. Gjør 10 repetisjoner på hver side.
     TeacherCues: |
-      Cue: Bruk magen og pusten til å styre bevegelsen.
+      Bruk magen og pusten til å styre bevegelsen.
 
   - Name: "Dead bug - en side om gangen"
     Description: |
-      Dead bug: 6 pust på hver side Startposisjon: Ligg på ryggen, armer opp mot taket, ben i tabletop. Utførelse: Pust inn. På utpust senker du en arm bakover og motsatt ben ned. Pust inn før tilbake. Bytt side. Pust ut når du strekker, inn tilbake.
+      6 pust på hver side Startposisjon: Ligg på ryggen, armer opp mot taket, ben i tabletop. Utførelse: Pust inn. På utpust senker du en arm bakover og motsatt ben ned. Pust inn før tilbake. Bytt side. Pust ut når du strekker, inn tilbake.
     TeacherCues: |
-      Lærercues: “Som et korsett rundt midjen” “Bevær trykket i korsryggen". Pass på så ikke korsryggen svaier - “Stopp før du mister kontakten”.
+      “Som et korsett rundt midjen” “Bevær trykket i korsryggen". Pass på så ikke korsryggen svaier - “Stopp før du mister kontakten”.
     Transition: |
       ta tak i knær og klem knær. Strekk ut begge beina. Ta tak i et lår og kom deg opp til sittende og derifra på alle fire.
 
@@ -60,7 +60,7 @@ Poses:
 
   - Name: "Stående svømmer"
     Description: |
-      Stående svømmer: 6 på hver side= 12 pust/øvelser. En side om gangen.
+      6 på hver side= 12 pust/øvelser. En side om gangen.
 
       Startposisjon: Stå på alle 4
 
@@ -82,7 +82,7 @@ Poses:
 
       Gjenta 8 ganger.
     TeacherCues: |
-      Cue: På innpust bøy og bak og på utpust tilbake.
+      På innpust bøy og bak og på utpust tilbake.
 
   - Name: "Stående balanseøvelse"
     Description: |
@@ -130,9 +130,9 @@ Poses:
 
   - Name: "Criss-Cross"
     Description: |
-      Criss-Cross Startposisjon: Ryggliggende, hender bak hodet, beina i tabletop. Utførelse: Ha hendene bak nakken. Pust inn og på utpust løft hodet/skuldre. Pust inn og på utpust roter høyre albue mot motsatt venstre kne, mens du strekker høyre fot. På innpust trekk tilbake til midten. Pust inn og på utpust, send venstre albue mot høyre kne, mens du strekker venstre fot. Pust inn tilbake til midten. 6 pust på hver side. Bekkenplassering: Innprint
+      Startposisjon: Ryggliggende, hender bak hodet, beina i tabletop. Utførelse: Ha hendene bak nakken. Pust inn og på utpust løft hodet/skuldre. Pust inn og på utpust roter høyre albue mot motsatt venstre kne, mens du strekker høyre fot. På innpust trekk tilbake til midten. Pust inn og på utpust, send venstre albue mot høyre kne, mens du strekker venstre fot. Pust inn tilbake til midten. 6 pust på hver side. Bekkenplassering: Innprint
     TeacherCues: |
-      Cue: Tenk skulder mot kne, ikke albue. Kjenn når du roterer at du bruker mage skrå.
+      Tenk skulder mot kne, ikke albue. Kjenn når du roterer at du bruker mage skrå.
     Transition: |
       Ta tak i et lår og kom opp i sittende. Derifra legger du deg på magen.
 
@@ -144,7 +144,7 @@ Poses:
 
       Repeter med 12 pust totalt -6 på hver side.
     TeacherCues: |
-      Cue: Husk å bruke magen, setet og ryggen til å løfte deg opp og senke ned. Holde på magen når du senker bein og arm ned.
+      Husk å bruke magen, setet og ryggen til å løfte deg opp og senke ned. Holde på magen når du senker bein og arm ned.
 
   - Section: "YIN"
 

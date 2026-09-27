@@ -40,9 +40,9 @@ Poses:
       **Utførelse:** Pust inn. På utpust senker du en tå til gulvet om gangen. Pust inn før tilbake. Bytt
       side. Pust ut når du senker tå til gulvet og pust inn tilbake.
     TeacherCues: |
-      *Lærercues:* Imprint anbefales. Bruk magen og pusten til å føre foten ned. Prøv å være bevisst
+      Imprint anbefales. Bruk magen og pusten til å føre foten ned. Prøv å være bevisst
       på at hoftenøyer ikke jobber, men magen.
-    Transition: Overgang til Dead bug.
+    Transition: til Dead bug.
 
   - Name: "Dead bug – vekslende"
     Duration: 3
@@ -54,7 +54,7 @@ Poses:
       **Utførelse:** Pust inn. På utpust senker du en arm bakover og motsatt ben ned. Pust inn før
       tilbake. Bytt side. Pust ut når du strekker, inn tilbake.
     TeacherCues: |
-      *Lærercues:* "Som et korsett rundt midjen" / "Bevær trykket i korsryggen". Pass på så ikke
+      "Som et korsett rundt midjen" / "Bevær trykket i korsryggen". Pass på så ikke
       korsryggen svaier – "Stopp før du mister kontakten".
     Transition: Vi holder dead bug pose og går over i begge-sides-varianten.
 
@@ -68,7 +68,7 @@ Poses:
       **Utførelse:** Pust inn. På utpust senker du begge armene bakover og begge beina ned skrått.
       Pust inn før tilbake. Pust ut når du strekker, inn tilbake.
     TeacherCues: |
-      *Lærercues:* "Som et korsett rundt midjen" / "Bevær trykket i korsryggen". Pass på så ikke
+      "Som et korsett rundt midjen" / "Bevær trykket i korsryggen". Pass på så ikke
       korsryggen svaier – "Stopp før du mister kontakten".
     Transition: Strekk ut beina og legg deg på siden. Ta et par pust her før du står på alle fire.
 
