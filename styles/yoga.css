@@ -604,7 +604,35 @@ details[open] > summary .chevron {
 
   .olive-chain { display: none; }
 
-  main { padding: 1.2rem 1rem 2rem; }
+  /* Use the full screen width for the session table; keep a small gutter
+     only for text that would otherwise touch the screen edge. */
+  main { padding: 1.2rem 0 2rem; }
+  main > h1,
+  .page-header,
+  .subtitle { padding-inline: 0.75rem; }
+  .session-grid { padding-inline: 0.75rem; }
+
+  .pose-table-wrapper { border-radius: 0; }
+  .pose-header,
+  .pose-item > summary,
+  .pose-section { padding-inline: 0.75rem; }
+
+  .detail-inner {
+    border-left: none;
+    padding: 0.9rem 0.75rem 1rem;
+  }
+  .detail-inner p,
+  .subtitle p { margin-inline: 0; }
+
+  /* Next button: same look as on desktop, just a bit more compact */
+  .next-pose { margin-top: 0.8rem; }
+  .next-pose-btn {
+    min-height: 2.25rem;
+    max-width: 85%;
+    padding: 0.35rem 0.75rem 0.35rem 0.95rem;
+    font-size: 0.85rem;
+  }
+  .next-pose-btn svg { width: 1rem; height: 1rem; }
 }
 
 /* ---------- Print ---------- */
