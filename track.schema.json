@@ -99,7 +99,7 @@
         },
         "TeacherCues": {
           "type": "string",
-          "description": "Verbal cues and tips for the teacher. Validated but not shown on the site yet."
+          "description": "Verbal cues and tips from the teacher, shown as their own section"
         },
         "Alternatives": {
           "type": "array",

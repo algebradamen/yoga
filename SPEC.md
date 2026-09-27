@@ -40,7 +40,7 @@ Each pose has:
 | `Transition` | plain text | "Transition" section |
 | `Rebound` | object: `Description` (text), `Duration` (minutes) | "Rebound – N min" section |
 | `Alternatives` | list of objects: `Name`, optional markdown `Description` | One "Alternative" section each |
-| `TeacherCues` | markdown | **Not shown yet.** Teacher-only cues, kept in the source for later use |
+| `TeacherCues` | markdown | "Teacher cues" section |
 
 Durations may be written with a decimal comma (`0,5`); they are converted to numbers before validation.
 

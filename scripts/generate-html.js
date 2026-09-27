@@ -135,6 +135,11 @@ function renderPose(pose, t) {
           <h4>${t('detail_adjustments')}</h4>
           <div>${md.render(pose.Adjustments)}</div>
         </div>` : ''}
+        ${pose.TeacherCues ? `
+        <div class="alt-section">
+          <h4>${t('detail_teacher_cues')}</h4>
+          <div>${md.render(pose.TeacherCues)}</div>
+        </div>` : ''}
         ${pose.Counterpose ? `
         <div class="alt-section">
           <h4>${t('detail_counterpose')}: ${pose.Counterpose.Name}</h4>

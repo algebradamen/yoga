@@ -23,7 +23,6 @@ Push to `main` = deploy (`.github/workflows/deploy.yml`, GitHub Pages). A failin
 - Session files live in the repo root. The filename without `.NO.yaml` becomes the URL path, so renaming a file changes the public URL.
 - Unknown fields fail validation. Adding a field means updating `track.schema.json`, the renderer in `scripts/generate-html.js`, the field list in `SPEC.md`, and the field list in the prompt in `scripts/translate-tracks.js`.
 - A `Poses` item can be a section heading (`- Section: "YIN"`) instead of a pose.
-- `TeacherCues` is deliberately **not rendered** yet. Don't display it without being asked.
 - Durations may use a decimal comma (`0,5`). Pose durations must add up to the session `Duration` within 10% or the build fails; rebounds don't count.
 - The loose files `Pilates Odda.pdf`, `Pilates-1-og-yin-1.docx`, `Yin yoga 60 minutter.docx` and `yin-60-heart-kidney-meridian.md` are Edita's original notes, kept for reference. They are not part of the build.
 
