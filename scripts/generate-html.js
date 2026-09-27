@@ -3,9 +3,13 @@
  *
  * Reads all `.json` files from the `generated/` directory (produced by
  * `parse-track-yaml.js`), renders each track into a full HTML page with a
- * pose table, and writes the output to `dist/<track-name>/index.html`.
- * Locale variants (e.g. `track.NO.json`) are written as `index.no.html` etc.
- * Also renders a `dist/index.html` listing all tracks.
+ * pose table, and writes the output to `dist/<track-name>/`. Norwegian is the
+ * default locale and is written as `index.html`; other locales are written as
+ * `index.<locale>.html` (e.g. `index.en.html`). Also renders one front page per
+ * locale (`dist/index.html`, `dist/index.en.html`, ...) listing every track;
+ * tracks missing a locale fall back to the Norwegian version.
+ *
+ * All links are relative, so the site works at any base path.
  *
  * Usage: `node scripts/generate-html.js`
  */
@@ -20,15 +24,26 @@ const root = path.resolve('./scripts', '..')
 const generatedDir = path.join(root, 'generated')
 const distDir = path.join(root, 'dist')
 
-// Locale metadata: display label and html lang attribute
+// Locale metadata: display label and html lang attribute.
+// Key order is the display order in the language switcher; the default comes first.
+const DEFAULT_LOCALE = 'no'
 const LOCALES = {
-  en: { label: 'EN', lang: 'en' },
   no: { label: 'NO', lang: 'no' },
+  en: { label: 'EN', lang: 'en' },
   es: { label: 'ES', lang: 'es' },
+}
+const LOCALE_ORDER = Object.keys(LOCALES)
+
+function compareLocales(a, b) {
+  const ia = LOCALE_ORDER.indexOf(a), ib = LOCALE_ORDER.indexOf(b)
+  if (ia === -1 && ib === -1) return a.localeCompare(b)
+  if (ia === -1) return 1
+  if (ib === -1) return -1
+  return ia - ib
 }
 
 function localeOutputFile(locale) {
-  return locale === 'no' ? 'index.html' : `index.${locale}.html`
+  return locale === DEFAULT_LOCALE ? 'index.html' : `index.${locale}.html`
 }
 
 // Parse a JSON filename into { baseName, locale }
@@ -43,11 +58,12 @@ function parseFilename(file) {
   return { baseName: noExt, locale: 'en' }
 }
 
-// basePath must be root-relative and end with '/' (e.g. '/' or '/yin-60-track/')
-// so links work regardless of whether the browser URL has a trailing slash.
-function renderTopDeco(imgBase, langSwitcherHtml) {
+// homeHref: the front page in the current locale. The "flow with Edita"
+// lettering links there.
+function renderTopDeco(imgBase, langSwitcherHtml, homeHref, homeLabel) {
   return `<!-- ===== TOP DECORATION ===== -->
-<div class="deco-top" aria-hidden="true">
+<header class="deco-top">
+  <a class="home-link" href="${homeHref}" title="${homeLabel}" aria-label="${homeLabel}">
   <svg width="340" height="100" viewBox="0 0 340 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <path id="deco-wave" d="M5 78 Q40 58 80 63 Q120 68 160 48 Q200 28 260 38 Q300 46 335 33"/>
@@ -56,11 +72,12 @@ function renderTopDeco(imgBase, langSwitcherHtml) {
       <textPath href="#deco-wave">flow with Edita</textPath>
     </text>
   </svg>
-  <img class="olive-chain" src="${imgBase}olive-chain-concept.svg" width="340" height="100" alt=""/>
+  </a>
+  <img class="olive-chain" src="${imgBase}olive-chain-concept.svg" width="340" height="100" alt="" aria-hidden="true"/>
   <nav class="lang-switcher" aria-label="Language">
     ${langSwitcherHtml}
   </nav>
-</div>`
+</header>`
 }
 
 function renderBottomDeco(imgSrc) {
@@ -70,10 +87,11 @@ function renderBottomDeco(imgSrc) {
 </div>`
 }
 
-function renderLangSwitcher(availableLocales, currentLocale, basePath) {
+// Locale variants of a page live in the same directory, so a bare filename is enough.
+function renderLangSwitcher(availableLocales, currentLocale) {
   return availableLocales.map(locale => {
     const { label } = LOCALES[locale] ?? { label: locale.toUpperCase() }
-    const href = basePath + localeOutputFile(locale)
+    const href = localeOutputFile(locale)
     return locale === currentLocale
       ? `<a href="${href}" class="active" aria-current="page">${label}</a>`
       : `<a href="${href}">${label}</a>`
@@ -104,8 +122,19 @@ function renderPose(pose, t) {
           <div>${md.render(pose.Instructions)}</div>
         </div>` : ''}
         <div class="mobile-info">
+          ${meridianBadges ? `<div class="alt-section"><h4>${t('col_meridians')}</h4><div class="badges">${meridianBadges}</div></div>` : ''}
           ${pose.Sensation ? `<div class="alt-section"><h4>${t('detail_sensation')}</h4><ul>${pose.Sensation.map(s => `<li>${s}</li>`).join('')}</ul></div>` : ''}
         </div>
+        ${pose.Adjustments ? `
+        <div class="alt-section">
+          <h4>${t('detail_adjustments')}</h4>
+          <div>${md.render(pose.Adjustments)}</div>
+        </div>` : ''}
+        ${pose.Counterpose ? `
+        <div class="alt-section">
+          <h4>${t('detail_counterpose')}: ${pose.Counterpose.Name}</h4>
+          ${pose.Counterpose.Description ? `<div class="alt-item">${md.render(pose.Counterpose.Description)}</div>` : ''}
+        </div>` : ''}
         ${pose.Transition ? `
         <div class="alt-section">
           <h4>${t('detail_transition')}</h4>
@@ -128,7 +157,7 @@ function renderPose(pose, t) {
 function renderTrack(track, locale, availableLocales, baseName, warnings) {
   const { lang } = LOCALES[locale] ?? { lang: locale }
   const t = makeT(locale, warnings)
-  const langSwitcher = renderLangSwitcher(availableLocales, locale, `/${baseName}/`)
+  const langSwitcher = renderLangSwitcher(availableLocales, locale)
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -139,7 +168,7 @@ function renderTrack(track, locale, availableLocales, baseName, warnings) {
 </head>
 <body>
 
-${renderTopDeco('../images/', langSwitcher)}
+${renderTopDeco('../images/', langSwitcher, `../${localeOutputFile(locale)}`, t('home_link'))}
 
 <!-- ===== MAIN ===== -->
 <main>
@@ -166,19 +195,41 @@ ${renderTopDeco('../images/', langSwitcher)}
 
 ${renderBottomDeco('../images/deco-bottom.svg')}
 
+<script>
+  // Browsers never print the contents of closed <details>, so open every pose
+  // before printing and close the ones we opened afterwards.
+  (() => {
+    let opened = []
+    addEventListener('beforeprint', () => {
+      opened = [...document.querySelectorAll('details.pose-item:not([open])')]
+      opened.forEach(d => { d.open = true })
+    })
+    addEventListener('afterprint', () => {
+      opened.forEach(d => { d.open = false })
+      opened = []
+    })
+  })()
+</script>
+
 </body>
 </html>`
 }
 
 function renderIndex(tracks, locale, availableLocales, warnings) {
   const { lang } = LOCALES[locale] ?? { lang: locale }
-  const langSwitcher = renderLangSwitcher(availableLocales, locale, '/')
+  const langSwitcher = renderLangSwitcher(availableLocales, locale)
+  const t = makeT(locale, warnings)
+  // tracks: Array<{ baseName, track, trackLocale }>; trackLocale differs from
+  // locale when the track has no translation and falls back to another language.
   const cards = tracks
-    .map(({ baseName, track }) => `
-  <a class="session-card" href="${baseName}/${localeOutputFile(locale)}">
+    .map(({ baseName, track, trackLocale }) => `
+  <a class="session-card" href="${baseName}/${localeOutputFile(trackLocale)}"${trackLocale !== locale ? ` hreflang="${LOCALES[trackLocale]?.lang ?? trackLocale}"` : ''}>
     <div class="session-card-header">
       <h2>${track.Name}</h2>
-      <span class="session-duration">${track.Duration} min</span>
+      <span class="session-meta">
+        ${trackLocale !== locale ? `<span class="session-lang">${LOCALES[trackLocale]?.label ?? trackLocale.toUpperCase()}</span>` : ''}
+        <span class="session-duration">${track.Duration} min</span>
+      </span>
     </div>
     ${track.Description ? `<div class="session-card-description">${md.render(track.Description)}</div>` : ''}
   </a>`)
@@ -206,7 +257,7 @@ function renderIndex(tracks, locale, availableLocales, warnings) {
 </head>
 <body>
 
-${renderTopDeco('images/', langSwitcher)}
+${renderTopDeco('images/', langSwitcher, localeOutputFile(locale), t('home_link'))}
 
 <!-- ===== MAIN ===== -->
 <main>
@@ -247,17 +298,12 @@ for (const file of jsonFiles) {
 
 // Render all locale variants for each track
 const warnings = []
-// groupsByLocale: Map<locale, Array<{ baseName, track }>>
-const groupsByLocale = new Map()
 
 for (const [baseName, localeMap] of groups) {
   const outDir = path.join(distDir, baseName)
   fs.mkdirSync(outDir, { recursive: true })
 
-  // Sort locales so EN comes first, then alphabetically
-  const availableLocales = [...localeMap.keys()].sort((a, b) =>
-    a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)
-  )
+  const availableLocales = [...localeMap.keys()].sort(compareLocales)
 
   for (const [locale, track] of localeMap) {
     const outFile = localeOutputFile(locale)
@@ -266,21 +312,25 @@ for (const [baseName, localeMap] of groups) {
     console.log(`✓ ${baseName}.${locale}  →  dist/${baseName}/${outFile}`)
   }
 
-  // Collect each locale's track for the front page
-  for (const locale of localeMap.keys()) {
-    if (!groupsByLocale.has(locale)) groupsByLocale.set(locale, [])
-    groupsByLocale.get(locale).push({ baseName, track: localeMap.get(locale) })
-  }
 }
 
-// All locales that exist across all tracks, EN first
-const allLocales = [...groupsByLocale.keys()].sort((a, b) =>
-  a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)
-)
+// All locales that exist across all tracks, in switcher order
+const allLocales = [...new Set([...groups.values()].flatMap(m => [...m.keys()]))].sort(compareLocales)
 
-// Render one front page per locale; each card links to that locale's track page
+// Pick the version of a track to show on a locale's front page: the matching
+// translation if there is one, otherwise the default locale, otherwise any.
+function pickTrackLocale(localeMap, locale) {
+  if (localeMap.has(locale)) return locale
+  if (localeMap.has(DEFAULT_LOCALE)) return DEFAULT_LOCALE
+  return [...localeMap.keys()].sort(compareLocales)[0]
+}
+
+// Render one front page per locale listing every track
 for (const locale of allLocales) {
-  const indexTracks = groupsByLocale.get(locale)
+  const indexTracks = [...groups].map(([baseName, localeMap]) => {
+    const trackLocale = pickTrackLocale(localeMap, locale)
+    return { baseName, track: localeMap.get(trackLocale), trackLocale }
+  })
   const outFile = localeOutputFile(locale)
   const indexPath = path.join(distDir, outFile)
   fs.writeFileSync(indexPath, renderIndex(indexTracks, locale, allLocales, warnings))

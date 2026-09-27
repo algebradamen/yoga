@@ -57,6 +57,14 @@ p {
 
 .deco-top svg { display: block; }
 
+.home-link {
+  display: block;
+  border-radius: 8px;
+  transition: opacity 0.15s;
+}
+.home-link:hover { opacity: 0.8; }
+.home-link:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+
 .olive-chain {
   position: absolute;
   top: 1.15rem;
@@ -196,6 +204,24 @@ h1 {
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   white-space: nowrap;
+}
+
+.session-meta {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Language tag on a card whose session isn't translated into the page's language */
+.session-lang {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--forest-dark);
+  border: 1px solid var(--forest-mid);
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
 }
 
 .session-card-description {
@@ -422,8 +448,10 @@ details[open] > summary .chevron {
 
 /* ---------- Print ---------- */
 @media print {
-  /* Expand all poses */
+  /* Expand all poses. A beforeprint script opens every <details>; this rule
+     also covers browsers that support ::details-content if the script can't run. */
   .pose-item > .detail-inner { display: block !important; }
+  .pose-item::details-content { content-visibility: visible; display: contents; }
 
   /* Show all columns */
   .col-alternatives,

@@ -9,7 +9,10 @@ export const translations = {
     detail_rebound:       'Rebound',
     detail_instructions:  'Instructions',
     detail_transition:    'Transition',
+    detail_adjustments:   'Adjustments',
+    detail_counterpose:   'Counterpose',
     col_session:      'Session',
+    home_link:        'All sessions',
     print_tooltip:    'Print or save as PDF — choose "Save as PDF" in the print dialog',
   },
   no: {
@@ -22,7 +25,10 @@ export const translations = {
     detail_rebound:       'Rebound',
     detail_instructions:  'Instruksjoner',
     detail_transition:    'Overgang',
+    detail_adjustments:   'Tilpasninger',
+    detail_counterpose:   'Motstilling',
     col_session:      'Økt',
+    home_link:        'Alle økter',
     print_tooltip:    'Skriv ut eller lagre som PDF — velg «Lagre som PDF» i utskriftsdialogen',
   },
   es: {
@@ -35,7 +41,10 @@ export const translations = {
     detail_rebound:       'Rebote',
     detail_instructions:  'Instrucciones',
     detail_transition:    'Transición',
+    detail_adjustments:   'Adaptaciones',
+    detail_counterpose:   'Contrapostura',
     col_session:      'Sesión',
+    home_link:        'Todas las sesiones',
     print_tooltip:    'Imprimir o guardar como PDF — elige «Guardar como PDF» en el diálogo de impresión',
   },
 }
