@@ -5,7 +5,7 @@
  * `track.schema.json` using AJV (durations like "0,5" are accepted), and checks
  * that pose durations add up to the stated track duration: a difference of up
  * to 10% gives a warning, more than 10% fails the build. Rebound durations are
- * not counted. Valid tracks are written as JSON to `generated/`.
+ * not counted. A track where no pose has a duration only gets a warning. Valid tracks are written as JSON to `generated/`.
  *
  * Usage: `node scripts/parse-track-yaml.js`
  */
@@ -44,12 +44,16 @@ for (const file of yamlFiles) {
     continue
   }
 
-  // Duration check
-  const posesWithDuration = result.Poses.filter(p => typeof p.Duration === 'number')
-  const posesWithout     = result.Poses.filter(p => typeof p.Duration !== 'number')
+  // Duration check (section headings are not poses)
+  const poses            = result.Poses.filter(p => !('Section' in p))
+  const posesWithDuration = poses.filter(p => typeof p.Duration === 'number')
+  const posesWithout     = poses.filter(p => typeof p.Duration !== 'number')
   const poseTotal        = posesWithDuration.reduce((s, p) => s + p.Duration, 0)
   const stated           = result.Duration
-  if (poseTotal !== stated) {
+  if (posesWithDuration.length === 0) {
+    // A session without any pose timings can't be checked; build it anyway
+    warnings.push(`  ⚠ ${file}: no pose has a duration, so the duration check was skipped`)
+  } else if (poseTotal !== stated) {
     const diff    = poseTotal - stated
     const sign    = diff > 0 ? `+${diff}` : `${diff}`
     const pct     = Math.round(Math.abs(diff) / stated * 100)

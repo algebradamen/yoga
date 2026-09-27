@@ -21,15 +21,29 @@
     },
     "Poses": {
       "type": "array",
-      "description": "Ordered list of poses in the track",
+      "description": "Ordered list of poses in the track, optionally divided by section headings",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/Pose"
+        "if": { "type": "object", "required": ["Section"] },
+        "then": { "$ref": "#/$defs/Section" },
+        "else": { "$ref": "#/$defs/Pose" }
       }
     }
   },
   "additionalProperties": false,
   "$defs": {
+    "Section": {
+      "type": "object",
+      "required": ["Section"],
+      "description": "A heading row that divides the pose list, e.g. a Pilates part and a Yin part",
+      "properties": {
+        "Section": {
+          "type": "string",
+          "description": "Heading text"
+        }
+      },
+      "additionalProperties": false
+    },
     "Pose": {
       "type": "object",
       "required": ["Name"],

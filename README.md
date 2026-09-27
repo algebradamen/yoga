@@ -69,7 +69,8 @@ The **Translate tracks** workflow (`.github/workflows/translate.yml`) does the s
 │   ├── i18n.js               # UI string translations
 │   ├── watch.js              # Dev watcher
 │   └── translate-tracks.js   # Claude-assisted YAML translation
-├── Pilates Odda.pdf, Yin yoga 60 minutter.docx, yin-60-heart-kidney-meridian.md
+├── Pilates Odda.pdf, Pilates-1-og-yin-1.docx, Yin yoga 60 minutter.docx,
+│   yin-60-heart-kidney-meridian.md
 │                             # Original session notes the YAML files were made from
 ├── .github/workflows/        # deploy, translate, and @claude helpers
 ├── generated/                # Intermediate JSON (gitignored)

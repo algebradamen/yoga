@@ -264,6 +264,18 @@ h1 {
   white-space: nowrap;
 }
 
+/* Section heading row dividing the pose list (e.g. PILATES / YIN) */
+.pose-section {
+  background: var(--sage-light);
+  color: var(--forest-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--expand-border);
+}
+
 .pose-item > summary {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--sage-light);
@@ -468,6 +480,7 @@ details[open] > summary .chevron {
 
   /* Don't split a pose across pages */
   .pose-item { break-inside: avoid; }
+  .pose-section { break-after: avoid; }
 
   /* Hide decorative and interactive elements */
   .deco-top, .deco-bottom, .lang-switcher { display: none; }

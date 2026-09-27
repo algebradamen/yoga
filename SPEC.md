@@ -21,7 +21,11 @@ The full schema is in `track.schema.json`. Unknown fields fail validation. A ses
 - `Name` — session title (string, required)
 - `Duration` — total duration in minutes (integer, required)
 - `Description` — markdown, shown under the title and on the front-page card
-- `Poses` — ordered list of poses (required, at least one). Each pose has:
+- `Poses` — ordered list (required, at least one). An item is either a **section heading** or a **pose**.
+
+A section heading is an item with only a `Section` field, e.g. `- Section: "YIN"`. It is shown as a full-width divider row in the pose table and is ignored by the duration check.
+
+Each pose has:
 
 | Field | Type | Shown on the site as |
 |---|---|---|
@@ -46,6 +50,7 @@ The build adds up pose durations and compares the sum with the session `Duration
 
 - Difference up to 10%: a warning is printed and the session is built.
 - Difference over 10%: the session is rejected and the build fails.
+- No pose has a duration: the check is skipped with a warning, and the Duration column stays empty.
 
 ## Build pipeline
 
@@ -89,7 +94,8 @@ The front page shows session cards with the title, duration badge and descriptio
 The session page uses an expandable table layout:
 
 - **Columns:** Pose · Duration · Meridians · Sensation
-- Each row is a `<details>` element that expands to show the description and the sections listed in the field table above.
+- Section headings appear as full-width divider rows.
+- Each pose row is a `<details>` element that expands to show the description and the sections listed in the field table above.
 - On **mobile** (≤ 768px), the Meridians and Sensation columns are hidden; both appear inside the expanded row instead.
 
 ### Printing

@@ -20,6 +20,7 @@ function parseDuration(v) {
 export function normalizeDurations(track) {
   if (track.Duration != null) track.Duration = parseDuration(track.Duration)
   for (const pose of track.Poses ?? []) {
+    if (pose == null || typeof pose !== 'object') continue
     if (pose.Duration != null) pose.Duration = parseDuration(pose.Duration)
     if (pose.Rebound?.Duration != null) pose.Rebound.Duration = parseDuration(pose.Rebound.Duration)
   }

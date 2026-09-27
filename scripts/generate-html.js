@@ -98,6 +98,11 @@ function renderLangSwitcher(availableLocales, currentLocale) {
   }).join('\n    ')
 }
 
+function renderSection(section) {
+  return `
+    <h2 class="pose-section">${section.Section}</h2>`
+}
+
 function renderPose(pose, t) {
   const meridianBadges = Array.isArray(pose.Meridians)
     ? pose.Meridians.map(m => `<span class="badge badge-meridian">${m}</span>`).join('')
@@ -188,7 +193,7 @@ ${renderTopDeco('../images/', langSwitcher, `../${localeOutputFile(locale)}`, t(
       <span class="col-sensation">${t('col_sensation')}</span>
     </div>
 
-    ${track.Poses.map(pose => renderPose(pose, t)).join('')}
+    ${track.Poses.map(item => 'Section' in item ? renderSection(item) : renderPose(item, t)).join('')}
 
   </div>
 </main>
