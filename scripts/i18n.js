@@ -15,6 +15,11 @@ export const translations = {
     col_session:      'Session',
     home_link:        'All sessions',
     print_tooltip:    'Print or save as PDF — choose "Save as PDF" in the print dialog',
+    play_tooltip:     'Teacher mode: one exercise at a time',
+    teach_nav:        'Exercises',
+    teach_prev:       'Prev',
+    teach_up:         'Up',
+    teach_next:       'Next',
   },
   no: {
     col_pose:         'Stilling',
@@ -32,6 +37,11 @@ export const translations = {
     col_session:      'Økt',
     home_link:        'Alle økter',
     print_tooltip:    'Skriv ut eller lagre som PDF — velg «Lagre som PDF» i utskriftsdialogen',
+    play_tooltip:     'Lærermodus: én øvelse om gangen',
+    teach_nav:        'Øvelser',
+    teach_prev:       'Forrige',
+    teach_up:         'Opp',
+    teach_next:       'Neste',
   },
   es: {
     col_pose:         'Postura',
@@ -49,6 +59,11 @@ export const translations = {
     col_session:      'Sesión',
     home_link:        'Todas las sesiones',
     print_tooltip:    'Imprimir o guardar como PDF — elige «Guardar como PDF» en el diálogo de impresión',
+    play_tooltip:     'Modo profesor: un ejercicio a la vez',
+    teach_nav:        'Ejercicios',
+    teach_prev:       'Anterior',
+    teach_up:         'Arriba',
+    teach_next:       'Siguiente',
   },
 }
 

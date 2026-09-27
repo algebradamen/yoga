@@ -98,13 +98,25 @@ The session page uses an expandable table layout:
 - Each pose row is a `<details>` element that expands to show the description and the sections listed in the field table above.
 - On **mobile** (≤ 768px), the Meridians and Sensation columns are hidden; both appear inside the expanded row instead.
 
+### Teacher mode
+
+A **Play button** (triangle icon, next to the print button) switches the session page into teacher mode, showing one exercise at a time for teaching from a phone or tablet. The logic is in `js/teacher-mode.js`, shared by all session pages.
+
+- **Layout:** Header, lettering, language switcher, title, description, table header and all other exercises are hidden. The current exercise is shown with large text and all its sections, including meridians and sensation. A slim bar at the top shows the section heading (e.g. YIN) on the left and the position and duration (e.g. `3 / 25 · 4 min`) on the right.
+- **Navigation:** Floating buttons at the bottom (not a navigation bar): **Prev**, **Up** and **Next**. Prev is disabled on the first exercise and Next on the last. On phones (≤ 480px) the buttons stretch across the screen and Up shows only its arrow.
+- **Up** leaves teacher mode and returns to the overview, scrolled to the exercise that was showing, which is left expanded.
+- **Keyboard:** Right arrow / Page Down = next, Left arrow / Page Up = previous, Escape = up.
+- **URL:** The current exercise is kept in the address as `#play-N` (1-based). Opening such a link starts teacher mode at that exercise (out-of-range numbers are clamped). Prev/Next replace the address instead of adding history entries, so the browser's Back button leaves teacher mode in one step.
+- **Screen:** While teaching, the page asks the browser to keep the screen awake (Screen Wake Lock API), and asks again when the tab becomes visible. Browsers without support simply ignore it.
+- **Printing** from teacher mode prints the full session as usual.
+
 ### Printing
 
 A discrete **print button** (printer icon, top-right of the session title) calls `window.print()`; the browser print dialog lets the user print or save as PDF.
 
 - A `beforeprint` handler opens every pose, and `afterprint` closes again the ones it opened, so the printout contains every description.
 - A `::details-content` print rule does the same in browsers that support it.
-- All four columns are shown; mobile-only duplicates, decorations, the language switcher and the print button are hidden; a pose is not split across pages.
+- All four columns are shown; mobile-only duplicates, decorations, the language switcher, the play and print buttons and the teacher-mode controls are hidden; a pose is not split across pages.
 
 ## Analytics
 
@@ -121,7 +133,7 @@ The manual **Translate tracks** GitHub Actions workflow (`.github/workflows/tran
 
 ## CSS conventions
 
-- `styles/yoga.css` is the single shared stylesheet, copied into `dist/styles/` at build time together with `images/`.
+- `styles/yoga.css` is the single shared stylesheet, copied into `dist/styles/` at build time together with `images/` and `js/`.
 - Session pages reference it as `../styles/yoga.css`; front pages as `styles/yoga.css`.
 - Colors are CSS custom properties on `:root`, except the header and footer gradient stops and the header lettering color.
 - Print styles are in a `@media print` block at the end of the file.

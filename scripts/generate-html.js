@@ -184,11 +184,21 @@ ${renderTopDeco('../images/', langSwitcher, `../${localeOutputFile(locale)}`, t(
 <main>
   <div class="page-header">
     <h1>${track.Name} – ${track.Duration} min</h1>
+    <div class="page-actions">
+    <button class="play-btn" type="button" data-teach-start title="${t('play_tooltip')}" aria-label="${t('play_tooltip')}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
+    </button>
     <button class="print-btn" onclick="window.print()" title="${t('print_tooltip')}" aria-label="${t('print_tooltip')}">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
     </button>
+    </div>
   </div>
   ${track.Description ? `<div class="subtitle">${md.render(track.Description)}</div>` : ''}
+
+  <div class="teach-bar" hidden>
+    <span class="teach-section"></span>
+    <span class="teach-pos"></span>
+  </div>
 
   <div class="pose-table-wrapper">
     <div class="pose-header">
@@ -205,6 +215,22 @@ ${renderTopDeco('../images/', langSwitcher, `../${localeOutputFile(locale)}`, t(
 
 ${renderBottomDeco('../images/deco-bottom.svg')}
 
+<nav class="teach-controls" aria-label="${t('teach_nav')}" hidden>
+  <button type="button" data-teach="prev" aria-label="${t('teach_prev')}">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    <span>${t('teach_prev')}</span>
+  </button>
+  <button type="button" data-teach="up" class="teach-up" aria-label="${t('teach_up')}">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+    <span>${t('teach_up')}</span>
+  </button>
+  <button type="button" data-teach="next" aria-label="${t('teach_next')}">
+    <span>${t('teach_next')}</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</nav>
+
+<script src="../js/teacher-mode.js" defer></script>
 <script>
   // Browsers never print the contents of closed <details>, so open every pose
   // before printing and close the ones we opened afterwards.
@@ -373,3 +399,6 @@ copyDir(stylesDir, path.join(distDir, 'styles'))
 console.log(`✓ styles/  →  dist/styles/`)
 copyDir(imagesDir, path.join(distDir, 'images'))
 console.log(`✓ images/  →  dist/images/`)
+const jsDir = path.join(root, 'js')
+copyDir(jsDir, path.join(distDir, 'js'))
+console.log(`✓ js/  →  dist/js/`)

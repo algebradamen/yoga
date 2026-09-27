@@ -125,9 +125,29 @@ h1 {
   color: var(--forest-dark);
 }
 
+.page-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.3rem;
+}
+
+.play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  color: var(--forest-mid);
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  line-height: 0;
+}
+.play-btn:hover { opacity: 1; }
+.play-btn svg { width: 24px; height: 24px; }
+
 .print-btn {
   flex-shrink: 0;
-  margin-top: 0.3rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -435,6 +455,100 @@ details[open] > summary .chevron {
   min-height: 64px;
 }
 
+/* ---------- Teacher mode (one exercise at a time) ---------- */
+.teach-bar[hidden], .teach-controls[hidden] { display: none; }
+
+.teach-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--sage-light);
+}
+.teach-pos { margin-left: auto; white-space: nowrap; }
+
+.teach-controls {
+  position: fixed;
+  left: 50%;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+}
+.teach-controls button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 3.2rem;
+  padding: 0 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--forest-mid);
+  color: var(--white);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(28, 46, 24, 0.28);
+  -webkit-tap-highlight-color: transparent;
+}
+.teach-controls button:hover { background: var(--forest-dark); }
+.teach-controls button:disabled { opacity: 0.35; cursor: default; background: var(--forest-mid); }
+.teach-controls .teach-up { background: var(--white); color: var(--forest-dark); }
+.teach-controls .teach-up:hover { background: var(--sage-light); }
+.teach-controls svg { width: 1.3rem; height: 1.3rem; flex-shrink: 0; }
+
+@media screen {
+  body.teaching .deco-top,
+  body.teaching .deco-bottom,
+  body.teaching .page-header,
+  body.teaching .subtitle,
+  body.teaching .pose-header,
+  body.teaching .pose-section,
+  body.teaching .pose-item:not(.teach-current),
+  body.teaching .pose-item.teach-current > summary { display: none; }
+
+  body.teaching { background: var(--expand-bg); }
+  body.teaching main { max-width: 720px; padding: 1rem 1.25rem 7rem; }
+  body.teaching .pose-table-wrapper {
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+  body.teaching .detail-inner {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  body.teaching .detail-inner h3 { font-size: 1.8rem; line-height: 1.2; margin-bottom: 0.8rem; }
+  body.teaching .detail-inner .alt-section h4 { font-size: 0.85rem; }
+  body.teaching .detail-inner p,
+  body.teaching .detail-inner li,
+  body.teaching .detail-inner .alt-item { font-size: inherit; }
+  body.teaching .detail-inner ul li { white-space: normal; }
+  /* Meridians and sensation have no columns here, so show them in the body */
+  body.teaching .mobile-info { display: block; }
+}
+
+@media screen and (max-width: 480px) {
+  .teach-controls { left: 1rem; right: 1rem; transform: none; }
+  .teach-controls button { flex: 1; justify-content: center; padding: 0 0.6rem; }
+  .teach-controls .teach-up { flex: 0 0 3.2rem; padding: 0; }
+  .teach-controls .teach-up span { display: none; }
+  body.teaching .detail-inner { font-size: 1.1rem; }
+}
+
 /* ---------- Mobile-only detail info (hidden on desktop) ---------- */
 .mobile-info { display: none; }
 
@@ -484,7 +598,7 @@ details[open] > summary .chevron {
 
   /* Hide decorative and interactive elements */
   .deco-top, .deco-bottom, .lang-switcher { display: none; }
-  .chevron, .print-btn { display: none; }
+  .chevron, .page-actions, .teach-bar, .teach-controls { display: none !important; }
 
   /* Clean appearance */
   .pose-table-wrapper { box-shadow: none; border: 1px solid var(--sage-light); }

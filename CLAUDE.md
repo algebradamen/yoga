@@ -29,6 +29,7 @@ Push to `main` = deploy (`.github/workflows/deploy.yml`, GitHub Pages). A failin
 ## Code conventions
 
 - Node ESM, no framework, no bundler. HTML is built with template literals in `scripts/generate-html.js`.
+- Browser JavaScript lives in `js/` (copied to `dist/js/`) and must work without a build step. Teacher mode (`js/teacher-mode.js`) reads the rendered page (`details.pose-item`, `.pose-section`, `.duration-cell`, `h3`), so keep those class names stable or update both together.
 - UI strings go in `scripts/i18n.js` for all three locales (`no`, `en`, `es`).
 - Keep every generated link relative (no leading `/`).
 - Colors are CSS custom properties in `styles/yoga.css`; print styles live in the `@media print` block at the end.
