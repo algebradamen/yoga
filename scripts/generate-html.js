@@ -34,6 +34,10 @@ const LOCALES = {
 }
 const LOCALE_ORDER = Object.keys(LOCALES)
 
+// Teacher mode's Play button is hidden while the feature is being reworked.
+// Set to true to show it again. Direct #play-N links keep working either way.
+const SHOW_PLAY_BUTTON = false
+
 function compareLocales(a, b) {
   const ia = LOCALE_ORDER.indexOf(a), ib = LOCALE_ORDER.indexOf(b)
   if (ia === -1 && ib === -1) return a.localeCompare(b)
@@ -103,7 +107,7 @@ function renderSection(section) {
     <h2 class="pose-section">${section.Section}</h2>`
 }
 
-function renderPose(pose, t) {
+function renderPose(pose, t, nextPose) {
   const meridianBadges = Array.isArray(pose.Meridians)
     ? pose.Meridians.map(m => `<span class="badge badge-meridian">${m}</span>`).join('')
     : ''
@@ -160,8 +164,25 @@ function renderPose(pose, t) {
           <h4>${t('detail_alternative')}: ${a.Name}</h4>
           ${a.Description ? `<div class="alt-item">${md.render(a.Description)}</div>` : ''}
         </div>`).join('') : ''}
+        ${nextPose ? `
+        <div class="next-pose">
+          <button type="button" class="next-pose-btn" data-next-pose>
+            <span class="next-pose-label">${t('detail_next')}:</span> <span class="next-pose-name">${nextPose.Name}</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>` : ''}
       </div>
     </details>`
+}
+
+// Render sections and poses in order; each pose gets a "Next" button pointing
+// at the following pose (section headings are skipped).
+function renderPoseList(items, t) {
+  const poses = items.filter(item => !('Section' in item))
+  return items.map(item => {
+    if ('Section' in item) return renderSection(item)
+    return renderPose(item, t, poses[poses.indexOf(item) + 1])
+  }).join('')
 }
 
 function renderTrack(track, locale, availableLocales, baseName, warnings) {
@@ -185,7 +206,7 @@ ${renderTopDeco('../images/', langSwitcher, `../${localeOutputFile(locale)}`, t(
   <div class="page-header">
     <h1>${track.Name} – ${track.Duration} min</h1>
     <div class="page-actions">
-    <button class="play-btn" type="button" data-teach-start title="${t('play_tooltip')}" aria-label="${t('play_tooltip')}">
+    <button class="play-btn" type="button" data-teach-start title="${t('play_tooltip')}" aria-label="${t('play_tooltip')}"${SHOW_PLAY_BUTTON ? '' : ' hidden'}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
     </button>
     <button class="print-btn" onclick="window.print()" title="${t('print_tooltip')}" aria-label="${t('print_tooltip')}">
@@ -208,7 +229,7 @@ ${renderTopDeco('../images/', langSwitcher, `../${localeOutputFile(locale)}`, t(
       <span class="col-sensation">${t('col_sensation')}</span>
     </div>
 
-    ${track.Poses.map(item => 'Section' in item ? renderSection(item) : renderPose(item, t)).join('')}
+    ${renderPoseList(track.Poses, t)}
 
   </div>
 </main>
@@ -230,6 +251,7 @@ ${renderBottomDeco('../images/deco-bottom.svg')}
   </button>
 </nav>
 
+<script src="../js/pose-nav.js" defer></script>
 <script src="../js/teacher-mode.js" defer></script>
 <script>
   // Browsers never print the contents of closed <details>, so open every pose

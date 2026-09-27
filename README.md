@@ -61,7 +61,8 @@ The **Translate tracks** workflow (`.github/workflows/translate.yml`) does the s
 ├── track.schema.json         # JSON Schema for session files
 ├── styles/yoga.css           # Shared stylesheet
 ├── images/                   # Decorative SVGs and favicon
-├── js/teacher-mode.js        # Play button: one exercise at a time with Prev / Up / Next
+├── js/pose-nav.js            # "Next" button inside each expanded exercise
+├── js/teacher-mode.js        # Play button: one exercise at a time (button currently hidden)
 ├── scripts/
 │   ├── parse-track-yaml.js   # YAML → JSON with schema and duration checks
 │   ├── validate-track.js     # Shared validation (used by parse and translate)

@@ -97,8 +97,11 @@ The session page uses an expandable table layout:
 - Section headings appear as full-width divider rows.
 - Each pose row is a `<details>` element that expands to show the description and the sections listed in the field table above.
 - On **mobile** (≤ 768px), the Meridians and Sensation columns are hidden; both appear inside the expanded row instead.
+- Every expanded exercise except the last ends with a **Next button** ("Neste: Heel slides"). It collapses the current exercise, opens the next one (section headings are skipped; an already open one stays open), scrolls it to the top of the screen and moves keyboard focus to it. Scrolling is instant when the user prefers reduced motion. The logic is in `js/pose-nav.js`.
 
 ### Teacher mode
+
+> **Currently hidden.** The Play button is turned off with `SHOW_PLAY_BUTTON` in `scripts/generate-html.js` while the feature is reworked. Teacher mode can still be opened with a `#play-N` link.
 
 A **Play button** (triangle icon, next to the print button) switches the session page into teacher mode, showing one exercise at a time for teaching from a phone or tablet. The logic is in `js/teacher-mode.js`, shared by all session pages.
 
@@ -116,7 +119,7 @@ A discrete **print button** (printer icon, top-right of the session title) calls
 
 - A `beforeprint` handler opens every pose, and `afterprint` closes again the ones it opened, so the printout contains every description.
 - A `::details-content` print rule does the same in browsers that support it.
-- All four columns are shown; mobile-only duplicates, decorations, the language switcher, the play and print buttons and the teacher-mode controls are hidden; a pose is not split across pages.
+- All four columns are shown; mobile-only duplicates, decorations, the language switcher, the play, print and Next buttons and the teacher-mode controls are hidden; a pose is not split across pages.
 
 ## Analytics
 

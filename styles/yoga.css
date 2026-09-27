@@ -144,6 +144,7 @@ h1 {
   line-height: 0;
 }
 .play-btn:hover { opacity: 1; }
+.play-btn[hidden] { display: none; }
 .play-btn svg { width: 24px; height: 24px; }
 
 .print-btn {
@@ -455,6 +456,39 @@ details[open] > summary .chevron {
   min-height: 64px;
 }
 
+/* ---------- "Next" button at the bottom of an expanded exercise ---------- */
+.pose-item { scroll-margin-top: 0.75rem; }
+
+.next-pose {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+}
+.next-pose-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem 0.5rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--forest-mid);
+  color: var(--white);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow);
+  -webkit-tap-highlight-color: transparent;
+}
+.next-pose-btn:hover { background: var(--forest-dark); }
+.next-pose-btn:focus-visible { outline: 2px solid var(--forest-dark); outline-offset: 2px; }
+.next-pose-label { font-weight: 700; }
+.next-pose-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.next-pose-btn svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+
 /* ---------- Teacher mode (one exercise at a time) ---------- */
 .teach-bar[hidden], .teach-controls[hidden] { display: none; }
 
@@ -513,7 +547,8 @@ details[open] > summary .chevron {
   body.teaching .pose-header,
   body.teaching .pose-section,
   body.teaching .pose-item:not(.teach-current),
-  body.teaching .pose-item.teach-current > summary { display: none; }
+  body.teaching .pose-item.teach-current > summary,
+  body.teaching .next-pose { display: none; }
 
   body.teaching { background: var(--expand-bg); }
   body.teaching main { max-width: 720px; padding: 1rem 1.25rem 7rem; }
@@ -598,7 +633,7 @@ details[open] > summary .chevron {
 
   /* Hide decorative and interactive elements */
   .deco-top, .deco-bottom, .lang-switcher { display: none; }
-  .chevron, .page-actions, .teach-bar, .teach-controls { display: none !important; }
+  .chevron, .page-actions, .teach-bar, .teach-controls, .next-pose { display: none !important; }
 
   /* Clean appearance */
   .pose-table-wrapper { box-shadow: none; border: 1px solid var(--sage-light); }
