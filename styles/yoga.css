@@ -637,6 +637,15 @@ details[open] > summary .chevron {
 
   .pose-item > summary { padding-block: 0.6rem; }
   .detail-inner ul li { white-space: normal; }
+
+  /* Slightly larger text for reading on a phone */
+  .pose-item > summary { font-size: 1rem; }
+  .duration-cell { font-size: 0.95rem; }
+  .detail-inner p,
+  .detail-inner ul li,
+  .detail-inner .alt-item { font-size: 1rem; }
+  .detail-inner .alt-section h4 { font-size: 0.9rem; }
+  .next-pose-btn { font-size: 0.9rem; }
 }
 
 /* Phones: the expanded exercise sits right under its own row, so its repeated
