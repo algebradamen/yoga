@@ -2,7 +2,7 @@
   "name": "@yoga/yoga",
   "version": "1.0.0",
   "description": "Edita's Yoga and Pilates sessions",
-  "main": "index.js",
+  "homepage": "https://yoga.algebradamen.no",
   "scripts": {
     "generate:json": "node scripts/parse-track-yaml.js",
     "generate:html": "node scripts/generate-html.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@codeberg.org/narve/yoga.git"
+    "url": "git+https://github.com/algebradamen/yoga.git"
   },
   "keywords": [],
   "author": "",
