@@ -26,8 +26,8 @@ function buildPrompt(noContent, targetLang) {
   return `Translate the following yoga session YAML file from Norwegian to ${targetLang}.
 
 Rules:
-- Keep ALL YAML field names exactly as-is (Name, Duration, Description, Poses, Sensation, Meridians, Rebound, Alternatives, Transition, Adjustments, Instructions, Counterpose, etc.)
-- Translate only the string values: pose names, descriptions, sensation items, rebound descriptions, alternative names and descriptions
+- Keep ALL YAML field names exactly as-is (Name, Duration, Description, Poses, Sensation, Meridians, Rebound, Alternatives, Transition, Adjustments, TeacherCues, Instructions, Counterpose, etc.)
+- Translate only the string values: pose names, descriptions, sensation items, rebound descriptions, alternative names and descriptions, adjustments, teacher cues, transitions and counterposes
 - Translate meridian names to ${targetLang} (e.g. "Nyre" → "Kidney" in English, "Riñón" in Spanish)
 - Preserve all markdown formatting (bold **, italic _, etc.)
 - Preserve the exact YAML structure, indentation, blank lines between poses, and quoting style

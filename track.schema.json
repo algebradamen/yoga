@@ -83,6 +83,10 @@
           "type": "string",
           "description": "Modifications or props for accessibility"
         },
+        "TeacherCues": {
+          "type": "string",
+          "description": "Verbal cues and tips for the teacher. Validated but not shown on the site yet."
+        },
         "Alternatives": {
           "type": "array",
           "description": "Alternative versions of the pose",

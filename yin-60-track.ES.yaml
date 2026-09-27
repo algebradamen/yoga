@@ -55,7 +55,9 @@ Poses:
       Mantén la columna larga y el pecho abierto. Ten las manos en posición de oración frente al corazón con los codos presionando contra las espinillas o las rodillas. Deja que el peso del cuerpo se hunda en el suelo y siente una apertura profunda en las caderas.
       Crea estabilidad y arraigo – preparación para la apertura del corazón.
     Adjustments: Si es difícil mantener los talones en el suelo, puedes colocar una esterilla enrollada o una manta debajo de ellos como apoyo.
-      **Rebound:** De pie erguido/a durante 0,5 min.
+    Rebound:
+      Duration: 0,5
+      Description: De pie erguido/a.
     Meridians:
       - Hígado
       - Riñón
