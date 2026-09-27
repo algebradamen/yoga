@@ -2,8 +2,10 @@
  * @fileoverview Parses and validates yoga track YAML files, then outputs JSON.
  *
  * Reads all `.yaml`/`.yml` files from the project root, validates each against
- * `track.schema.json` using AJV, warns if pose durations don't sum to the
- * stated track duration, and writes valid tracks as JSON to `generated/`.
+ * `track.schema.json` using AJV (durations like "0,5" are accepted), and checks
+ * that pose durations add up to the stated track duration: a difference of up
+ * to 10% gives a warning, more than 10% fails the build. Rebound durations are
+ * not counted. Valid tracks are written as JSON to `generated/`.
  *
  * Usage: `node scripts/parse-track-yaml.js`
  */

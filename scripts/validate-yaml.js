@@ -1,40 +1,33 @@
 /**
  * @fileoverview Validates one or more yoga track YAML files against the schema.
  *
- * Accepts file paths as command-line arguments; falls back to a default set of
- * files if none are provided. Validates each file against `track.schema.json`
- * using AJV and reports pass/fail per file.
+ * Uses the same validation as the build (`validate-track.js`), so durations like
+ * "0,5" are accepted. Validates the given files, or every `.yaml`/`.yml` file in
+ * the project root when no arguments are given. Does not check duration totals;
+ * `npm run generate:json` does that.
  *
  * Usage: `node scripts/validate-yaml.js [file1.yaml file2.yaml ...]`
  */
 
 import fs from 'fs'
 import path from 'path'
-import YAML from 'yaml'
-import Ajv from 'ajv/dist/2020.js'
+import { validateTrack } from './validate-track.js'
 
-const root = path.join('./scripts', '..')
-const schema = JSON.parse(fs.readFileSync(path.join(root, 'track.schema.json'), 'utf-8'))
-const ajv = new Ajv({strict: false})
-const validate = ajv.compile(schema)
+const root = path.resolve('./scripts', '..')
 
-const files = process.argv.slice(2).length
-    ? process.argv.slice(2)
-    : ['yin-60-track.yaml', 'yin-60-heart-kidney-meridian.yaml']
+const files = process.argv.length > 2
+  ? process.argv.slice(2)
+  : fs.readdirSync(root).filter(f => f.endsWith('.yaml') || f.endsWith('.yml')).sort()
 
 let allOk = true
 for (const f of files) {
-    const data = YAML.parse(fs.readFileSync(path.join(root, f), 'utf-8'))
-    const ok = validate(data)
-    if (!ok) {
-        allOk = false
-        console.error(`✗ ${f}`)
-        for (const err of validate.errors) {
-            console.error(`    ${err.instancePath || '(root)'}: ${err.message}`)
-        }
-    } else {
-        console.log(`✓ ${f}`)
-    }
+  const { ok, errors } = validateTrack(fs.readFileSync(path.resolve(root, f), 'utf-8'))
+  if (ok) {
+    console.log(`✓ ${f}`)
+  } else {
+    allOk = false
+    console.error(`✗ ${f}`)
+    for (const e of errors) console.error(`    ${e}`)
+  }
 }
 process.exit(allOk ? 0 : 1)
-

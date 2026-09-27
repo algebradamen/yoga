@@ -9,6 +9,7 @@
     "generate": "npm run generate:json && npm run generate:html",
     "dist": "npm run generate",
     "serve": "npx serve dist",
+    "validate": "node scripts/validate-yaml.js",
     "watch": "node scripts/watch.js",
     "translate": "node scripts/translate-tracks.js"
   },
