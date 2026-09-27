@@ -1,0 +1,233 @@
+Name: "Pilates 1 og yin 1"
+Duration: 75
+Description: |
+  **Pilates sequence 1 og yin yoga sequence 1**
+
+Poses:
+
+  # Not in the document, which only marks the start of the Yin part
+  - Section: "PILATES"
+
+  - Name: "Landing"
+    Description: |
+      Landing Legg dere på ryggen og lukk øynene. Kjenn at du lander på matta di, kjenne hvordan kroppen møter matta.
+
+      Så puster du inn gjennom nesa..og ut gjennom munnen…Zoome inn i pusten din, hvordan det kjennes, legg merke til.
+
+      **Utførelse:** Legg hendene på ribbeina slik at fingertuppene møtes. Pust inn og kjenn utvidelsen av ribbeina og at fingertuppene glir fra hverandre. Pust ut og kjenn at fingertuppene møtes..
+    TeacherCues: |
+      Cue: “fyll ribbena som et trekkspill” “Utpusten lukker ribbeina som et trekkspill”
+
+  - Name: "Pelvic tilt eller inprint"
+    Description: |
+      **Startposisjon:** Ligg på ryggen med bøyde knær, føttene i hoftebreddens avstand, og en fot lengde mellom foten og bekken.
+
+      **Utførelse:** På utpust vipp bekkenet bakover slik at korsryggen smelter mot matten. På innpust, gå tilbake til nøytral. Når du er i nøytral merker du det er avstand mellom ryggen og matten.
+
+      Repeter et par ganger.
+
+  - Name: "Heel slides"
+    Description: |
+      **Heel slides**: 6 pust på hver side Startposisjon: Ligg på ryggen, ben i støtteposisjon. Armene skal ligge langs kroppen . Utførelse: Pust inn og åpne venstre kne ut til siden og skyver du høyre fot frem Pust ut før tilbake. Jobb med å holde bekkenet i ro.
+
+      Bytt side. Pust inn når du skyver/strekker lang fot ut på matta og pust ut tilbake.
+    TeacherCues: |
+      Lærercues: Imprint anbefales. Bruk magen og pusten til å strekke foten langs matta og holde bekkenet i ro. Prøv å være bevisst på at hoftene ikke jobber, men magen.
+    Transition: |
+      Ta et par pust i støtteposisjon der du sender knær over til sidene en om gangen.
+
+  - Name: "One leg Circle"
+    Description: |
+      **One leg Circle:** Du er i støtteposisjon, pust inn og på utpust sender du en fot opp. Tærne peker mot taket. Lag en halv sirkel på innpust og tilbake halv sirkel på utpust. Gjør 10 repetisjoner på hver side.
+    TeacherCues: |
+      Cue: Bruk magen og pusten til å styre bevegelsen.
+
+  - Name: "Dead bug - en side om gangen"
+    Description: |
+      Dead bug: 6 pust på hver side Startposisjon: Ligg på ryggen, armer opp mot taket, ben i tabletop. Utførelse: Pust inn. På utpust senker du en arm bakover og motsatt ben ned. Pust inn før tilbake. Bytt side. Pust ut når du strekker, inn tilbake.
+    TeacherCues: |
+      Lærercues: “Som et korsett rundt midjen” “Bevær trykket i korsryggen". Pass på så ikke korsryggen svaier - “Stopp før du mister kontakten”.
+    Transition: |
+      ta tak i knær og klem knær. Strekk ut begge beina. Ta tak i et lår og kom deg opp til sittende og derifra på alle fire.
+
+  - Name: "Cat and cow"
+    Description: |
+      6 pust
+
+      Startposisjon: hender og knær på matta, nøytral rygg. Utførelse: Pust inn svai rygg og skyve brystbeinet frem. På utpust rund rygg virvel for virvel, begynn fra halebeinet og oppover ryggen der nakken og hodet plasseres sist. Pust inn og svai.
+    Transition: |
+      Fra cat and cow går vi over til stående svømmer.
+
+  - Name: "Stående svømmer"
+    Description: |
+      Stående svømmer: 6 på hver side= 12 pust/øvelser. En side om gangen.
+
+      Startposisjon: Stå på alle 4
+
+      Utførelse: Pust inn. På utpust strekk ut høyre bein og venstre arm og pust inn på vei tilbake til utgangsposisjonen. Bekken og ryggsøyle i nøytral posisjon. På siste hold i 3 pust.
+    Transition: |
+      fra svømmeren/ flying dog, går vi på alle 4 og over i hunden som ser ned.
+
+  - Name: "Omvendt V posisjon (hunden som ser ned i pilates)"
+    Description: |
+      (du står på hender og føtter, med hofter løftet opp mot taket, ryggen lang og hælene presset mot gulvet. Stillingen gir strekk i rygg, skuldre og baksiden av ben).
+    Transition: |
+      gå hendene mot føttene i 4 steg.
+
+      Roll up på innpust, trekk magen inn og på utpust ruller du virvel for virvel fra halebeinet til du kommer til nakken og står oppreist.
+
+  - Name: "Squat"
+    Description: |
+      Stå med hoftebreddens avstand med føttene på matta. På innpust bøy deg ned i squat og skyv setet bak. På utpust skyv opp gjennom hæler til stående.
+
+      Gjenta 8 ganger.
+    TeacherCues: |
+      Cue: På innpust bøy og bak og på utpust tilbake.
+
+  - Name: "Stående balanseøvelse"
+    Description: |
+      Startposisjon: stå rett med begge føttene i bakken.
+
+      Balanse øvelse. 6 repetisjoner på hver side.
+
+      **Utførelse:** Pust inn og løft høyre fot (90 graders vinkel, mellom hofte og lår). Pust ut og før foten bak, og kroppen frem (armene i prayer) eller armene rett opp og hold skuldrene nede. Pust inn, send foten frem stående på en fot. Pust inn stående på en fot og pust ut, send utilbake. 6 repetisjoner. På siste holde i 6 sekunder og rolig sende foten frem, og senke foten. Bytt side.
+    Transition: |
+      Stående rulle nedover virvel for virvel. Gå armene opp til toppen av matta til rett planke.
+
+  - Name: "Rett planke"
+    Description: |
+      Startposisjon: Stå i planken med å føre kroppen frem og beina litt lenger bak. Hold kroppen strak som en rett linje fra hode til hæler, aktiver kjerne og setemuskler.
+
+      Stå fem pust i rett planke.
+    Transition: |
+      fra planken gå over til child pose og ta et par pust her. Gå over til sittende med beina pekende fremover.
+
+  - Name: "C kurve"
+    Description: |
+      Startposisjon: sitte med rett rygg
+
+      Utførelse: Bøy knær i startposisjon og send overkroppen bakover med en C kurve i ryggen. Rett armene, ha rette skuldre. Hvis du vil ha større utfordring kan du ha rette bein i 60 graders vinkel. Send kroppen frem på innpust og tilbake til startposisjon på utpust. 5 repetisjoner.
+
+      Utvidelse: På utpust. Før høyre arm bak og bøy i albuen, se over mot høyre hånd. Send armen tilbake til å peke rett frem på innpust. På utpust send venstre arm bakover og bøy i albuen, seo ver mot venstre hånd. På innpust send armen rett frem. 6 repetisjoner (pust) på hver side. Hvis en ønsker enda en utvidelse så kan en strekke begge beina frem (60 graders vinkel) og begge armene bak og opp så tilbake til utgangsposisjon og repetere 5 ganger.
+    Transition: |
+      legg den ned på ryggen.
+
+  - Name: "Chest Lift"
+    Description: |
+      **Startposisjon:** Ryggliggende, hender bak hodet, beina i støtteposisjon.
+
+      **Utførelse:** Ha hendene bak hodet. Pust inn og på utpust løft hodet/skuldre og strekk ut et bein. På innpusten settes foten ned og overkroppen senkes. Gjenta på motsatt siden.
+
+      12 repetisjoner totalt- 6 på hver side.
+
+  - Name: "Chest Lift"
+    Description: |
+      **Startposisjon:** Ryggliggende, hender bak hodet, beina i støtteposisjon. Løft høyre fot i table top.
+
+      **Utførelse:** Ha hendene bak hodet, på innpust løft overkroppen. På utpust roter overkroppen mot høyre bein og strekk venstre arm. På innpust tilbake til utgangsposisjon med samme fot i table top. Hold hode løftet og roter mot samme bein- 6 repetisjoner. På siste holder du 3 pust i posisjonen.
+
+      Motsatt side.
+
+  - Name: "Criss-Cross"
+    Description: |
+      Criss-Cross Startposisjon: Ryggliggende, hender bak hodet, beina i tabletop. Utførelse: Ha hendene bak nakken. Pust inn og på utpust løft hodet/skuldre. Pust inn og på utpust roter høyre albue mot motsatt venstre kne, mens du strekker høyre fot. På innpust trekk tilbake til midten. Pust inn og på utpust, send venstre albue mot høyre kne, mens du strekker venstre fot. Pust inn tilbake til midten. 6 pust på hver side. Bekkenplassering: Innprint
+    TeacherCues: |
+      Cue: Tenk skulder mot kne, ikke albue. Kjenn når du roterer at du bruker mage skrå.
+    Transition: |
+      Ta tak i et lår og kom opp i sittende. Derifra legger du deg på magen.
+
+  - Name: "Swømmer"
+    Description: |
+      Utgangsposisjonen: ligg på magen med føtter og armer i mattebreddes avstand.
+
+      Pust inn og på utpust løfter du høyre fot og venstre arm. Pust inn senk og pust ut venstre fot og høyre arm.
+
+      Repeter med 12 pust totalt -6 på hver side.
+    TeacherCues: |
+      Cue: Husk å bruke magen, setet og ryggen til å løfte deg opp og senke ned. Holde på magen når du senker bein og arm ned.
+
+  - Section: "YIN"
+
+  - Name: "Child Pose"
+    Description: |
+      Du legger deg i child pose og prøv å puste normalt. Hvordan kjennes det i kroppen, hvordan kjennes det i pusten.
+
+      Fold overkroppen fremover med pannen i matten eller ha bolsteret under magen og brystet. Armene kan du sende fremover eller langs siden av kroppen. Prøv å la tankene fare- komme og gå, for å roe ned sinnet ditt. Strekk ryggen og hofter se om det gir deg dyp avspenning.
+    Rebound:
+      Duration: 1
+      Description: |
+        Sitte på sitteknokene og observer kroppen, hvor kjenner du dyp avslapping (sensasjon).
+
+  - Name: "Caterpillar"
+    Description: |
+      Beina strakt frem, lar overkroppen hvile avslappet forover, gjerne på et bolster. Slipper spenninger i rygg og hofter. Ingen aktiv strekking – la tyngden gjøre jobben.
+    Rebound:
+      Duration: 1
+      Description: |
+        Ligge på ryggen (shavasana).
+
+  - Name: "Liggende sommerfugl (Supta Baddha Konasana)"
+    Description: |
+      Ligger på ryggen med et bolster under ryggen på langs, knærne ut til siden mens en har fotsålene samlet. La brystet åpne seg. Bygg gjerne opp med blokker under knærne for mer støtte og åpning.
+    Transition: |
+      Rull over på siden og ta ut bolsteren.
+    Rebound:
+      Duration: 0.5
+      Description: |
+        Ligge på siden i fosterstilling før du setter deg opp i sittende posisjon.
+
+  - Name: "Sfinks"
+    Description: |
+      Ligg på magen. Plasser albuene litt foran skuldrene og hvil på underarmene. La magen smelte mot gulvet. Kjenn hvordan det føles i nedre korsrygg.  Hvis "sensasjonen" er for dyp, flytt albuene litt fremover for mindre kompresjon, eller trekk dem litt tilbake for mer kompresjon. Du kan gjerne bygge opp med en bolster under brystet for mer støtte og en mykere åpning.
+
+      Legg merke til pusten som beveger seg inn i de øvre ribbeina og hjerterommet.
+    Rebound:
+      Duration: 1
+      Description: |
+        Ligg flat på magen, snu hodet mot høyre og dra høyre kne oppover langs gulvet.
+
+  - Name: "Recline twist – Høyre side"
+    Description: |
+      Trekk knærne inn mot brystet og send venstre kne til høyre side av kroppen, gjerne støttet av bolster. Åpne dine armer ut som to vinger og la tyngden av knærne og overkroppen skape en mild vridning i ryggraden. La hodet hvile mot gulvet eller vend det i motsatt retning av knærne for en dypere vridning. Begge skuldrene er hviler gulvet.
+    Rebound:
+      Duration: 0.5
+      Description: |
+        Shavasana, observer pusten og hvordan kroppen føles etter vridningen.
+
+  - Name: "Recline twist – Venstre side"
+    Description: |
+      Trekk knærne inn mot brystet og send høyre kne til venstre side av kroppen, gjerne støttet av bolster. Åpne dine armer ut som to vinger og la tyngden av knærne og overkroppen skape en mild vridning i ryggraden. La hodet hvile mot gulvet eller vend det i motsatt retning av knærne for en dypere vridning. Begge skuldrene er hviler gulvet.
+    Rebound:
+      Duration: 0.5
+      Description: |
+        Shavasana, observer pusten og hvordan kroppen føles etter vridningen.
+
+  - Name: "Dangling"
+    Description: |
+      Stående oppreist med føttene i komfortabel avstand. Bøy knærne og fold forward. La armene og hodet henge tungt. Hvil gjerne hendene på bolster eller blokker for støtte. La tyngden av hodet og armene trekke deg dypere inn i folden, og kjenn hvordan ryggraden frigjøres og åpner seg.
+    Rebound:
+      Duration: 0.5
+      Description: |
+        Bøy i knær, slipp armene og rolig stå opp. Stå oppreist.
+
+  - Name: "Shavasana"
+    Description: |
+      Tid for å hvile. Shavasana er avslutning av din praksis en naturlig del av reisen. La kroppen synke ned i underlaget og la pusten være naturlig og uanstrengt. La kroppen og sinnet smelte sammen. Legg merke til energien og det som har åpnet seg i løpet av praksisen.
+
+      Ligg komfortabelt på ryggen og armene langs sidene med håndflatene vendt opp. Lukk øynene. Ta et dypt åndedrag inn… og pust sakte ut.  La kroppen smelte inn i matten.
+
+      Kjenn føttene dine. La dem mykne og slippe spenning. Flytt oppmerksomhet sakte opp gjennom bena, hoftene og torso. Kjenn hvordan hver del slapper av. Kjenn skuldrene senke seg, armene tunge og avslappet. Slapp av i nakken, kjeven og ansiktet. La pannen bli glatt. Ta noen rolige åndedrag, og legg merke til brystets opp og ned bevegelse.
+
+      Forestill deg et varmt og beroligende lys som beveger seg fra hodet til tærne, og gir fred til hver celle.
+
+      Bli værende her, la kroppen slappe helt av. La tankene flyte forbi uten å holde fast i dem. Begynn sakte å bevege fingre og tær, og bring oppmerksomhet tilbake til kroppen. …
+
+      Strekk armene over hodet, ta et dypt åndedrag, og rull sakte over på høyre side. Når du er klar, sett deg opp i en komfortabel stilling.
+
+  - Name: "Sittende stilling! (hendene i prayer)"
+    Description: |
+      Kjenn hvordan det føles å være i kroppen din akkurat nå, og la en følelse av takknemlighet for deg selv og din praksis vokse frem.
+
+      Et lite mantra om takknemlighet. "Jeg er takknemlig for min kropp og min praksis. Jeg er åpen for det som har åpnet seg i meg i dag, og jeg bærer denne roen og åpenheten med meg videre." "Jeg er takknemlig for kjærligheten og støtten i mitt hjerterom. Jeg er åpen for å gi og motta kjærlighet i alle aspekter av livet mitt." "la mine tanker, ord og handlinger være fylt med kjærlighet og medfølelse. Jeg er takknemlig for muligheten til å åpne mitt hjerte og dele min kjærlighet med verden."
+
+      **NAMASTE!** (la blikket ta en runde fra en side av klasserommet mot midten til neste side av klasserommet).
